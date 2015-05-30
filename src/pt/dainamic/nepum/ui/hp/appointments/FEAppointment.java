@@ -16,6 +16,7 @@ import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import pt.dainamic.nepum.model.Appointment;
+import pt.dainamic.nepum.model.LoginSession;
 import pt.dainamic.nepum.model.Patient;
 import pt.dainamic.nepum.ws.AppointmentWS;
 import pt.dainamic.nepum.ws.PatientWS;
@@ -82,15 +83,16 @@ public class FEAppointment extends javax.swing.JFrame {
     private Appointment aproveAppointment() {
         int idAppointment = getSelectAppointment().getIdAppointment();
         int idPatient = getSelectPat().getIdPatient();
-        int idHealthProfessional = 1;
+        int idHealthProfessional = LoginSession.getInstance().getIdHealthProfessional();
         String date = jTextFieldDate.getText();
         String hour = jTextFieldHours.getText();
         String local = jTextFieldLocal.getText();
         byte healthProAprov = 1;
+        byte patientAprov = 1;
         String description = jTextAreaDescription.getText();
 
         return new Appointment(idAppointment, idPatient, idHealthProfessional, date, hour, local,
-                (byte) 1, healthProAprov, description);
+                patientAprov, healthProAprov, description);
     }
 
     private void seeAppointment() {
@@ -117,13 +119,13 @@ public class FEAppointment extends javax.swing.JFrame {
 
     private void changeMessage(Appointment a) {
         if (a.getHealthProfessionalApproval() == 1 && a.getPatientApproval() == 1) {
-            jLabelStatus.setText("Esta consulta foi aprovada por ambos");
+            jLabelStatus.setText("Consulta Aprovada!");
             jLabelStatus.setForeground(newGreen);
         } else if (a.getHealthProfessionalApproval() == 1 && a.getPatientApproval() == 0) {
-            jLabelStatus.setText("Esta consulta necessita de ser aprovada pelo paciente");
+            jLabelStatus.setText("Esta consulta necessita de ser aprovada pelo paciente.");
             jLabelStatus.setForeground(newRed);
         } else if (a.getHealthProfessionalApproval() == 0 && a.getPatientApproval() == 1) {
-            jLabelStatus.setText("Esta consulta necessita de ser aprovada por si");
+            jLabelStatus.setText("Esta consulta necessita de ser aprovada por si.");
             jLabelStatus.setForeground(newRed);
         }
     }
@@ -146,6 +148,17 @@ public class FEAppointment extends javax.swing.JFrame {
         icons.add(new ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/logo.png")).getImage());
         icons.add(new ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/logo-icon.png")).getImage());
         setIconImages(icons);
+    }
+    
+    private Date dateParse(String birthDate) {
+        SimpleDateFormat dateFromat = new SimpleDateFormat("yyyy-MM-dd");
+        Date d = null;
+        try {
+            d = dateFromat.parse(birthDate);
+        } catch (ParseException ex) {
+
+        }
+        return d;
     }
 
     @SuppressWarnings("unchecked")
@@ -304,16 +317,7 @@ public class FEAppointment extends javax.swing.JFrame {
         comboChange();
     }
 
-    private Date dateParse(String birthDate) {
-        SimpleDateFormat dateFromat = new SimpleDateFormat("yyyy-MM-dd");
-        Date d = null;
-        try {
-            d = dateFromat.parse(birthDate);
-        } catch (ParseException ex) {
-
-        }
-        return d;
-    }
+    
 
     // Variables declaration - do not modify
     private javax.swing.JButton jButtonAprove;

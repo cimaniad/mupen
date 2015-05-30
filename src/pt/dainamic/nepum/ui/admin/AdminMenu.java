@@ -10,6 +10,7 @@ import java.awt.Image;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.ImageIcon;
+import pt.dainamic.nepum.model.LoginSession;
 
 /**
  *
@@ -76,8 +77,9 @@ public class AdminMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonHealthProfessionalActionPerformed
 
     private void jButtonProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonProfileActionPerformed
-        //pôr ID !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        new AdminProfile(1).setVisible(true);
+        int idAdmin = LoginSession.getInstance().getIdAdmin();
+
+        new AdminProfile(idAdmin).setVisible(true);
         dispose();
     }//GEN-LAST:event_jButtonProfileActionPerformed
 

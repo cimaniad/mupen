@@ -3,23 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group name="videoaulas">
-            <file>file:/C:/Users/Ricardo/Documents/NetBeansProjects/nep-um/src/pt/dainamic/nepum/ui/hp/appointments/FEAppointment.java</file>
+            <file>file:/C:/Users/Ricardo/Documents/NetBeansProjects/nep-um/src/pt/dainamic/nepum/model/LoginSession.java</file>
             <file>file:/C:/Users/Ricardo/Documents/NetBeansProjects/nep-um/src/pt/dainamic/nepum/ui/login/Login.java</file>
+            <file>file:/C:/Users/Ricardo/Documents/NetBeansProjects/nep-um/src/pt/dainamic/nepum/main/Main.java</file>
             <file>file:/C:/Users/Ricardo/Documents/NetBeansProjects/nep-um/src/pt/dainamic/nepum/ui/hp/patients/PatientsList.java</file>
-            <file>file:/C:/Users/Ricardo/Documents/NetBeansProjects/nep-um/src/pt/dainamic/nepum/ui/hp/patients/PatientRegist.java</file>
-            <file>file:/C:/Users/Ricardo/Documents/NetBeansProjects/nep-um/src/pt/dainamic/nepum/ui/admin/hp/HealthProfessionalProfile.java</file>
-            <file>file:/C:/Users/Ricardo/Documents/NetBeansProjects/nep-um/src/pt/dainamic/nepum/ui/hp/HealthProfessionalEdit.java</file>
-            <file>file:/C:/Users/Ricardo/Documents/NetBeansProjects/nep-um/src/pt/dainamic/nepum/ui/admin/hp/HealthProfessionalList.java</file>
-            <file>file:/C:/Users/Ricardo/Documents/NetBeansProjects/nep-um/src/pt/dainamic/nepum/ui/hp/HealthProfessionalProfile.java</file>
-            <file>file:/C:/Users/Ricardo/Documents/NetBeansProjects/nep-um/src/pt/dainamic/nepum/ui/hp/patients/exercises/CreateBlock.java</file>
-            <file>file:/C:/Users/Ricardo/Documents/NetBeansProjects/nep-um/src/pt/dainamic/nepum/ui/admin/hp/HealthProfessionalRegist.java</file>
-            <file>file:/C:/Users/Ricardo/Documents/NetBeansProjects/nep-um/src/pt/dainamic/nepum/ui/hp/appointments/Schedule.java</file>
-            <file>file:/C:/Users/Ricardo/Documents/NetBeansProjects/nep-um/src/pt/dainamic/nepum/ui/hp/HealthProfessionalMenu.java</file>
-            <file>file:/C:/Users/Ricardo/Documents/NetBeansProjects/nep-um/src/pt/dainamic/nepum/ui/hp/patients/exercises/BlockInterface.java</file>
-            <file>file:/C:/Users/Ricardo/Documents/NetBeansProjects/nep-um/src/pt/dainamic/nepum/ui/hp/patients/exercises/ExerciseInterface.java</file>
-            <file>file:/C:/Users/Ricardo/Documents/NetBeansProjects/nep-um/src/pt/dainamic/nepum/ui/hp/appointments/AppointmentCreateEdit.java</file>
-            <file>file:/C:/Users/Ricardo/Documents/NetBeansProjects/nep-um/src/pt/dainamic/nepum/ui/hp/patients/exercises/PrescribeSession.java</file>
-            <file>file:/C:/Users/Ricardo/Documents/NetBeansProjects/nep-um/src/pt/dainamic/nepum/ui/hp/patients/PatientProfile.java</file>
+            <file>file:/C:/Users/Ricardo/Documents/NetBeansProjects/nep-um/src/pt/dainamic/nepum/util/PlaceholderTextField.java</file>
+            <file>file:/C:/Users/Ricardo/Documents/NetBeansProjects/nep-um/src/pt/dainamic/nepum/ws/LoginWS.java</file>
+            <file>file:/C:/Users/Ricardo/Documents/NetBeansProjects/nep-um/src/pt/dainamic/nepum/ui/admin/AdminMenu.java</file>
         </group>
     </open-files>
 </project-private>

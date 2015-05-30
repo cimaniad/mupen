@@ -297,12 +297,7 @@ public class HealthProfessionalRegist extends javax.swing.JFrame {
     private void jTextFieldInstitutionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldInstitutionKeyTyped
         numberConsume(evt);
     }//GEN-LAST:event_jTextFieldInstitutionKeyTyped
-    /**
-     * This method checks if the required fields are filled. If the required
-     * fields are empty it returns a String with that field names.
-     *
-     * @return String
-     */
+
     private void numberConsume(KeyEvent evt) {
         String numbers = "0123456789";
         if (numbers.contains(evt.getKeyChar() + "")) {
@@ -310,6 +305,12 @@ public class HealthProfessionalRegist extends javax.swing.JFrame {
         }
     }
 
+    /**
+     * This method checks if the required fields are filled. If the required
+     * fields are empty it returns a String with that field names.
+     *
+     * @return String
+     */
     private String validator() {
         StringBuilder warns = new StringBuilder();
         warns.append(jTextFieldName.getText().isEmpty() ? "Nome, " : "");
@@ -363,20 +364,21 @@ public class HealthProfessionalRegist extends javax.swing.JFrame {
 
             if (jTextFieldNIF.getText().trim().length() != 9 && !jTextFieldNIF.getText().trim().isEmpty()) {
                 throw new RuntimeException("NIF deve ter 9 digitos!");
-            }else if (!jTextFieldNIF.getText().trim().isEmpty() && jTextFieldNIF.getText().trim().length() == 9){
+            } else if (!jTextFieldNIF.getText().trim().isEmpty() && jTextFieldNIF.getText().trim().length() == 9) {
                 nif = Integer.valueOf(jTextFieldNIF.getText().trim());
             }
             numTel = Integer.valueOf(jTextFieldTel.getText().trim());
             numCC = Integer.valueOf(jTextFieldCC.getText().trim());
-            
+
         } catch (NumberFormatException e) {
             throw new RuntimeException("Apenas numeros são permitidos nos campos NºTel, NIF e NºCC");
         } catch (RuntimeException e) {
             throw new RuntimeException(e.getMessage());
         }
 
-        return new HealthProfessional(name, lastName, numCC, adress, numTel, nif, email, maritalStatus,
-                parseDate(birthDate), bloodGroup, nacionality, gender, pass, encodeToString(pic, "jpg"), institution, developmentPro);
+        return new HealthProfessional(name, lastName, numCC, adress, numTel, nif,
+                email, maritalStatus, parseDate(birthDate), bloodGroup, nacionality,
+                gender, pass, encodeToString(pic, "jpg"), institution, developmentPro);
     }
 
     /**

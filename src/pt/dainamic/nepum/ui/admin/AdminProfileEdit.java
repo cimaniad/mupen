@@ -11,6 +11,7 @@ import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.ImageIcon;
+import pt.dainamic.nepum.model.LoginSession;
 
 /**
  *
@@ -184,7 +185,7 @@ public class AdminProfileEdit extends javax.swing.JFrame {
 
 
     private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackActionPerformed
-        new AdminProfile(1).setVisible(true);
+        new AdminProfile(LoginSession.getInstance().getIdAdmin()).setVisible(true);
         dispose();
     }//GEN-LAST:event_jButtonBackActionPerformed
 

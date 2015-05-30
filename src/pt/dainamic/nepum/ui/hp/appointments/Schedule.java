@@ -19,6 +19,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import pt.dainamic.nepum.model.Appointment;
+import pt.dainamic.nepum.model.LoginSession;
 import pt.dainamic.nepum.ui.hp.HealthProfessionalMenu;
 import pt.dainamic.nepum.ws.AppointmentWS;
 
@@ -38,9 +39,7 @@ public class Schedule extends javax.swing.JFrame {
     public Schedule() {
         try {
             appoint = new AppointmentWS();
-            //colocar idHealthProfessional
-            apList = appoint.getHPAppointments(1);
-
+            apList = appoint.getHPAppointments(LoginSession.getInstance().getIdHealthProfessional());
         } catch (Exception e) {
             JOptionPane.showMessageDialog(Schedule.this,
                     e.getMessage(), "Erro ao aceder à internet", JOptionPane.ERROR_MESSAGE);
@@ -92,6 +91,34 @@ public class Schedule extends javax.swing.JFrame {
                 component[appointDay - 1 + offset + 6].setBackground(newRed);
             }
         }
+    }
+
+    private Date formatDate(Date d) {
+        return dateParse(parseDate(d));
+    }
+
+    private String parseDate(Date d) {
+        SimpleDateFormat dateFromat = new SimpleDateFormat("yyyy-MM-dd");
+        String date = dateFromat.format(d);
+        return date;
+    }
+
+    private void setIcon() {
+        List<Image> icons = new ArrayList<>();
+        icons.add(new ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/logo.png")).getImage());
+        icons.add(new ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/logo-icon.png")).getImage());
+        setIconImages(icons);
+    }
+
+    private Date dateParse(String birthDate) {
+        SimpleDateFormat dateFromat = new SimpleDateFormat("yyyy-MM-dd");
+        Date d = null;
+        try {
+            d = dateFromat.parse(birthDate);
+        } catch (ParseException ex) {
+
+        }
+        return d;
     }
 
     @SuppressWarnings("unchecked")
@@ -176,7 +203,8 @@ public class Schedule extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonSeeEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSeeEventActionPerformed
-        new FEAppointment(1, parseDate(jCalendar.getDate())).setVisible(true);
+        int idHealthProfessional = LoginSession.getInstance().getIdHealthProfessional();
+        new FEAppointment(idHealthProfessional, parseDate(jCalendar.getDate())).setVisible(true);
         dispose();
     }//GEN-LAST:event_jButtonSeeEventActionPerformed
 
@@ -207,14 +235,17 @@ public class Schedule extends javax.swing.JFrame {
             jButtonMakeAppointment.setVisible(true);
 
         }
-
-        for (Appointment a : apList) {
-            if (selectDay.equals(dateParse(a.getDate()))) {
+        if (!apList.isEmpty()) {
+            for (Appointment a : apList) {
+                if (selectDay.equals(dateParse(a.getDate()))) {
                     jButtonSeeEvent.setVisible(true);
                     return;
-            } else {
-                jButtonSeeEvent.setVisible(false);
+                } else {
+                    jButtonSeeEvent.setVisible(false);
+                }
             }
+        } else {
+            jButtonSeeEvent.setVisible(false);
         }
 
     }//GEN-LAST:event_jCalendarPropertyChange
@@ -233,31 +264,4 @@ public class Schedule extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelWallpaper;
     // End of variables declaration//GEN-END:variables
 
-    private Date formatDate(Date d) {
-        return dateParse(parseDate(d));
-    }
-
-    private String parseDate(Date d) {
-        SimpleDateFormat dateFromat = new SimpleDateFormat("yyyy-MM-dd");
-        String date = dateFromat.format(d);
-        return date;
-    }
-
-    private void setIcon() {
-        List<Image> icons = new ArrayList<>();
-        icons.add(new ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/logo.png")).getImage());
-        icons.add(new ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/logo-icon.png")).getImage());
-        setIconImages(icons);
-    }
-
-    private Date dateParse(String birthDate) {
-        SimpleDateFormat dateFromat = new SimpleDateFormat("yyyy-MM-dd");
-        Date d = null;
-        try {
-            d = dateFromat.parse(birthDate);
-        } catch (ParseException ex) {
-
-        }
-        return d;
-    }
 }

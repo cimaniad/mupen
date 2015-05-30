@@ -14,6 +14,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import org.apache.log4j.Logger;
 import pt.dainamic.nepum.model.Appointment;
+import pt.dainamic.nepum.model.LoginSession;
 import pt.dainamic.nepum.model.Patient;
 import pt.dainamic.nepum.ws.AppointmentWS;
 import pt.dainamic.nepum.ws.PatientWS;
@@ -40,7 +41,7 @@ public class AppointmentCreateEdit extends javax.swing.JFrame {
             patWS = new PatientWS();
             patList = new ArrayList<>();
             //id Profissional de saude!!!!!!!!!!!!
-            apptList = appWS.getHPAppointments(1);
+            apptList = appWS.getHPAppointments(LoginSession.getInstance().getIdHealthProfessional());
             initComponents();
             setIcon();
             jTextFieldDate.setVisible(false);
@@ -59,10 +60,10 @@ public class AppointmentCreateEdit extends javax.swing.JFrame {
             appWS = new AppointmentWS();
             patWS = new PatientWS();
             //colocar id HealthProfessional
-            apptList = appWS.getHPAppointments(1);
+            apptList = appWS.getHPAppointments(LoginSession.getInstance().getIdHealthProfessional());
             jTextFieldDate.setText(date);
             //colocar id do terapeuta
-            patList = patWS.getPatientsByHealthProfessional(1);
+            patList = patWS.getPatientsByHealthProfessional(LoginSession.getInstance().getIdHealthProfessional());
             if (!patList.isEmpty()) {
                 for (Patient p : patList) {
                     jComboBoxPatientList.addItem(p.getName() + " " + p.getLastName());
@@ -104,7 +105,7 @@ public class AppointmentCreateEdit extends javax.swing.JFrame {
 
         int idPatient = getSelectPat().getIdPatient();
         //pôr IDHealthPro
-        int idHealthProfessional = 1;
+        int idHealthProfessional = LoginSession.getInstance().getIdHealthProfessional();
         String date = null;
         if (jDateChooser1.isVisible()) {
             date = parseDate(jDateChooser1.getDate());

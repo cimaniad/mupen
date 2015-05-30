@@ -10,6 +10,7 @@ import java.awt.Image;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.ImageIcon;
+import pt.dainamic.nepum.model.LoginSession;
 import pt.dainamic.nepum.ui.hp.appointments.Schedule;
 import pt.dainamic.nepum.ui.hp.patients.PatientsList;
 
@@ -116,9 +117,7 @@ public class HealthProfessionalMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonHealthProfessionalActionPerformed
 
     private void jButtonProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonProfileActionPerformed
-        // Por idHealthProfessional !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        new HealthProfessionalProfile(1).setVisible(true);
-      //  new healthprofprof(1).setVisible(true);
+        new HealthProfessionalProfile(LoginSession.getInstance().getIdHealthProfessional()).setVisible(true);
         dispose();
     }//GEN-LAST:event_jButtonProfileActionPerformed
 

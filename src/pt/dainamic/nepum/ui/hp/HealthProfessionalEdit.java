@@ -24,6 +24,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import org.apache.log4j.Logger;
 import pt.dainamic.nepum.model.HealthProfessional;
+import pt.dainamic.nepum.model.LoginSession;
 import pt.dainamic.nepum.ws.HealthProfessionalWS;
 import sun.misc.BASE64Encoder;
 
@@ -267,8 +268,8 @@ public class HealthProfessionalEdit extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonEditPhotoActionPerformed
 
     private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackActionPerformed
-        //POR ID !!!!!!!!!!!!!!!!!!!!!!!
-        new HealthProfessionalProfile(1).setVisible(true);
+        new HealthProfessionalProfile(LoginSession.getInstance().getIdHealthProfessional()).setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButtonBackActionPerformed
 
     private void jTextFieldNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldNameKeyTyped
@@ -446,6 +447,17 @@ public class HealthProfessionalEdit extends javax.swing.JFrame {
         icons.add(new ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/logo-icon.png")).getImage());
         setIconImages(icons);
     }
+    
+    private Date dateParse(String birthDate) {
+        SimpleDateFormat dateFromat = new SimpleDateFormat("yyyy-MM-dd");
+        Date d = null;
+        try {
+            d = dateFromat.parse(birthDate);
+        } catch (ParseException ex) {
+            java.util.logging.Logger.getLogger(HealthProfessionalEdit.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return d;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBack;
@@ -486,14 +498,5 @@ public class HealthProfessionalEdit extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldTel;
     // End of variables declaration//GEN-END:variables
 
-    private Date dateParse(String birthDate) {
-        SimpleDateFormat dateFromat = new SimpleDateFormat("yyyy-MM-dd");
-        Date d = null;
-        try {
-            d = dateFromat.parse(birthDate);
-        } catch (ParseException ex) {
-            java.util.logging.Logger.getLogger(HealthProfessionalEdit.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return d;
-    }
+    
 }

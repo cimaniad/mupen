@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pt.dainamic.nepum.ui.hp.patients;;
+package pt.dainamic.nepum.ui.hp.patients;
 
 import java.awt.Image;
 import java.awt.event.KeyEvent;
@@ -19,9 +19,12 @@ import java.util.Random;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import pt.dainamic.nepum.model.LoginSession;
 import pt.dainamic.nepum.model.Patient;
 import pt.dainamic.nepum.ws.PatientWS;
 import sun.misc.BASE64Encoder;
+
+
 
 public class PatientRegist extends javax.swing.JFrame {
 
@@ -321,6 +324,7 @@ public class PatientRegist extends javax.swing.JFrame {
         String bloodGroup = String.valueOf(jComboBoxBloodType.getSelectedItem());
         Date birthDate = jDateChooserBirth.getDate();
         String pass = generatePass();
+        int idHealthProfessional = LoginSession.getInstance().getIdHealthProfessional();
         int numTel = 0;
         int numCC = 0;
         int nif = 0;
@@ -332,9 +336,11 @@ public class PatientRegist extends javax.swing.JFrame {
             if (jTextFieldCC.getText().trim().length() != 8) {
                 throw new RuntimeException("O NºCC deve ter 8 digitos!");
             }
-            if (jTextFieldNIF.getText().trim().length() != 9 && !jTextFieldNIF.getText().trim().isEmpty()) {
+            if (jTextFieldNIF.getText().trim().length() != 9
+                    && !jTextFieldNIF.getText().trim().isEmpty()) {
                 throw new RuntimeException("O NIF deve ter 9 digitos!");
-            } else if (!jTextFieldNIF.getText().trim().isEmpty() && jTextFieldNIF.getText().trim().length() == 9) {
+            } else if (!jTextFieldNIF.getText().trim().isEmpty()
+                    && jTextFieldNIF.getText().trim().length() == 9) {
                 nif = Integer.valueOf(jTextFieldNIF.getText().trim());
             }
             numTel = Integer.valueOf(jTextFieldTel.getText().trim());
@@ -346,8 +352,10 @@ public class PatientRegist extends javax.swing.JFrame {
             throw new RuntimeException(e.getMessage());
         }
         //por o id do Profissional de saude!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        return new Patient(name, lastName, numCC, encodeToString(pic, "jpg"), adress, numTel, nif, email, maritalStatus, parseDate(birthDate),
-                bloodGroup, nationality, gender, pass, pathology, description, 1);
+        return new Patient(name, lastName, numCC, encodeToString(pic, "jpg"),
+                adress, numTel, nif, email, maritalStatus, parseDate(birthDate),
+                bloodGroup, nationality, gender, pass, pathology, description,
+                idHealthProfessional);
     }
 
     private String generatePass() {

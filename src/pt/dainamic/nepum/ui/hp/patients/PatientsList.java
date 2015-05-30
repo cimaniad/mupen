@@ -19,6 +19,7 @@ import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 import org.apache.log4j.Logger;
+import pt.dainamic.nepum.model.LoginSession;
 import pt.dainamic.nepum.model.Patient;
 import pt.dainamic.nepum.util.JTableRenderer;
 import pt.dainamic.nepum.util.PlaceholderTextField;
@@ -33,6 +34,7 @@ public class PatientsList extends javax.swing.JFrame {
     private Logger log = Logger.getLogger(PatientsList.class);
     private DefaultTableModel tableModel;
     private PatientWS pWS;
+    private int idHealthProfessional;
     private List<Patient> pList;
 
     /**
@@ -43,8 +45,8 @@ public class PatientsList extends javax.swing.JFrame {
             initComponents();
             setIcon();
             pWS = new PatientWS();
-            //Pôr id HealthProfessional!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11
-            pList = pWS.getPatientsByHealthProfessional(1);
+            idHealthProfessional = LoginSession.getInstance().getIdHealthProfessional();
+            pList = pWS.getPatientsByHealthProfessional(idHealthProfessional);
             drawTable();
         } catch (Exception e) {
             log.error(e.getMessage());
@@ -71,8 +73,7 @@ public class PatientsList extends javax.swing.JFrame {
         jScrollPaneList = new javax.swing.JScrollPane();
         jTableList = new javax.swing.JTable();
         jButtonSearch = new javax.swing.JButton();
-        placeholderFieldSearch = new PlaceholderTextField("");
-        jComboBoxPesquisa = new javax.swing.JComboBox();
+        jTextFieldSearch = new javax.swing.JTextField();
         jLabelInformation = new javax.swing.JLabel();
         jLabelwallpaper = new javax.swing.JLabel();
 
@@ -130,7 +131,7 @@ public class PatientsList extends javax.swing.JFrame {
         });
         jScrollPaneList.setViewportView(jTableList);
 
-        jPanelInformation.add(jScrollPaneList, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 630, 190));
+        jPanelInformation.add(jScrollPaneList, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 630, 220));
 
         jButtonSearch.setText("Pesquisar");
         jButtonSearch.addActionListener(new java.awt.event.ActionListener() {
@@ -140,16 +141,12 @@ public class PatientsList extends javax.swing.JFrame {
         });
         jPanelInformation.add(jButtonSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 50, -1, -1));
 
-        placeholderFieldSearch.setPlaceholder("Pequise por nome ou contacto");
-        placeholderFieldSearch.addKeyListener(new java.awt.event.KeyAdapter() {
+        jTextFieldSearch.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                placeholderFieldSearchKeyPressed(evt);
+                jTextFieldSearchKeyPressed(evt);
             }
         });
-        jPanelInformation.add(placeholderFieldSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, 210, -1));
-
-        jComboBoxPesquisa.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "nome", "nºtel" }));
-        jPanelInformation.add(jComboBoxPesquisa, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 50, -1, -1));
+        jPanelInformation.add(jTextFieldSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, 210, -1));
 
         jLabelInformation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/backGround/second.jpg"))); // NOI18N
         jLabelInformation.setMaximumSize(new java.awt.Dimension(680, 380));
@@ -185,19 +182,17 @@ public class PatientsList extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jTableListMouseClicked
 
-    private void placeholderFieldSearchKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_placeholderFieldSearchKeyPressed
+    private void jTextFieldSearchKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_placeholderFieldSearchKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            String name = placeholderFieldSearch.getText();
-            //Por id Health Professional!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            pList = pWS.searchPatient(name, 1);
+            String input = jTextFieldSearch.getText();
+            pList = pWS.searchPatient(input, idHealthProfessional);
             drawTable();
         }
     }//GEN-LAST:event_placeholderFieldSearchKeyPressed
 
     private void jButtonSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSearchActionPerformed
-        String name = placeholderFieldSearch.getText();
-        //Por id Health Professional!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        pList = pWS.searchPatient(name, 1);
+        String input = jTextFieldSearch.getText();
+        pList = pWS.searchPatient(input, idHealthProfessional);
         drawTable();
     }//GEN-LAST:event_jButtonSearchActionPerformed
 
@@ -280,7 +275,6 @@ public class PatientsList extends javax.swing.JFrame {
     private javax.swing.JButton jButtonBack;
     private javax.swing.JButton jButtonRegist;
     private javax.swing.JButton jButtonSearch;
-    private javax.swing.JComboBox jComboBoxPesquisa;
     private javax.swing.JLabel jLabelInformation;
     private javax.swing.JLabel jLabelPatientslList;
     private javax.swing.JLabel jLabelwallpaper;
@@ -288,6 +282,6 @@ public class PatientsList extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelWallpaper;
     private javax.swing.JScrollPane jScrollPaneList;
     private javax.swing.JTable jTableList;
-    private PlaceholderTextField placeholderFieldSearch;
+    private javax.swing.JTextField jTextFieldSearch;
     // End of variables declaration//GEN-END:variables
 }

@@ -11,6 +11,7 @@ import pt.dainamic.nepum.ui.hp.HealthProfessionalMenu;
 
 import org.apache.log4j.Logger;
 import pt.dainamic.nepum.ui.admin.AdminMenu;
+import pt.dainamic.nepum.ui.login.Login;
 
 /**
  *
@@ -34,9 +35,11 @@ public class Main {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
-                new HealthProfessionalMenu().setVisible(true);
-                new AdminMenu().setVisible(true);
+                new Login().setVisible(true);
+//                new HealthProfessionalMenu().setVisible(true);
+//                new AdminMenu().setVisible(true);
             }
         });
     }

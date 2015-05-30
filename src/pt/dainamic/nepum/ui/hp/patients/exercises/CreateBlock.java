@@ -400,7 +400,8 @@ public class CreateBlock extends javax.swing.JFrame {
         }
         String name = jTextFieldName.getText();
         String description = jTextAreaDescription.getText();
-        return new Block(0,name, description, 1);   // resolver id profissional
+        int idHealthProfessional = LoginSession.getInstance().getIdHealthProfessional();
+        return new Block(0,name, description, idHealthProfessional);
     }
     private String validator() {
         StringBuilder warns = new StringBuilder();
