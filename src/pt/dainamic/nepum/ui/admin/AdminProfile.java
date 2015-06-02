@@ -29,6 +29,7 @@ public class AdminProfile extends javax.swing.JFrame {
 
     private Logger log = Logger.getLogger(AdminProfile.class);
     private AdminWS admWS;
+    private Admin ad;
 
 
     /**
@@ -40,7 +41,8 @@ public class AdminProfile extends javax.swing.JFrame {
             initComponents();
             setIcon();
             admWS = new AdminWS();
-            setFields(admWS.getAdminById(idAdmin));
+            ad = admWS.getAdminById(idAdmin);
+            setFields(ad);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(AdminProfile.this,
                     e.getMessage(), "Erro ao carregar os dados do Administrador", JOptionPane.ERROR_MESSAGE);
@@ -221,7 +223,7 @@ public class AdminProfile extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonEditProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditProfileActionPerformed
-        new AdminProfileEdit().setVisible(true);
+        new AdminProfileEdit(ad).setVisible(true);
         dispose();
     }//GEN-LAST:event_jButtonEditProfileActionPerformed
 
@@ -268,9 +270,11 @@ public class AdminProfile extends javax.swing.JFrame {
             ImageIcon pic = new ImageIcon(image);
             return pic.getImage().getScaledInstance(with, heigth, Image.SCALE_DEFAULT);
         } catch (MalformedURLException ex) {
+            ex.printStackTrace();
             log.error(ex.getMessage());
             throw new RuntimeException("Erro ao carregar imagem");
         } catch (IOException ex) {
+            ex.printStackTrace();
             log.error(ex.getMessage());
             throw new RuntimeException("Erro ao carregar imagem");
         }

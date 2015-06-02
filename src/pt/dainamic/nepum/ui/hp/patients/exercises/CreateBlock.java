@@ -15,6 +15,7 @@ import pt.dainamic.nepum.model.AssignExercise;
 import pt.dainamic.nepum.model.Block;
 import pt.dainamic.nepum.model.Domain;
 import pt.dainamic.nepum.model.Exercise;
+import pt.dainamic.nepum.model.LoginSession;
 import pt.dainamic.nepum.model.Patient;
 import pt.dainamic.nepum.model.SubDomain;
 import pt.dainamic.nepum.ws.AssignExerciseWS;

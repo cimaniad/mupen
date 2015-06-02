@@ -74,9 +74,8 @@ public class AdminWS {
 
             Validation v = gson.fromJson(validacao, Validation.class);    //Conversão do objecto Json para o objecto Java
             int httpResponseCod = responseWS.getStatusLine().getStatusCode();
-            if (httpResponseCod != 201) {
+            if (httpResponseCod != 200) {
                 log.error("\n\tError saving admin: " + v.getMsg() + "\tCod:" + httpResponseCod);
-                log.error(v.getMsg());
                 throw new RuntimeException("Ocorreu um erro ao editar o Administrador");
             }
 

@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package pt.dainamic.nepum.main;
+
 import de.javasoft.plaf.synthetica.SyntheticaAluOxideLookAndFeel;
 import de.javasoft.plaf.synthetica.SyntheticaSilverMoonLookAndFeel;
 import de.javasoft.plaf.synthetica.SyntheticaSimple2DLookAndFeel;
@@ -18,20 +19,23 @@ import pt.dainamic.nepum.ui.login.Login;
  * @author Ricardo
  */
 public class Main {
+
     private static Logger log = Logger.getLogger(Main.class);
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
        // com.sun.java.swing.plaf.windows.WindowsLookAndFeel
-       // UIManager.setLookAndFeel("com.seaglasslookandfeel.SeaGlassLookAndFeel");
-       // new SyntheticaAluOxideLookAndFeel()
+        // UIManager.setLookAndFeel("com.seaglasslookandfeel.SeaGlassLookAndFeel");
+        // new SyntheticaAluOxideLookAndFeel()
         try {
             javax.swing.UIManager.setLookAndFeel(new SyntheticaAluOxideLookAndFeel());
+
         } catch (Exception e) {
             log.error(e.getMessage());
         }
-       
+
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {

@@ -5,13 +5,27 @@
  */
 package pt.dainamic.nepum.ui.admin;
 
-
 import java.awt.Image;
 import java.awt.event.KeyEvent;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.logging.Level;
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
-import pt.dainamic.nepum.model.LoginSession;
+import javax.swing.JOptionPane;
+import org.apache.log4j.Logger;
+import pt.dainamic.nepum.model.Admin;
+import pt.dainamic.nepum.ws.AdminWS;
+import sun.misc.BASE64Encoder;
 
 /**
  *
@@ -19,12 +33,23 @@ import pt.dainamic.nepum.model.LoginSession;
  */
 public class AdminProfileEdit extends javax.swing.JFrame {
 
+    private Logger log = Logger.getLogger(AdminProfile.class);
+    private Admin ad;
+    private BufferedImage pic = null;
+
     /**
      * Creates new form AdminProfileEdit
      */
-    public AdminProfileEdit() {
+    public AdminProfileEdit(Admin ad) {
         initComponents();
         setIcon();
+        this.ad = ad;
+        try {
+            setFields(this.ad);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(AdminProfileEdit.this,
+                    e.getMessage(), "Erro ao carregar o seu perfil", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     /**
@@ -36,6 +61,7 @@ public class AdminProfileEdit extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jFileChooserPhoto = new javax.swing.JFileChooser();
         jPanelWallpaper = new javax.swing.JPanel();
         jPanelInformation = new javax.swing.JPanel();
         jLabelProfile = new javax.swing.JLabel();
@@ -60,7 +86,7 @@ public class AdminProfileEdit extends javax.swing.JFrame {
         jTextFieldAdress = new javax.swing.JTextField();
         jButtonEditPhoto = new javax.swing.JButton();
         jDateChooserBirthDate = new com.toedter.calendar.JDateChooser();
-        jComboBox1 = new javax.swing.JComboBox();
+        jComboBoxBloodType = new javax.swing.JComboBox();
         jLabelInformation = new javax.swing.JLabel();
         jLabelwallpaper = new javax.swing.JLabel();
 
@@ -159,8 +185,8 @@ public class AdminProfileEdit extends javax.swing.JFrame {
         jPanelInformation.add(jButtonEditPhoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
         jPanelInformation.add(jDateChooserBirthDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, 170, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "O+", "O-", "A+", "A-", "B+", "B-", "AB+", "AB-" }));
-        jPanelInformation.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 170, 60, -1));
+        jComboBoxBloodType.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "O+", "O-", "A+", "A-", "B+", "B-", "AB+", "AB-" }));
+        jPanelInformation.add(jComboBoxBloodType, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 170, 60, -1));
 
         jLabelInformation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/backGround/second.jpg"))); // NOI18N
         jLabelInformation.setMaximumSize(new java.awt.Dimension(680, 380));
@@ -180,17 +206,40 @@ public class AdminProfileEdit extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonEditProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditProfileActionPerformed
-        // TODO add your handling code here:
+        try {
+
+            AdminWS adWS = new AdminWS();
+            adWS.editAdmin(loadAdminFromPanel());
+            new AdminProfile(ad.getIdAdmin()).setVisible(true);
+            dispose();
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(AdminProfileEdit.this,
+                    e.getMessage(), "Erro ao editar perfil", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_jButtonEditProfileActionPerformed
 
 
     private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackActionPerformed
-        new AdminProfile(LoginSession.getInstance().getIdAdmin()).setVisible(true);
+        new AdminProfile(ad.getIdAdmin()).setVisible(true);
         dispose();
     }//GEN-LAST:event_jButtonBackActionPerformed
 
     private void jButtonEditPhotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditPhotoActionPerformed
-        // TODO add your handling code here:
+        jFileChooserPhoto.showOpenDialog(this);
+        File f = jFileChooserPhoto.getSelectedFile();
+        try {
+            ImageIcon image = new ImageIcon(f.getAbsolutePath());
+            jLabelPhoto.setIcon(new ImageIcon(image.getImage().getScaledInstance(
+                    jLabelPhoto.getWidth(), jLabelPhoto.getHeight(), Image.SCALE_DEFAULT)));
+            pic = ImageIO.read(f);
+
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(AdminProfileEdit.this,
+                    "Erro ao carregar imagem", "Erro ao editar Administrador",
+                    JOptionPane.ERROR_MESSAGE
+            );
+        }
     }//GEN-LAST:event_jButtonEditPhotoActionPerformed
 
     private void jTextFieldNameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldNameKeyTyped
@@ -219,12 +268,149 @@ public class AdminProfileEdit extends javax.swing.JFrame {
         setIconImages(icons);
     }
 
+    private void setFields(Admin a) {
+        this.jTextFieldName.setText(a.getName());
+        this.jTextFieldLastName.setText(a.getLastName());
+        this.jDateChooserBirthDate.setDate(dateParse(a.getBirthDate()));
+        this.jTextFieldNTel.setText(String.valueOf(a.getNumTel()));
+        this.jTextFieldNationality.setText(a.getNationality());
+        this.jTextFieldNCC.setText(String.valueOf(a.getNumCC()));
+        this.jTextFieldEmail.setText(a.getEmail());
+        this.jTextFieldAdress.setText(a.getAdress());
+        this.jComboBoxBloodType.setSelectedItem(a.getBloodGroup());
+
+        if (a.getPicture().equals("profile")) {
+            ImageIcon pic = new ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/pics/profile.PNG"));
+            jLabelPhoto.setIcon(new ImageIcon(pic.getImage().getScaledInstance(
+                    jLabelPhoto.getWidth(), jLabelPhoto.getHeight(), Image.SCALE_DEFAULT)));
+        } else {
+            jLabelPhoto.setIcon(new ImageIcon(getImageFromServer(a.getPicture(), 90, 90)));
+        }
+
+    }
+
+    private String validator() {
+        StringBuilder warns = new StringBuilder();
+        warns.append(jTextFieldName.getText().isEmpty() ? "Nome, " : "");
+        warns.append(jTextFieldLastName.getText().isEmpty() ? "Apelido, " : "");
+        warns.append(jDateChooserBirthDate.getDate().toString().isEmpty() ? "Data de Nascimento, " : "");
+        warns.append(jTextFieldNCC.getText().isEmpty() ? "Numero CC, " : "");
+        warns.append(jTextFieldEmail.getText().isEmpty() ? "E-mail, " : "");
+        warns.append(jTextFieldNTel.getText().trim().isEmpty() ? "Número de Telemóvel, " : "");
+        if (!warns.toString().isEmpty()) {
+            warns.delete(warns.toString().length() - 2, warns.toString().length());
+            warns.append("!");
+        }
+
+        return warns.toString();
+    }
+
+    private Admin loadAdminFromPanel() {
+        String warn = validator();
+        if (!warn.isEmpty()) {
+            throw new RuntimeException("Preencha o(s) seguintes dado(s): " + warn);
+        }
+        String name = jTextFieldName.getText();
+        ad.setName(name);
+        String lastName = jTextFieldLastName.getText();
+        ad.setLastName(lastName);
+        String email = jTextFieldEmail.getText().trim();
+        ad.setEmail(email);
+        String adress = jTextFieldAdress.getText();
+        ad.setAdress(adress);
+        String nationality = jTextFieldNationality.getText();
+        ad.setNationality(nationality);
+        String bloodGroup = String.valueOf(jComboBoxBloodType.getSelectedItem());
+        ad.setBloodGroup(bloodGroup);
+        Date birthDate = jDateChooserBirthDate.getDate();
+        ad.setBirthDate(parseDate(birthDate));
+        int numTel = 0;
+        int numCC = 0;
+        try {
+            if (jTextFieldNTel.getText().trim().length() != 9) {
+                throw new RuntimeException("O NºTel deve ter 9 digitos!");
+            }
+            if (jTextFieldNCC.getText().trim().length() != 8) {
+                throw new RuntimeException("O NºCC deve ter 8 digitos!");
+            }
+            numTel = Integer.valueOf(jTextFieldNTel.getText().trim());
+            ad.setNumTel(numTel);
+            numCC = Integer.valueOf(jTextFieldNCC.getText().trim());
+            ad.setNumCC(numCC);
+
+        } catch (NumberFormatException e) {
+            throw new RuntimeException("Apenas numeros são permitidos nos campos NºTel e NºCC");
+        } catch (RuntimeException e) {
+            throw new RuntimeException(e.getMessage());
+        }
+
+        ad.setPicture(encodeToString(pic, "jpg"));
+
+        return ad;
+    }
+
+    private Image getImageFromServer(String picture, int with, int heigth) {
+        try {
+            URL url = new URL(picture.trim());
+            log.debug("\n\tProfile Image: " + url.toString());
+            BufferedImage image = ImageIO.read(url);
+            ImageIcon pic = new ImageIcon(image);
+            return pic.getImage().getScaledInstance(with, heigth, Image.SCALE_DEFAULT);
+        } catch (MalformedURLException ex) {
+            log.error(ex.getMessage());
+            throw new RuntimeException("Erro ao carregar imagem");
+        } catch (IOException ex) {
+            log.error(ex.getMessage());
+            throw new RuntimeException("Erro ao carregar imagem");
+        }
+    }
+
+    public String parseDate(Date d) {
+        SimpleDateFormat dateFromat = new SimpleDateFormat("yyyy-MM-dd");
+        String date = dateFromat.format(d);
+        return date;
+    }
+
+    private String encodeToString(BufferedImage image, String type) {
+        if (image == null) {
+            return "profile";
+        }
+
+        String imageString = null;
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+
+        try {
+            ImageIO.write(image, type, bos);
+            byte[] imageBytes = bos.toByteArray();
+
+            BASE64Encoder encoder = new BASE64Encoder();
+            imageString = encoder.encode(imageBytes);
+
+            bos.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return imageString;
+    }
+
+    private Date dateParse(String birthDate) {
+        SimpleDateFormat dateFromat = new SimpleDateFormat("yyyy-MM-dd");
+        Date d = null;
+        try {
+            d = dateFromat.parse(birthDate);
+        } catch (ParseException ex) {
+            java.util.logging.Logger.getLogger(AdminProfileEdit.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return d;
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBack;
     private javax.swing.JButton jButtonEditPhoto;
     private javax.swing.JButton jButtonEditProfile;
-    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JComboBox jComboBoxBloodType;
     private com.toedter.calendar.JDateChooser jDateChooserBirthDate;
+    private javax.swing.JFileChooser jFileChooserPhoto;
     private javax.swing.JLabel jLabelAdress;
     private javax.swing.JLabel jLabelBirthDate;
     private javax.swing.JLabel jLabelCC;
