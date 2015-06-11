@@ -15,7 +15,9 @@ import java.util.List;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import org.apache.log4j.Logger;
+import pt.dainamic.nepum.model.Block;
 import pt.dainamic.nepum.model.Exercise;
+import pt.dainamic.nepum.model.Patient;
 import pt.dainamic.nepum.ui.hp.HealthProfessionalMenu;
 import pt.dainamic.nepum.ws.ExerciseWS;
 
@@ -26,7 +28,6 @@ import pt.dainamic.nepum.ws.ExerciseWS;
 public class ExerciseInterface extends javax.swing.JFrame {
 
     private Logger log = Logger.getLogger(ExerciseInterface.class);
-    private ExerciseWS exWS;
 
     /**
      * Creates new form ExerciseDescription
@@ -39,21 +40,24 @@ public class ExerciseInterface extends javax.swing.JFrame {
 
     private void setField(Exercise ex){
         this.jTextFieldName.setText(ex.getName());
-        this.jTextFieldStructure.setText(ex.getStructure());
-        this.jTextFieldDesignation.setText(ex.getDesignation());
-
-        if (ex.getPicture().equals("profile")) {
-            ImageIcon pic = new ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/pics/profile.PNG"));
-            jLabelPhoto.setIcon(new ImageIcon(pic.getImage().getScaledInstance(
-                    jLabelPhoto.getWidth(), jLabelPhoto.getHeight(), Image.SCALE_DEFAULT)));
-        } else {
-            jLabelPhoto.setIcon(new ImageIcon(getImageFromServer(ex.getPicture(), 90, 90)));
+        this.jTextFieldLevel.setText(String.valueOf(ex.getLevel()));
+        this.jTextFieldDescription.setText(ex.getDescription());
+        this.jTextFieldDomain.setText(ex.getDomain());
+        this.jTextFieldSubDomain.setText(ex.getSubDomain());
+        
+        if(ex.getTime()==0){
+            this.jTextFieldTime.setText("Tempo ilimitado");
+        }else{
+            this.jTextFieldTime.setText(String.valueOf(ex.getTime()+ "segundos"));
         }
+
+            jLabelPhoto.setIcon(new ImageIcon(getImageFromServer(ex.getPicture(), 310,220)));
+        
     }
 
     private Image getImageFromServer(String picture, int with, int heigth) {
         try {
-            URL url = new URL("http://localhost/mu-pen-web/images/Exercises/" + picture.trim());
+            URL url = new URL(picture.trim());
             log.debug("\n\tProfile Image: " + url.toString());
             BufferedImage image = ImageIO.read(url);
             ImageIcon pic = new ImageIcon(image);
@@ -87,12 +91,18 @@ public class ExerciseInterface extends javax.swing.JFrame {
         jLabelExercise = new javax.swing.JLabel();
         jLabelName = new javax.swing.JLabel();
         jLabelBirthDate = new javax.swing.JLabel();
-        jLabelGender = new javax.swing.JLabel();
+        jLabelLevel = new javax.swing.JLabel();
         jButtonBack = new javax.swing.JButton();
         jTextFieldName = new javax.swing.JTextField();
+        jTextFieldDescription = new javax.swing.JTextField();
+        jTextFieldLevel = new javax.swing.JTextField();
+        jTextFieldDomain = new javax.swing.JTextField();
+        jTextFieldTime = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jTextFieldSubDomain = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
         jLabelPhoto = new javax.swing.JLabel();
-        jTextFieldDesignation = new javax.swing.JTextField();
-        jTextFieldStructure = new javax.swing.JTextField();
         jLabelInformation = new javax.swing.JLabel();
         jLabelwallpaper = new javax.swing.JLabel();
 
@@ -114,11 +124,11 @@ public class ExerciseInterface extends javax.swing.JFrame {
         jLabelName.setText("Nome:");
         jPanelInformation.add(jLabelName, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 70, -1, -1));
 
-        jLabelBirthDate.setText("designaçao:");
-        jPanelInformation.add(jLabelBirthDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 150, -1, -1));
+        jLabelBirthDate.setText("Descrição:");
+        jPanelInformation.add(jLabelBirthDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 150, -1, -1));
 
-        jLabelGender.setText("Estrutura:");
-        jPanelInformation.add(jLabelGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 110, -1, -1));
+        jLabelLevel.setText("Nivel:");
+        jPanelInformation.add(jLabelLevel, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 110, -1, -1));
 
         jButtonBack.setText("Voltar");
         jButtonBack.addActionListener(new java.awt.event.ActionListener() {
@@ -128,12 +138,21 @@ public class ExerciseInterface extends javax.swing.JFrame {
         });
         jPanelInformation.add(jButtonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 320, -1, -1));
         jPanelInformation.add(jTextFieldName, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 70, 190, -1));
+        jPanelInformation.add(jTextFieldDescription, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 150, 190, -1));
+        jPanelInformation.add(jTextFieldLevel, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, 190, -1));
+        jPanelInformation.add(jTextFieldDomain, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 190, 190, -1));
+        jPanelInformation.add(jTextFieldTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 270, 190, -1));
 
-        jLabelPhoto.setText("                           Imagem do exercício");
-        jLabelPhoto.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), null));
-        jPanelInformation.add(jLabelPhoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 300, 220));
-        jPanelInformation.add(jTextFieldDesignation, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 150, 190, -1));
-        jPanelInformation.add(jTextFieldStructure, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, 190, -1));
+        jLabel1.setText("Domínio:");
+        jPanelInformation.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 190, -1, -1));
+
+        jLabel2.setText("Sub-domínio:");
+        jPanelInformation.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 230, -1, -1));
+        jPanelInformation.add(jTextFieldSubDomain, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 230, 190, -1));
+
+        jLabel3.setText("Tempo limite:");
+        jPanelInformation.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 270, -1, -1));
+        jPanelInformation.add(jLabelPhoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 310, 220));
 
         jLabelInformation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/backGround/second.jpg"))); // NOI18N
         jLabelInformation.setMaximumSize(new java.awt.Dimension(680, 380));
@@ -149,10 +168,11 @@ public class ExerciseInterface extends javax.swing.JFrame {
         getContentPane().add(jPanelWallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 500));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackActionPerformed
-        new HealthProfessionalMenu().setVisible(true);
+
         dispose();
     }//GEN-LAST:event_jButtonBackActionPerformed
 
@@ -160,17 +180,23 @@ public class ExerciseInterface extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonBack;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabelBirthDate;
     private javax.swing.JLabel jLabelExercise;
-    private javax.swing.JLabel jLabelGender;
     private javax.swing.JLabel jLabelInformation;
+    private javax.swing.JLabel jLabelLevel;
     private javax.swing.JLabel jLabelName;
     private javax.swing.JLabel jLabelPhoto;
     private javax.swing.JLabel jLabelwallpaper;
     private javax.swing.JPanel jPanelInformation;
     private javax.swing.JPanel jPanelWallpaper;
-    private javax.swing.JTextField jTextFieldDesignation;
+    private javax.swing.JTextField jTextFieldDescription;
+    private javax.swing.JTextField jTextFieldDomain;
+    private javax.swing.JTextField jTextFieldLevel;
     private javax.swing.JTextField jTextFieldName;
-    private javax.swing.JTextField jTextFieldStructure;
+    private javax.swing.JTextField jTextFieldSubDomain;
+    private javax.swing.JTextField jTextFieldTime;
     // End of variables declaration//GEN-END:variables
 }

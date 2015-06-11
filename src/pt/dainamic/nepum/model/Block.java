@@ -17,8 +17,7 @@ public class Block {
     private String name;
     private int idHealthProfessional;
 
-    public Block(int idBlock, String description, String name, int idHealthProfessional) {
-        this.idBlock = idBlock;
+    public Block( String description, String name, int idHealthProfessional) {
         this.description = description;
         this.name = name;
         this.idHealthProfessional = idHealthProfessional;

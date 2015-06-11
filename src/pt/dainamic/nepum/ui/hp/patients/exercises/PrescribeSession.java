@@ -80,12 +80,12 @@ public class PrescribeSession extends javax.swing.JFrame {
         return bList.get(jTableList.getSelectedRow());
     }
 
-    private Date getDeadLine(){
+    private Date getDeadLine() {
         Date date = jDateChooserDeadline.getDate();
         return date;
     }
 
-    private Session loadSession(){
+    private Session loadSession() {
         if (jDateChooserDeadline.getDate().toString().isEmpty()) {
             throw new RuntimeException("Preencha a data limite");
         }
@@ -96,12 +96,14 @@ public class PrescribeSession extends javax.swing.JFrame {
 
         return new Session(0, idPatient, idHealthProfessional, idBlock, deadline);
     }
- private void setIcon(){
+
+    private void setIcon() {
         List<Image> icons = new ArrayList<>();
         icons.add(new ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/logo.png")).getImage());
         icons.add(new ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/logo-icon.png")).getImage());
         setIconImages(icons);
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -265,14 +267,19 @@ public class PrescribeSession extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonBackActionPerformed
 
     private void jButtonDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDeleteActionPerformed
+
         try {
             bWS.deleteBlock(getBlockAtTable().getIdBlock());
             bList.remove(getBlockAtTable());
             drawTable();
         } catch (Exception e) {
             log.error(e.getMessage());
-            JOptionPane.showMessageDialog(PrescribeSession.this, e.getMessage(),
-                    "Erro  Blocos", JOptionPane.ERROR_MESSAGE);
+            if (jTableList.getSelectedRow() == -1) {
+                JOptionPane.showMessageDialog(PrescribeSession.this, "Nenhum bloco selecionado", "Erro Bloco", JOptionPane.ERROR_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(PrescribeSession.this, e.getMessage(),
+                        "Erro  Blocos", JOptionPane.ERROR_MESSAGE);
+            }
         }
 
 
@@ -280,7 +287,11 @@ public class PrescribeSession extends javax.swing.JFrame {
 
     private void jButtonPrescribeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPrescribeActionPerformed
         // TODO add your handling code here:
+        if (jTableList.getSelectedRow() == -1) {
+            JOptionPane.showMessageDialog(PrescribeSession.this, "Nenhum bloco selecionado", "Erro Bloco", JOptionPane.ERROR_MESSAGE);
+        }
         sWS.saveSession(loadSession());
+
     }//GEN-LAST:event_jButtonPrescribeActionPerformed
 
     private void jTextFieldSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldSearchActionPerformed

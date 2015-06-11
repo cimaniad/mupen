@@ -12,11 +12,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import org.apache.log4j.Logger;
-import pt.dainamic.nepum.model.AssignExercise;
 import pt.dainamic.nepum.model.Block;
 import pt.dainamic.nepum.model.Exercise;
 import pt.dainamic.nepum.model.Patient;
-import pt.dainamic.nepum.ws.AssignExerciseWS;
 import pt.dainamic.nepum.ws.ExerciseWS;
 
 /**
@@ -30,8 +28,6 @@ public class BlockInterface extends javax.swing.JFrame {
      */
 
     private Logger log = Logger.getLogger(BlockInterface.class);
-    private AssignExerciseWS aeWS;
-    private List<AssignExercise> aexList;
     private ExerciseWS exWS;
     private List<Exercise> eList;
     private Block b;
@@ -40,24 +36,23 @@ public class BlockInterface extends javax.swing.JFrame {
     private int idHP;
 
     public BlockInterface(Block b, Patient p, int idHP) {
-        try {
+//        try {
 
             initComponents();
             setIcon();
             this.p = p;
             this.idHP = idHP;
             this.b = b;
-            aeWS = new AssignExerciseWS();
-            this.aexList = aeWS.getAssignExerciseByIdBlock(b.getIdBlock());
-            this.eList = new ArrayList();
+            
+            this.exWS = new ExerciseWS();
+            this.eList = exWS.getExercisesByBlock(b.getIdBlock());
             setFields(b);
-            getExercises();
             drawExercises();
 
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(BlockInterface.this,
-                    e.getMessage(), "Erro ao carregar dados para criação de um bloco", JOptionPane.ERROR_MESSAGE);
-        }
+//        } catch (Exception e) {
+//            JOptionPane.showMessageDialog(BlockInterface.this,
+//                    e.getMessage(), "Erro ao carregar dados de um bloco", JOptionPane.ERROR_MESSAGE);
+//        }
 
     }
 
@@ -75,7 +70,7 @@ public class BlockInterface extends javax.swing.JFrame {
                 }
             };
             jTableSelectedExercises.setModel(tableModel);
-            tableModel.addColumn("Exercícios Selecionados");
+            tableModel.addColumn("Exercícios");
             for (Exercise ex : eList) {
                 tableModel.addRow(new Object[]{ex.getName()});
             }
@@ -87,23 +82,6 @@ public class BlockInterface extends javax.swing.JFrame {
                     "Erro  Exercícios selecionados", JOptionPane.ERROR_MESSAGE);
         }
     }
-
-    private List<Exercise> getExercises() {
-        ArrayList<Integer> idList = new ArrayList();
-
-        for (AssignExercise ae : aexList) {
-            int id = ae.getIdExercise();
-            idList.add(id);
-        }
-        for (Exercise e : eList) {
-
-            if (idList.contains(e.getIdExercise())) {
-                eList.add(e);
-            }
-        }
-        return eList;
-    }
-
     private Exercise getExerciseSelAtTable() {
         return eList.get(jTableSelectedExercises.getSelectedRow());
     }
@@ -174,7 +152,7 @@ public class BlockInterface extends javax.swing.JFrame {
                 {null}
             },
             new String [] {
-                "Exercícios Selecionados"
+                "Exercícios "
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -213,13 +191,14 @@ public class BlockInterface extends javax.swing.JFrame {
         getContentPane().add(jPanelWallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 500));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTableSelectedExercisesMouseClicked(java.awt.event.MouseEvent evt) {
         // TODO add your handling code here:
+        
         if (evt.getClickCount() == 2) {
             new ExerciseInterface(getExerciseSelAtTable()).setVisible(true);
-            dispose();
         }
     }
 
