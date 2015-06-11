@@ -5,5 +5,10 @@
         <group name="videoaulas">
             <file>file:/C:/Users/Ricardo/Documents/NetBeansProjects/nep-um/src/pt/dainamic/nepum/main/Main.java</file>
         </group>
+        <group>
+            <file>file:/C:/Users/Administrador/Documents/NetBeansProjects/mupen/src/pt/dainamic/nepum/model/HealthProfessional.java</file>
+            <file>file:/C:/Users/Administrador/Documents/NetBeansProjects/mupen/src/pt/dainamic/nepum/ws/HealthProfessionalWS.java</file>
+            <file>file:/C:/Users/Administrador/Documents/NetBeansProjects/mupen/src/pt/dainamic/nepum/ui/admin/hp/HealthProfessionalProfile.java</file>
+        </group>
     </open-files>
 </project-private>

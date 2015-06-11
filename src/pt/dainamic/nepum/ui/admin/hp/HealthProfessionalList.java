@@ -42,17 +42,17 @@ public class HealthProfessionalList extends javax.swing.JFrame {
      * Creates new form HeathProfessionalList
      */
     public HealthProfessionalList() {
-        try {
+//        try {
             initComponents();
             setIcon();
             hpWS = new HealthProfessionalWS();
             hpList = hpWS.getAllHealthProfessionals();
             drawTable();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(HealthProfessionalList.this,
-                    e.getMessage(), "Erro ao carregar os dados do Profissional de saude", JOptionPane.ERROR_MESSAGE);
-
-        }
+//        } catch (Exception e) {
+//            JOptionPane.showMessageDialog(HealthProfessionalList.this,
+//                    e.getMessage(), "Erro ao carregar os dados do Profissional de saude", JOptionPane.ERROR_MESSAGE);
+//
+//        }
 
     }
 
@@ -222,7 +222,7 @@ public class HealthProfessionalList extends javax.swing.JFrame {
      * This method draw and fill the table
      */
     private void drawTable() {
-        try {
+//        try {
             initializeTable();
             int width = jTableList.getColumnModel().getColumn(2).getWidth();
             int height = 60;
@@ -239,11 +239,11 @@ public class HealthProfessionalList extends javax.swing.JFrame {
                 }
 
             }
-        } catch (Exception ex) {
-            log.error(ex.getMessage());
-            JOptionPane.showMessageDialog(HealthProfessionalList.this, "Erro ao carregar a tabela dos \nprofissionais de saude",
-                    "Erro  Profissional de saude", JOptionPane.ERROR_MESSAGE);
-        }
+//        } catch (Exception ex) {
+//            log.error(ex.getMessage());
+//            JOptionPane.showMessageDialog(HealthProfessionalList.this, "Erro ao carregar a tabela dos \nprofissionais de saude",
+//                    "Erro  Profissional de saude", JOptionPane.ERROR_MESSAGE);
+//        }
     }
 
     /**

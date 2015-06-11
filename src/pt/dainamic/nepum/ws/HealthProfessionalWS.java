@@ -206,7 +206,7 @@ public class HealthProfessionalWS {
         params.add(new BasicNameValuePair("password", hp.getPassword()));
         params.add(new BasicNameValuePair("picture", hp.getPicture()));
         params.add(new BasicNameValuePair("institution", hp.getInstitution()));
-        params.add(new BasicNameValuePair("developmentProfessional", String.valueOf(hp.isDevelopmentProfessional())));
+        params.add(new BasicNameValuePair("developmentProfessional", String.valueOf(hp.getDevelopmentProfessional())));
 
         return params;
     }
