@@ -241,6 +241,7 @@ public class HealthProfessionalList extends javax.swing.JFrame {
             }
         } catch (Exception ex) {
             log.error(ex.getMessage());
+            ex.printStackTrace();
             JOptionPane.showMessageDialog(HealthProfessionalList.this, "Erro ao carregar a tabela dos \nprofissionais de saude",
                     "Erro  Profissional de saude", JOptionPane.ERROR_MESSAGE);
         }
