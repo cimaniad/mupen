@@ -22,7 +22,7 @@ import pt.dainamic.nepum.model.Exercise;
  */
 public class ExerciseWS {
 
-     private WrapperWS wrapperWS;
+    private WrapperWS wrapperWS;
     private CloseableHttpResponse responseWS;
     private Gson gson;
     private Logger log = Logger.getLogger(ExerciseWS.class);
@@ -93,7 +93,7 @@ public class ExerciseWS {
         return ex;
     }
 
-    public List<Exercise> getExerciseBySubDomain(int idSD){
+    public List<Exercise> getExerciseBySubDomain(int idSD) {
         List<Exercise> exList = null;
 
         List<NameValuePair> params = new ArrayList<>();           //array com os params necessários para registar um terapeuta
@@ -123,15 +123,62 @@ public class ExerciseWS {
         log.debug("\n\tPs : " + exList.toString());
         return exList;
     }
+    
+    public void saveAssignExercise(int idBlock, int idExercise ) {
 
-    private List<NameValuePair> getAllParams(Exercise ex) {
+        try {
+            ArrayList<NameValuePair> params = new ArrayList<>();
+            params.add(new BasicNameValuePair("idBlock", String.valueOf(idBlock)));
+            params.add(new BasicNameValuePair("idExercise", String.valueOf(idExercise)));
+            
+            
+            responseWS = wrapperWS.sendRequest("Exercise",
+                    "saveAssignExercise", params);    //efetua o pedido ao WS
+            String jsonResp = wrapperWS.readResponse(responseWS);         //Passa a responseWS para uma string
+
+            Validation v = gson.fromJson(jsonResp, Validation.class);    //Conversão do objecto Json para o objecto Java
+
+            int httpResponseCod = responseWS.getStatusLine().getStatusCode();
+            if (httpResponseCod != 201) {
+                log.error("\n\tCod: " + v.getCod() + "\tMsg: " + v.getMsg());
+                throw new RuntimeException("Ocorreu um erro ao guardar um exercício");
+            }
+
+        } catch (RuntimeException e) {
+            log.error("\n\t" + e.getMessage());
+            throw new RuntimeException(e.getMessage());
+        }
+        log.debug("\n\t AssignedEcercise saved with success");
+    }
+    
+    public List<Exercise> getExercisesByBlock(int idB) {
+        List<Exercise> exList = null;
+
         List<NameValuePair> params = new ArrayList<>();           //array com os params necessários para registar um terapeuta
-        params.add(new BasicNameValuePair("idExercise", String.valueOf(ex.getIdExercise())));
-        params.add(new BasicNameValuePair("idSubDomain", String.valueOf(ex.getIdSubDomain())));
-        params.add(new BasicNameValuePair("designation", ex.getDesignation()));
-        params.add(new BasicNameValuePair("structure", ex.getStructure()));
-                params.add(new BasicNameValuePair("name", (ex.getName())));
+        params.add(new BasicNameValuePair("idBlock", String.valueOf(idB)));
 
-        return params;
+        try {
+            responseWS = wrapperWS.sendRequest("Exercise",
+                    "getExercisesByBlock", params);    //efetua o pedido ao WS
+            String jsonResp = wrapperWS.readResponse(responseWS);         //Passa a responseWS para uma string
+
+            int httpResponseCod = responseWS.getStatusLine().getStatusCode();
+            if (httpResponseCod != 200) {
+                Validation v = gson.fromJson(jsonResp, Validation.class);    //Conversão do objecto Json para o objecto Java
+                log.error("\n\tCod: " + v.getCod() + "\tMsg: " + v.getMsg());
+                throw new RuntimeException("Ocorreu um erro ao aceder aos dados do Bloco");
+            }
+
+            Type type = new TypeToken<List<Exercise>>() {
+            }.getType();  //tipo do para o qual queros retornar a responseWS Json
+            exList = gson.fromJson(jsonResp, type);
+
+        } catch (RuntimeException e) {
+            log.error("\n\t" + e.getMessage());
+            throw new RuntimeException(e.getMessage());
+        }
+        log.debug("\n\tBlock data access success");
+        log.debug("\n\tPs : " + exList.toString());
+        return exList;
     }
 }

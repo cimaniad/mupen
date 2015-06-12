@@ -353,7 +353,7 @@ public class HealthProfessionalRegist extends javax.swing.JFrame {
         int numTel = 0;
         int numCC = 0;
         int nif = 0;
-        boolean developmentPro = jCheckBoxDevelopmentProfessional.isSelected() == true ? true : false;
+        byte developmentPro = jCheckBoxDevelopmentProfessional.isSelected() == true ? (byte)1 : (byte)0;
         try {
             if (jTextFieldTel.getText().trim().length() != 9) {
                 throw new RuntimeException("O NºTel deve ter 9 digitos!");
