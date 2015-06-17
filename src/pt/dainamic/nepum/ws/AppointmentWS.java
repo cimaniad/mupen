@@ -55,7 +55,6 @@ public class AppointmentWS {
         }
         log.debug("\n\t Appointment saved with success");
     }
-
     public List<Appointment> getHPAppointments(int idHealthProfessional) {
         List<Appointment> aList = null;
 

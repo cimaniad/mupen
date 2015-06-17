@@ -1,0 +1,73 @@
+2015-06-06 15:05:58,381 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.WrapperWS.<init> 41 - Connection established with the WS
+2015-06-06 15:05:58,391 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.WrapperWS.sendRequest 72 - Request executed with sucess
+2015-06-06 15:05:58,401 DEBUG [AWT-EventQueue-0] - org.apache.http.client.protocol.RequestAddCookies.process 122 - CookieSpec selected: default
+2015-06-06 15:05:58,411 DEBUG [AWT-EventQueue-0] - org.apache.http.client.protocol.RequestAuthCache.process 76 - Auth cache not set in the context
+2015-06-06 15:05:58,411 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.requestConnection 249 - Connection request: [route: {}->http://dainamic.dsi.uminho.pt:80][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+2015-06-06 15:05:58,421 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.leaseConnection 282 - Connection leased: [id: 0][route: {}->http://dainamic.dsi.uminho.pt:80][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+2015-06-06 15:05:58,421 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 234 - Opening connection {}->http://dainamic.dsi.uminho.pt:80
+2015-06-06 15:05:58,461 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect 131 - Connecting to dainamic.dsi.uminho.pt/192.168.223.3:80
+2015-06-06 15:06:19,508 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.DefaultManagedHttpClientConnection.shutdown 87 - http-outgoing-0: Shutdown connection
+2015-06-06 15:06:19,508 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.abortConnection 131 - Socket is closed
+java.net.SocketException: Socket is closed
+	at java.net.Socket.setSoLinger(Socket.java:1016)
+	at org.apache.http.impl.BHttpConnectionBase.shutdown(BHttpConnectionBase.java:305)
+	at org.apache.http.impl.conn.DefaultManagedHttpClientConnection.shutdown(DefaultManagedHttpClientConnection.java:97)
+	at org.apache.http.impl.conn.LoggingManagedHttpClientConnection.shutdown(LoggingManagedHttpClientConnection.java:89)
+	at org.apache.http.impl.conn.CPoolEntry.shutdownConnection(CPoolEntry.java:74)
+	at org.apache.http.impl.conn.CPoolProxy.shutdown(CPoolProxy.java:96)
+	at org.apache.http.impl.execchain.ConnectionHolder.abortConnection(ConnectionHolder.java:127)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:352)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:107)
+	at pt.dainamic.nepum.ws.WrapperWS.sendRequest(WrapperWS.java:73)
+	at pt.dainamic.nepum.ws.LoginWS.validateLogin(LoginWS.java:33)
+	at pt.dainamic.nepum.ui.login.Login.jButtonLoginActionPerformed(Login.java:109)
+	at pt.dainamic.nepum.ui.login.Login.access$000(Login.java:24)
+	at pt.dainamic.nepum.ui.login.Login$1.actionPerformed(Login.java:69)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:2022)
+	at javax.swing.AbstractButton$Handler.actionPerformed(AbstractButton.java:2346)
+	at javax.swing.DefaultButtonModel.fireActionPerformed(DefaultButtonModel.java:402)
+	at javax.swing.DefaultButtonModel.setPressed(DefaultButtonModel.java:259)
+	at javax.swing.plaf.basic.BasicButtonListener.mouseReleased(BasicButtonListener.java:252)
+	at java.awt.Component.processMouseEvent(Component.java:6525)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3321)
+	at java.awt.Component.processEvent(Component.java:6290)
+	at java.awt.Container.processEvent(Container.java:2234)
+	at java.awt.Component.dispatchEventImpl(Component.java:4881)
+	at java.awt.Container.dispatchEventImpl(Container.java:2292)
+	at java.awt.Component.dispatchEvent(Component.java:4703)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4898)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4533)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4462)
+	at java.awt.Container.dispatchEventImpl(Container.java:2278)
+	at java.awt.Window.dispatchEventImpl(Window.java:2739)
+	at java.awt.Component.dispatchEvent(Component.java:4703)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:746)
+	at java.awt.EventQueue.access$400(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:697)
+	at java.awt.EventQueue$3.run(EventQueue.java:691)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.awt.EventQueue$4.run(EventQueue.java:719)
+	at java.awt.EventQueue$4.run(EventQueue.java:717)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:75)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:716)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+2015-06-06 15:06:19,511 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.DefaultManagedHttpClientConnection.close 79 - http-outgoing-0: Close connection
+2015-06-06 15:06:19,511 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.releaseConnection 320 - Connection released: [id: 0][route: {}->http://dainamic.dsi.uminho.pt:80][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+2015-06-06 15:06:19,512 ERROR [AWT-EventQueue-0] - pt.dainamic.nepum.ws.WrapperWS.sendRequest 75 - Error trying to access the server:
+ Connect to dainamic.dsi.uminho.pt:80 [dainamic.dsi.uminho.pt/192.168.223.3] failed: Connection timed out: connect
+2015-06-06 15:06:19,512 ERROR [AWT-EventQueue-0] - pt.dainamic.nepum.ws.LoginWS.validateLogin 50 - 
+	Ocorreu um erro ao tentar aceder ao servidor. 
+	Verifique a ligação à internet

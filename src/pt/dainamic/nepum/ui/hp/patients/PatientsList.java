@@ -4,6 +4,7 @@
  */
 package pt.dainamic.nepum.ui.hp.patients;
 
+import java.awt.Color;
 import pt.dainamic.nepum.ui.hp.HealthProfessionalMenu;
 import java.awt.Image;
 import java.awt.event.KeyEvent;
@@ -22,7 +23,6 @@ import org.apache.log4j.Logger;
 import pt.dainamic.nepum.model.LoginSession;
 import pt.dainamic.nepum.model.Patient;
 import pt.dainamic.nepum.util.JTableRenderer;
-import pt.dainamic.nepum.util.PlaceholderTextField;
 import pt.dainamic.nepum.ws.PatientWS;
 
 /**
@@ -128,6 +128,14 @@ public class PatientsList extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTableListMouseClicked(evt);
             }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jTableListMousePressed(evt);
+            }
+        });
+        jTableList.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                jTableListPropertyChange(evt);
+            }
         });
         jScrollPaneList.setViewportView(jTableList);
 
@@ -152,12 +160,12 @@ public class PatientsList extends javax.swing.JFrame {
         jLabelInformation.setMaximumSize(new java.awt.Dimension(680, 380));
         jLabelInformation.setMinimumSize(new java.awt.Dimension(680, 380));
         jLabelInformation.setPreferredSize(new java.awt.Dimension(680, 380));
-        jPanelInformation.add(jLabelInformation, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanelInformation.add(jLabelInformation, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 390));
 
         jPanelWallpaper.add(jPanelInformation, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 680, 380));
 
         jLabelwallpaper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/backGround/first.jpg"))); // NOI18N
-        jPanelWallpaper.add(jLabelwallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jPanelWallpaper.add(jLabelwallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 500));
 
         getContentPane().add(jPanelWallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 500));
 
@@ -171,7 +179,7 @@ public class PatientsList extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonRegistActionPerformed
 
     private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackActionPerformed
-        new HealthProfessionalMenu().setVisible(true);;
+        new HealthProfessionalMenu().setVisible(true);
         dispose();
     }//GEN-LAST:event_jButtonBackActionPerformed
 
@@ -180,6 +188,13 @@ public class PatientsList extends javax.swing.JFrame {
             new PatientProfile(getPatientAtTable()).setVisible(true);
             dispose();
         }
+        
+        
+        if (getPatientAtTable().getNotification() == 1 && evt.getClickCount() == 1 && jTableList.getSelectedColumn()== 3) {
+            
+            new NotificationPage().setVisible(true);
+        }
+        
     }//GEN-LAST:event_jTableListMouseClicked
 
     private void jTextFieldSearchKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_placeholderFieldSearchKeyPressed
@@ -196,25 +211,51 @@ public class PatientsList extends javax.swing.JFrame {
         drawTable();
     }//GEN-LAST:event_jButtonSearchActionPerformed
 
+    private void jTableListPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jTableListPropertyChange
+    }//GEN-LAST:event_jTableListPropertyChange
+
+    private void jTableListMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableListMousePressed
+        jLabelPatientslList.setBackground(Color.red);
+    }//GEN-LAST:event_jTableListMousePressed
+
     private void drawTable() {
         try {
             initializeTable();
             int width = jTableList.getColumnModel().getColumn(2).getWidth();
             int height = 60;
-
-            for (Patient p : pList) {
+            
+        for (Patient p : pList) {
+                ImageIcon icon;
+                if(p.getNotification()== 1){
+                     icon = new ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/icons/notificação laranja SF.PNG"));
+                }else{ 
+                     icon = new ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/icons/mecanico.PNG"));
+                }
                 if (p.getPicture().equals("profile")) {
                     ImageIcon pic = new ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/pics/profile.PNG"));
+                    
+                    
                     tableModel.addRow(new Object[]{p.getName(), p.getLastName(),
-                        new ImageIcon(pic.getImage().getScaledInstance(width, height, Image.SCALE_DEFAULT))});
-                } else {
-
+                        new ImageIcon(pic.getImage().getScaledInstance(width, height, Image.SCALE_DEFAULT)),
+                        
+                        new ImageIcon(icon.getImage().getScaledInstance(40, 40, Image.SCALE_DEFAULT))
+                    
+                    });
+                }else{
+                     
                     tableModel.addRow(new Object[]{p.getName(), p.getLastName(),
-                        new ImageIcon(getImageFromServer(p.getPicture(), width, height))});
+                        
+                        new ImageIcon(getImageFromServer(p.getPicture(), width, height)),
+                        
+                        new ImageIcon(icon.getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT))
+                        
+                    
+                    });
                 }
 
             }
         } catch (Exception ex) {
+            ex.printStackTrace();
             log.error(ex.getMessage());
             JOptionPane.showMessageDialog(PatientsList.this, "Erro ao carregar a tabela dos \npacientes!",
                     "Erro  Lista de Pacientes", JOptionPane.ERROR_MESSAGE);
@@ -236,9 +277,11 @@ public class PatientsList extends javax.swing.JFrame {
         tableModel.addColumn("Nome");
         tableModel.addColumn("Apelido");
         tableModel.addColumn("Foto");
+        tableModel.addColumn("Notificações");
         JTableRenderer renderer = new JTableRenderer();
         renderer.setHorizontalAlignment(SwingConstants.CENTER);
         jTableList.getColumnModel().getColumn(2).setCellRenderer(renderer);
+        jTableList.getColumnModel().getColumn(3).setCellRenderer(renderer);
         jTableList.setRowHeight(60);
     }
 
@@ -265,7 +308,8 @@ public class PatientsList extends javax.swing.JFrame {
         }
         return null;
     }
- private void setIcon(){
+
+    private void setIcon() {
         List<Image> icons = new ArrayList<>();
         icons.add(new ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/logo.png")).getImage());
         icons.add(new ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/logo-icon.png")).getImage());
@@ -284,4 +328,8 @@ public class PatientsList extends javax.swing.JFrame {
     private javax.swing.JTable jTableList;
     private javax.swing.JTextField jTextFieldSearch;
     // End of variables declaration//GEN-END:variables
+
+    private Object ImageIcon(Image scaledInstance) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

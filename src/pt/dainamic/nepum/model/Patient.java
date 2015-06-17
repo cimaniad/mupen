@@ -10,6 +10,7 @@ public class Patient extends User{
     private String pathology;
     private String description;
     private int idHealthProfessional;
+    private byte notification;
 
     public Patient() {
       super();
@@ -45,10 +46,19 @@ public class Patient extends User{
         this.pathology = pathology;
         this.description = description;
         this.idHealthProfessional = idHealthProfessional;
+        
     }
 
     public int getIdPatient() {
         return idPatient;
+    }
+
+    public byte getNotification() {
+        return notification;
+    }
+
+    public void setNotification(byte notification) {
+        this.notification = notification;
     }
 
     public int getIdHealthProfessional() {
