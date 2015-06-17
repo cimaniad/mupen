@@ -277,7 +277,7 @@ public class CreateBlock extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonSelectActionPerformed
 
     private void jButtonSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSaveActionPerformed
-
+        try{
         bWS.saveBlock(loadBlockFromPanel());
         int idB = bWS.getLastBlock().getIdBlock();
         
@@ -286,7 +286,11 @@ public class CreateBlock extends javax.swing.JFrame {
         }
             new PrescribeSession(p, idHP).setVisible(true);
             dispose();
-        
+        } 
+            catch (Exception e) {
+            JOptionPane.showMessageDialog(CreateBlock.this,
+                    e.getMessage(), "Erro ao Criar Bloco", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_jButtonSaveActionPerformed
 
     private void jTableProposenExercisesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableProposenExercisesMouseClicked

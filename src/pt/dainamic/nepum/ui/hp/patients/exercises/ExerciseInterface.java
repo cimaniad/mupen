@@ -118,17 +118,17 @@ public class ExerciseInterface extends javax.swing.JFrame {
         jPanelInformation.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabelExercise.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jLabelExercise.setText("Exercícios");
+        jLabelExercise.setText("Exercício");
         jPanelInformation.add(jLabelExercise, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
         jLabelName.setText("Nome:");
-        jPanelInformation.add(jLabelName, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 70, -1, -1));
+        jPanelInformation.add(jLabelName, new org.netbeans.lib.awtextra.AbsoluteConstraints(437, 70, -1, -1));
 
         jLabelBirthDate.setText("Descrição:");
         jPanelInformation.add(jLabelBirthDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 150, -1, -1));
 
         jLabelLevel.setText("Nivel:");
-        jPanelInformation.add(jLabelLevel, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 110, -1, -1));
+        jPanelInformation.add(jLabelLevel, new org.netbeans.lib.awtextra.AbsoluteConstraints(442, 110, -1, -1));
 
         jButtonBack.setText("Voltar");
         jButtonBack.addActionListener(new java.awt.event.ActionListener() {
@@ -137,21 +137,33 @@ public class ExerciseInterface extends javax.swing.JFrame {
             }
         });
         jPanelInformation.add(jButtonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 320, -1, -1));
+
+        jTextFieldName.setEditable(false);
         jPanelInformation.add(jTextFieldName, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 70, 190, -1));
+
+        jTextFieldDescription.setEditable(false);
         jPanelInformation.add(jTextFieldDescription, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 150, 190, -1));
+
+        jTextFieldLevel.setEditable(false);
         jPanelInformation.add(jTextFieldLevel, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, 190, -1));
+
+        jTextFieldDomain.setEditable(false);
         jPanelInformation.add(jTextFieldDomain, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 190, 190, -1));
+
+        jTextFieldTime.setEditable(false);
         jPanelInformation.add(jTextFieldTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 270, 190, -1));
 
         jLabel1.setText("Domínio:");
-        jPanelInformation.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 190, -1, -1));
+        jPanelInformation.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 190, -1, -1));
 
         jLabel2.setText("Sub-domínio:");
-        jPanelInformation.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 230, -1, -1));
+        jPanelInformation.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 230, -1, -1));
+
+        jTextFieldSubDomain.setEditable(false);
         jPanelInformation.add(jTextFieldSubDomain, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 230, 190, -1));
 
         jLabel3.setText("Tempo limite:");
-        jPanelInformation.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 270, -1, -1));
+        jPanelInformation.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 270, -1, -1));
         jPanelInformation.add(jLabelPhoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 310, 220));
 
         jLabelInformation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/backGround/second.jpg"))); // NOI18N
