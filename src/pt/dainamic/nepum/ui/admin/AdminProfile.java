@@ -136,22 +136,22 @@ public class AdminProfile extends javax.swing.JFrame {
         jPanelInformation.add(jLabelTel, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, -1, 20));
 
         jLabelCC.setText("  Nº CC:");
-        jPanelInformation.add(jLabelCC, new org.netbeans.lib.awtextra.AbsoluteConstraints(443, 139, -1, 20));
+        jPanelInformation.add(jLabelCC, new org.netbeans.lib.awtextra.AbsoluteConstraints(443, 139, 50, 20));
 
         jLabelEmail.setText("  E-mail:");
         jPanelInformation.add(jLabelEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, -1, 20));
 
         jLabelLastName.setText(" Apelido:");
-        jPanelInformation.add(jLabelLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(441, 49, -1, 20));
+        jPanelInformation.add(jLabelLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(441, 49, 60, 20));
 
         jLabelNationality.setText(" Nacionalidade:");
-        jPanelInformation.add(jLabelNationality, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 79, -1, 20));
+        jPanelInformation.add(jLabelNationality, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 79, 90, 20));
 
         jLabelAdress.setText("   Morada:");
         jPanelInformation.add(jLabelAdress, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, -1, 20));
 
         jLabelBloodType.setText("Grupo sanguíneo:");
-        jPanelInformation.add(jLabelBloodType, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 169, 90, 20));
+        jPanelInformation.add(jLabelBloodType, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 169, 110, 20));
 
         jButtonEditProfile.setText("Editar Perfil");
         jButtonEditProfile.addActionListener(new java.awt.event.ActionListener() {
@@ -179,27 +179,27 @@ public class AdminProfile extends javax.swing.JFrame {
 
         jTextFieldEmail.setEditable(false);
         jTextFieldEmail.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jPanelInformation.add(jTextFieldEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 150, -1));
+        jPanelInformation.add(jTextFieldEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 200, -1));
 
         jTextFieldAdress.setEditable(false);
         jTextFieldAdress.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jPanelInformation.add(jTextFieldAdress, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 400, -1));
+        jPanelInformation.add(jTextFieldAdress, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 410, -1));
 
         jTextFieldLastName.setEditable(false);
         jTextFieldLastName.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jPanelInformation.add(jTextFieldLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 50, 140, -1));
+        jPanelInformation.add(jTextFieldLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 50, 140, -1));
 
         jTextFieldBloodGroup.setEditable(false);
         jTextFieldBloodGroup.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jPanelInformation.add(jTextFieldBloodGroup, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 170, 40, -1));
+        jPanelInformation.add(jTextFieldBloodGroup, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 170, 40, -1));
 
         jTextFieldNatio.setEditable(false);
         jTextFieldNatio.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jPanelInformation.add(jTextFieldNatio, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 140, -1));
+        jPanelInformation.add(jTextFieldNatio, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 80, 140, -1));
 
         jTextFieldNCC.setEditable(false);
         jTextFieldNCC.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jPanelInformation.add(jTextFieldNCC, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 140, 140, -1));
+        jPanelInformation.add(jTextFieldNCC, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 140, 140, -1));
 
         jTextFieldNTel.setEditable(false);
         jTextFieldNTel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
