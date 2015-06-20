@@ -104,11 +104,11 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabelTel">
               <Properties>
-                <Property name="text" type="java.lang.String" value="  N&#xba; Telemovel:"/>
+                <Property name="text" type="java.lang.String" value="  N&#xba; Tel:"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="140" y="140" width="80" height="20"/>
+                  <AbsoluteConstraints x="170" y="140" width="50" height="20"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -118,7 +118,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="170" y="170" width="40" height="20"/>
+                  <AbsoluteConstraints x="170" y="170" width="60" height="20"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -148,7 +148,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="430" y="80" width="40" height="20"/>
+                  <AbsoluteConstraints x="430" y="80" width="50" height="20"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -227,11 +227,14 @@
             </Component>
             <Component class="javax.swing.JCheckBox" name="jCheckBoxDevelopmentProfessional">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Profissional de desenvolvimento"/>
+                <Property name="text" type="java.lang.String" value="Profissional de Desenvolvimento"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxDevelopmentProfessionalActionPerformed"/>
+              </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="400" y="230" width="180" height="-1"/>
+                  <AbsoluteConstraints x="400" y="230" width="260" height="40"/>
                 </Constraint>
               </Constraints>
             </Component>
