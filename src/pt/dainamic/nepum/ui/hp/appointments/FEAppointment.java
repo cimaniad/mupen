@@ -33,7 +33,7 @@ public class FEAppointment extends javax.swing.JFrame {
     private List<Patient> patients;
     private Color newGreen;
     private Color newRed;
-
+    private int idAppointment;
     /**
      * Creates new form Event
      */
@@ -57,7 +57,20 @@ public class FEAppointment extends javax.swing.JFrame {
         }
 
     }
+    public FEAppointment(int idAppointment) {
 
+            patWS = new PatientWS();
+            apptmWS = new AppointmentWS();
+            patients = new ArrayList<>();
+            apL = new ArrayList<>();
+            apL.add(0, apptmWS.getApointmentById(idAppointment));
+            patients.add(patWS.getPatientById(apL.get(0).getIdPatient()));
+            initComponents();
+            jTextFieldDate.setText(apL.get(0).getDate());
+            jTextAreaDescription.setEditable(false);
+            setIcon();
+            seeAppointment();
+        }
     private void hideButtons(Appointment a) {
 
         if (dateParse(a.getDate()).before(Calendar.getInstance().getTime())) {
@@ -122,7 +135,7 @@ public class FEAppointment extends javax.swing.JFrame {
             jLabelStatus.setText("Consulta Aprovada!");
             jLabelStatus.setForeground(newGreen);
         } else if (a.getHealthProfessionalApproval() == 1 && a.getPatientApproval() == 0) {
-            jLabelStatus.setText("Esta consulta necessita de ser aprovada pelo paciente.");
+            jLabelStatus.setText("Esta consulta necessita de ser aprovada pelo paciente ou já expirou.");
             jLabelStatus.setForeground(newRed);
         } else if (a.getHealthProfessionalApproval() == 0 && a.getPatientApproval() == 1) {
             jLabelStatus.setText("Esta consulta necessita de ser aprovada por si.");
@@ -149,7 +162,7 @@ public class FEAppointment extends javax.swing.JFrame {
         icons.add(new ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/logo-icon.png")).getImage());
         setIconImages(icons);
     }
-    
+
     private Date dateParse(String birthDate) {
         SimpleDateFormat dateFromat = new SimpleDateFormat("yyyy-MM-dd");
         Date d = null;
@@ -317,7 +330,7 @@ public class FEAppointment extends javax.swing.JFrame {
         comboChange();
     }
 
-    
+
 
     // Variables declaration - do not modify
     private javax.swing.JButton jButtonAprove;

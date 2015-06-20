@@ -140,11 +140,11 @@ public class HealthProfessionalProfile extends javax.swing.JFrame {
         jLabelBirthDate.setText(" Data de nascimento:");
         jPanelInformation.add(jLabelBirthDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, -1, 20));
 
-        jLabelTel.setText("  Nº Telemovel:");
-        jPanelInformation.add(jLabelTel, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 80, 20));
+        jLabelTel.setText("  Nº Tel:");
+        jPanelInformation.add(jLabelTel, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 50, 20));
 
         jLabelCC.setText("  Nº CC:");
-        jPanelInformation.add(jLabelCC, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 40, 20));
+        jPanelInformation.add(jLabelCC, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 60, 20));
 
         jLabelEmail.setText("    Email: ");
         jPanelInformation.add(jLabelEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, -1, 20));
@@ -153,7 +153,7 @@ public class HealthProfessionalProfile extends javax.swing.JFrame {
         jPanelInformation.add(jLabelLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, 50, 20));
 
         jLabelGender.setText("    Sexo:");
-        jPanelInformation.add(jLabelGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 80, 40, 20));
+        jPanelInformation.add(jLabelGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 80, 50, 20));
 
         jLabelNationality.setText("  Nacionalidade:");
         jPanelInformation.add(jLabelNationality, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 90, 20));
@@ -181,8 +181,13 @@ public class HealthProfessionalProfile extends javax.swing.JFrame {
         });
         jPanelInformation.add(jButtonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 330, -1, -1));
 
-        jCheckBoxDevelopmentProfessional.setText("Profissional de desenvolvimento");
-        jPanelInformation.add(jCheckBoxDevelopmentProfessional, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 230, 180, -1));
+        jCheckBoxDevelopmentProfessional.setText("Profissional de Desenvolvimento");
+        jCheckBoxDevelopmentProfessional.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxDevelopmentProfessionalActionPerformed(evt);
+            }
+        });
+        jPanelInformation.add(jCheckBoxDevelopmentProfessional, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 230, 260, 40));
 
         jTextFieldnCChp.setEditable(false);
         jTextFieldnCChp.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -317,6 +322,10 @@ public class HealthProfessionalProfile extends javax.swing.JFrame {
     private void jTextFieldGenderhpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldGenderhpActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldGenderhpActionPerformed
+
+    private void jCheckBoxDevelopmentProfessionalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxDevelopmentProfessionalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBoxDevelopmentProfessionalActionPerformed
 
     private Image getImageFromServer(String picture, int with, int heigth) {
         try {

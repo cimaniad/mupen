@@ -12,13 +12,13 @@ import java.util.Date;
 import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 import org.apache.log4j.Logger;
 import pt.dainamic.nepum.model.Block;
 import pt.dainamic.nepum.model.Patient;
 import pt.dainamic.nepum.model.Session;
 import pt.dainamic.nepum.ui.hp.patients.PatientProfile;
+import pt.dainamic.nepum.util.PlaceholderTextField;
 import pt.dainamic.nepum.ws.BlockWS;
 import pt.dainamic.nepum.ws.SessionWS;
 
@@ -88,13 +88,14 @@ public class PrescribeSession extends javax.swing.JFrame {
     private Session loadSession() {
         if (jDateChooserDeadline.getDate().toString().isEmpty()) {
             throw new RuntimeException("Preencha a data limite");
-        }
+        }else{
         int idPatient = p.getIdPatient();
         int idHealthProfessional = idHP;
         int idBlock = getBlockAtTable().getIdBlock();
         Date deadline = getDeadLine();
 
         return new Session(0, idPatient, idHealthProfessional, idBlock, deadline);
+        }
     }
 
     private void setIcon() {
@@ -121,7 +122,7 @@ public class PrescribeSession extends javax.swing.JFrame {
         jScrollPaneList = new javax.swing.JScrollPane();
         jTableList = new javax.swing.JTable();
         jButtonSearch = new javax.swing.JButton();
-        jTextFieldSearch = new javax.swing.JTextField();
+        jTextFieldSearch = new PlaceholderTextField("pesquise pelo nome do bloco");
         jButtonDelete = new javax.swing.JButton();
         jButtonPrescribe = new javax.swing.JButton();
         jLabelDeadline = new javax.swing.JLabel();
@@ -286,12 +287,17 @@ public class PrescribeSession extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonDeleteActionPerformed
 
     private void jButtonPrescribeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPrescribeActionPerformed
-        // TODO add your handling code here:
+
         if (jTableList.getSelectedRow() == -1) {
             JOptionPane.showMessageDialog(PrescribeSession.this, "Nenhum bloco selecionado", "Erro Bloco", JOptionPane.ERROR_MESSAGE);
-        }
+        }else{
+            try{
         sWS.saveSession(loadSession());
-
+            }catch (Exception e){
+                log.error(e.getMessage());
+                 JOptionPane.showMessageDialog(PrescribeSession.this, e.getMessage(), "Erro Bloco", JOptionPane.ERROR_MESSAGE);
+            }
+        }
     }//GEN-LAST:event_jButtonPrescribeActionPerformed
 
     private void jTextFieldSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldSearchActionPerformed
@@ -338,6 +344,6 @@ public class PrescribeSession extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelWallpaper;
     private javax.swing.JScrollPane jScrollPaneList;
     private javax.swing.JTable jTableList;
-    private javax.swing.JTextField jTextFieldSearch;
+    private PlaceholderTextField jTextFieldSearch;
     // End of variables declaration//GEN-END:variables
 }

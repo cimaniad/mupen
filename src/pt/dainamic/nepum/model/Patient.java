@@ -1,5 +1,5 @@
 package pt.dainamic.nepum.model;
-
+import java.util.ArrayList;
 
 public class Patient extends User{
 
@@ -10,7 +10,7 @@ public class Patient extends User{
     private String pathology;
     private String description;
     private int idHealthProfessional;
-
+    private ArrayList<Notification> notifications = new ArrayList<>();
     public Patient() {
       super();
     }
@@ -50,7 +50,14 @@ public class Patient extends User{
     public int getIdPatient() {
         return idPatient;
     }
+    public ArrayList<Notification> getNotifications() {
+            return notifications;
+        }
 
+
+        public void addNotification(Notification n){
+            this.notifications.add(n);
+        }
     public int getIdHealthProfessional() {
         return idHealthProfessional;
     }

@@ -1,0 +1,16 @@
+2015-06-15 16:27:08,775 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.WrapperWS.<init> 41 - Connection established with the WS
+2015-06-15 16:27:08,817 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.WrapperWS.sendRequest 72 - Request executed with sucess
+2015-06-15 16:27:08,857 DEBUG [AWT-EventQueue-0] - org.apache.http.client.protocol.RequestAddCookies.process 122 - CookieSpec selected: default
+2015-06-15 16:27:08,881 DEBUG [AWT-EventQueue-0] - org.apache.http.client.protocol.RequestAuthCache.process 76 - Auth cache not set in the context
+2015-06-15 16:27:08,885 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.requestConnection 249 - Connection request: [route: {}->http://dainamic.dsi.uminho.pt:80][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+2015-06-15 16:27:08,960 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.leaseConnection 282 - Connection leased: [id: 0][route: {}->http://dainamic.dsi.uminho.pt:80][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+2015-06-15 16:27:08,974 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 234 - Opening connection {}->http://dainamic.dsi.uminho.pt:80
+2015-06-15 16:27:08,980 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.DefaultManagedHttpClientConnection.shutdown 87 - http-outgoing-0: Shutdown connection
+2015-06-15 16:27:08,981 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.abortConnection 128 - Connection discarded
+2015-06-15 16:27:08,981 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.DefaultManagedHttpClientConnection.close 79 - http-outgoing-0: Close connection
+2015-06-15 16:27:08,982 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.releaseConnection 320 - Connection released: [id: 0][route: {}->http://dainamic.dsi.uminho.pt:80][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+2015-06-15 16:27:08,982 ERROR [AWT-EventQueue-0] - pt.dainamic.nepum.ws.WrapperWS.sendRequest 75 - Error trying to access the server:
+ dainamic.dsi.uminho.pt
+2015-06-15 16:27:08,983 ERROR [AWT-EventQueue-0] - pt.dainamic.nepum.ws.LoginWS.validateLogin 50 - 
+	Ocorreu um erro ao tentar aceder ao servidor. 
+	Verifique a ligação à internet

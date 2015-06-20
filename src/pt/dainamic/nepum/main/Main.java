@@ -12,7 +12,7 @@ import pt.dainamic.nepum.ui.hp.HealthProfessionalMenu;
 
 import org.apache.log4j.Logger;
 import pt.dainamic.nepum.ui.admin.AdminMenu;
-import pt.dainamic.nepum.ui.login.Login;
+import pt.dainamic.nepum.ui.login.LoginPage;
 
 /**
  *
@@ -41,7 +41,7 @@ public class Main {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new Login().setVisible(true);
+                new LoginPage().setVisible(true);
 //                new HealthProfessionalMenu().setVisible(true);
 //                new AdminMenu().setVisible(true);
             }

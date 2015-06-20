@@ -6,10 +6,17 @@
 package pt.dainamic.nepum.ui.login;
 
 import java.awt.Image;
+import java.awt.event.KeyEvent;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import org.apache.log4j.Logger;
 import pt.dainamic.nepum.model.LoginSession;
 import pt.dainamic.nepum.ui.admin.AdminMenu;
 import pt.dainamic.nepum.ui.hp.HealthProfessionalMenu;
@@ -21,14 +28,47 @@ import pt.dainamic.nepum.ws.LoginWS;
  *
  * @author jorge
  */
-public class Login extends javax.swing.JFrame {
-
+public class LoginPage extends javax.swing.JFrame {
+    private Logger log = Logger.getLogger(Login.class);
     /**
-     * Creates new form Login
+     * Creates new form LoginPage
      */
-    public Login() {
+    public LoginPage() {
         initComponents();
         setIcon();
+        setFields();
+    }
+
+    private String[] checkFile() {
+        FileReader fileR = null;
+        try {
+            fileR = new FileReader("properties/predifinedSession.txt");
+            StringBuilder file = new StringBuilder();
+            BufferedReader buff = new BufferedReader(fileR);
+            while (buff.ready()) {
+                file.append(buff.readLine());
+            }   buff.close();
+            String[] split = file.toString().split("/");
+            return split;
+        } catch (FileNotFoundException ex) {
+        } catch (IOException ex) {
+        } finally {
+            try {
+                fileR.close();
+            } catch (IOException ex) {
+                log.error(ex.getMessage());
+            }
+
+        }
+        return null;
+    }
+
+    private void setFields(){
+        String[] str = checkFile();
+        if(str[0].equals("1")){
+            jTextFieldEmail.setText(str[1]);
+            jTextFieldPassword.setText(str[2]);
+        }
     }
 
     /**
@@ -44,8 +84,8 @@ public class Login extends javax.swing.JFrame {
         jLabelLogin = new javax.swing.JLabel();
         jButtonLogin = new javax.swing.JButton();
         jButtonForgot = new javax.swing.JButton();
-        jTextFieldEmail = new PlaceholderTextField();
-        jTextFieldPassword = new PlaceholderPassField();
+        jTextFieldEmail = new PlaceholderTextField("E-mail");;
+        jTextFieldPassword = new PlaceholderPassField("Password");
         jLabelwallpaper = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -69,6 +109,11 @@ public class Login extends javax.swing.JFrame {
                 jButtonLoginActionPerformed(evt);
             }
         });
+        jButtonLogin.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jButtonLoginKeyPressed(evt);
+            }
+        });
         jPanelWallpaper.add(jButtonLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 280, 180, 30));
 
         jButtonForgot.setText("Esqueceu-se da password?");
@@ -78,11 +123,13 @@ public class Login extends javax.swing.JFrame {
             }
         });
         jPanelWallpaper.add(jButtonForgot, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 350, 180, 20));
-
-        jTextFieldEmail.setPlaceholder("E-mail");
         jPanelWallpaper.add(jTextFieldEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 180, 180, 30));
 
-        jTextFieldPassword.setPlaceholder("Password");
+        jTextFieldPassword.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextFieldPasswordKeyPressed(evt);
+            }
+        });
         jPanelWallpaper.add(jTextFieldPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 230, 180, 30));
 
         jLabelwallpaper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/backGround/login.jpg"))); // NOI18N
@@ -93,6 +140,7 @@ public class Login extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
     private String getPass(){
         StringBuilder sb = new StringBuilder();
         char[] pass = jTextFieldPassword.getPassword();
@@ -101,34 +149,83 @@ public class Login extends javax.swing.JFrame {
         }
         return sb.toString();
     }
+    private void predifinedSession(){
+        String[] str = checkFile();
+        if(str[0].equals("0")){
+            int resposta;
+            String[] messages = {"Sim","Não"};
+            resposta = JOptionPane.showOptionDialog(null, "Deseja predefinir esta conta?", "Predefinir Conta",
+                JOptionPane.YES_OPTION, JOptionPane.QUESTION_MESSAGE,
+                null, messages, null);
+            if (resposta == JOptionPane.YES_OPTION) {
+            String toUpdate = "0/";
+            String updated = "1/"+jTextFieldEmail.getText()+"/"+getPass();
+            try {
+                updateLine(toUpdate,updated);
+            } catch (IOException ex) {
+                log.error(ex.getMessage());
+            }
+            }
+        }
+    }
+
+    private void updateLine(String toUpdate, String updated) throws IOException {
+        BufferedReader file = new BufferedReader(new FileReader("properties/predifinedSession.txt"));
+        String line;
+        String input = "";
+
+        while ((line = file.readLine()) != null)
+            input += line + "\n";
+
+        input = input.replace(toUpdate, updated);
+
+        FileOutputStream os = new FileOutputStream("properties/predifinedSession.txt");
+        os.write(input.getBytes());
+
+        file.close();
+        os.close();
+}
+
+    private void jButtonForgotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonForgotActionPerformed
+        // TODO add your handling code here:
+        new ForgetPassword().setVisible(true);
+    }//GEN-LAST:event_jButtonForgotActionPerformed
+
+    private void jButtonLoginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButtonLoginKeyPressed
+
+    }//GEN-LAST:event_jButtonLoginKeyPressed
+
     private void jButtonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLoginActionPerformed
         String email = jTextFieldEmail.getText().trim();
-        
         try {
             LoginWS loginWS = new LoginWS();
             LoginSession log = loginWS.validateLogin(email, getPass());
             LoginSession.getInstance().setIdAdmin(log.getIdAdmin());
             LoginSession.getInstance().setIdHealthProfessional(log.getIdHealthProfessional());
             if (LoginSession.getInstance().getIdAdmin() == 0
-                    && LoginSession.getInstance().getIdHealthProfessional() != 0) {
+                && LoginSession.getInstance().getIdHealthProfessional() != 0) {
                 new HealthProfessionalMenu().setVisible(true);
                 dispose();
+                predifinedSession();
             } else if (LoginSession.getInstance().getIdAdmin() != 0
-                    && LoginSession.getInstance().getIdHealthProfessional() == 0) {
+                && LoginSession.getInstance().getIdHealthProfessional() == 0) {
                 new AdminMenu().setVisible(true);
                 dispose();
+                predifinedSession();
             } else {
-                throw new RuntimeException("Pacientes não tem  permição de acesso nesta aplicação");
+                throw new RuntimeException("Pacientes não tem  permissão de acesso nesta aplicação");
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(Login.this,
-                    e.getMessage(), "Erro ao iniciar sessão", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(LoginPage.this,
+                e.getMessage(), "Erro ao iniciar sessão", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButtonLoginActionPerformed
 
-    private void jButtonForgotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonForgotActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonForgotActionPerformed
+    private void jTextFieldPasswordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldPasswordKeyPressed
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            jButtonLogin.doClick();
+        }
+    }//GEN-LAST:event_jTextFieldPasswordKeyPressed
 
     private void setIcon() {
         List<Image> icons = new ArrayList<>();

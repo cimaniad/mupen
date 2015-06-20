@@ -36,23 +36,20 @@ public class BlockInterface extends javax.swing.JFrame {
     private int idHP;
 
     public BlockInterface(Block b, Patient p, int idHP) {
-//        try {
-
+        try {
             initComponents();
             setIcon();
             this.p = p;
             this.idHP = idHP;
             this.b = b;
-            
             this.exWS = new ExerciseWS();
             this.eList = exWS.getExercisesByBlock(b.getIdBlock());
             setFields(b);
             drawExercises();
-
-//        } catch (Exception e) {
-//            JOptionPane.showMessageDialog(BlockInterface.this,
-//                    e.getMessage(), "Erro ao carregar dados de um bloco", JOptionPane.ERROR_MESSAGE);
-//        }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(BlockInterface.this,
+                    e.getMessage(), "Erro ao carregar dados de um bloco", JOptionPane.ERROR_MESSAGE);
+        }
 
     }
 
@@ -127,13 +124,18 @@ public class BlockInterface extends javax.swing.JFrame {
 
         jLabelName.setText("  Nome:");
         jPanelInformation.add(jLabelName, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, -1, 20));
+
+        jTextFieldName.setEditable(false);
         jPanelInformation.add(jTextFieldName, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 70, 320, -1));
 
         jLabelDiscription.setText("Descrição:");
         jPanelInformation.add(jLabelDiscription, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, -1, 20));
 
+        jTextAreaDescription.setEditable(false);
         jTextAreaDescription.setColumns(20);
+        jTextAreaDescription.setLineWrap(true);
         jTextAreaDescription.setRows(5);
+        jTextAreaDescription.setWrapStyleWord(true);
         jScrollPane1.setViewportView(jTextAreaDescription);
 
         jPanelInformation.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 320, 60));
@@ -196,7 +198,7 @@ public class BlockInterface extends javax.swing.JFrame {
 
     private void jTableSelectedExercisesMouseClicked(java.awt.event.MouseEvent evt) {
         // TODO add your handling code here:
-        
+
         if (evt.getClickCount() == 2) {
             new ExerciseInterface(getExerciseSelAtTable()).setVisible(true);
         }
