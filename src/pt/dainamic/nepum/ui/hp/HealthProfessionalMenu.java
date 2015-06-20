@@ -13,6 +13,7 @@ import javax.swing.ImageIcon;
 import pt.dainamic.nepum.model.LoginSession;
 import pt.dainamic.nepum.ui.hp.appointments.Schedule;
 import pt.dainamic.nepum.ui.hp.patients.PatientsList;
+import pt.dainamic.nepum.ui.login.Login;
 
 /**
  *
@@ -46,6 +47,7 @@ public class HealthProfessionalMenu extends javax.swing.JFrame {
         jButtonHealthProfessional = new javax.swing.JButton();
         jButtonProfile = new javax.swing.JButton();
         jButtonSchedule = new javax.swing.JButton();
+        jButtonLogout = new javax.swing.JButton();
         jLabelwallpaper = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -70,7 +72,7 @@ public class HealthProfessionalMenu extends javax.swing.JFrame {
                 jButtonProfileActionPerformed(evt);
             }
         });
-        jPanelWallpaper.add(jButtonProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, 140, 40));
+        jPanelWallpaper.add(jButtonProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, 140, 40));
 
         jButtonSchedule.setText("Agenda");
         jButtonSchedule.addActionListener(new java.awt.event.ActionListener() {
@@ -78,7 +80,15 @@ public class HealthProfessionalMenu extends javax.swing.JFrame {
                 jButtonScheduleActionPerformed(evt);
             }
         });
-        jPanelWallpaper.add(jButtonSchedule, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 360, 140, 40));
+        jPanelWallpaper.add(jButtonSchedule, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 330, 140, 40));
+
+        jButtonLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/buttons/powerred.png"))); // NOI18N
+        jButtonLogout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonLogoutActionPerformed(evt);
+            }
+        });
+        jPanelWallpaper.add(jButtonLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 450, 40, 40));
 
         jLabelwallpaper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/backGround/first.jpg"))); // NOI18N
         jPanelWallpaper.add(jLabelwallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 500));
@@ -121,10 +131,16 @@ public class HealthProfessionalMenu extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jButtonProfileActionPerformed
 
+    private void jButtonLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLogoutActionPerformed
+         new Login().setVisible(true);
+         dispose();
+    }//GEN-LAST:event_jButtonLogoutActionPerformed
+
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonHealthProfessional;
+    private javax.swing.JButton jButtonLogout;
     private javax.swing.JButton jButtonProfile;
     private javax.swing.JButton jButtonSchedule;
     private javax.swing.JLabel jLabelwallpaper;
