@@ -32,14 +32,14 @@ public class SessionWS {
         wrapperWS = WrapperWS.getWrapperWS();
     }
 
-    public void saveSession(Session s) {
-
+    public Validation saveSession(Session s) {
+Validation v;
         try {
             responseWS = wrapperWS.sendRequest("Session",
                     "saveSession", getAllParams(s));    //efetua o pedido ao WS
             String jsonResp = wrapperWS.readResponse(responseWS);         //Passa a responseWS para uma string
 
-            Validation v = gson.fromJson(jsonResp, Validation.class);    //Conversão do objecto Json para o objecto Java
+             v = gson.fromJson(jsonResp, Validation.class);    //Conversão do objecto Json para o objecto Java
 
             int httpResponseCod = responseWS.getStatusLine().getStatusCode();
             if (httpResponseCod != 201) {
@@ -52,6 +52,7 @@ public class SessionWS {
             throw new RuntimeException(e.getMessage());
         }
         log.debug("\n\tSession saved with success");
+        return v;
     }
 
      private List<NameValuePair> getAllParams(Session s) {

@@ -15,22 +15,32 @@ public class Notification {
     private int idAppointment;
     private int idSession;
     private int idComment;
-    private byte saw;
+   
     private String description;
     private byte isPatientN;
     private int idPatient;
     private int idHealthProfessional;
 
-    public Notification(int idNotification, int idComment,int idAppointment, int idSession, byte saw, String description, byte isPatientN, int idPatient, int idHealthProfessional) {
+
+    public Notification(int idNotification, int idAppointment, int idSession, int idComment, byte saw, String description, byte isPatientN, int idPatient, int idHealthProfessional) {
         this.idNotification = idNotification;
         this.idAppointment = idAppointment;
         this.idSession = idSession;
-        this.saw = saw;
+        this.idComment = idComment;
+        
         this.description = description;
         this.isPatientN = isPatientN;
         this.idPatient = idPatient;
         this.idHealthProfessional = idHealthProfessional;
+        
     }
+
+    
+
+
+
+
+
 
     public int getIdComment() {
         return idComment;
@@ -48,9 +58,7 @@ public class Notification {
         return idSession;
     }
 
-    public byte getSaw() {
-        return saw;
-    }
+
 
     public String getDescription() {
         return description;
@@ -66,10 +74,6 @@ public class Notification {
 
     public int getIdHealthProfessional() {
         return idHealthProfessional;
-    }
-
-    public void setSaw(byte saw) {
-        this.saw = saw;
     }
 
     public void setDescription(String description) {

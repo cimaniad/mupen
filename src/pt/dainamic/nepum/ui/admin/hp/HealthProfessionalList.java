@@ -66,7 +66,7 @@ public class HealthProfessionalList extends javax.swing.JFrame {
         jButtonRegist = new javax.swing.JButton();
         jButtonBack = new javax.swing.JButton();
         jButtonSearch = new javax.swing.JButton();
-        placeholderFieldSearch = new PlaceholderTextField("Pequise por nome ou contacto");
+        placeholderFieldSearch = new PlaceholderTextField("pesquise por nome ou contacto");
         jScrollPaneList = new javax.swing.JScrollPane();
         jTableList = new javax.swing.JTable();
         jLabelInformation = new javax.swing.JLabel();
@@ -93,7 +93,7 @@ public class HealthProfessionalList extends javax.swing.JFrame {
                 jButtonRegistActionPerformed(evt);
             }
         });
-        jPanelInformation.add(jButtonRegist, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 330, -1, -1));
+        jPanelInformation.add(jButtonRegist, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 330, -1, -1));
 
         jButtonBack.setText("Voltar");
         jButtonBack.addActionListener(new java.awt.event.ActionListener() {
@@ -101,7 +101,7 @@ public class HealthProfessionalList extends javax.swing.JFrame {
                 jButtonBackActionPerformed(evt);
             }
         });
-        jPanelInformation.add(jButtonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 330, -1, -1));
+        jPanelInformation.add(jButtonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 330, -1, -1));
 
         jButtonSearch.setText("Pesquisar");
         jButtonSearch.addActionListener(new java.awt.event.ActionListener() {
@@ -111,6 +111,7 @@ public class HealthProfessionalList extends javax.swing.JFrame {
         });
         jPanelInformation.add(jButtonSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 50, -1, -1));
 
+       
         placeholderFieldSearch.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 placeholderFieldSearchKeyPressed(evt);

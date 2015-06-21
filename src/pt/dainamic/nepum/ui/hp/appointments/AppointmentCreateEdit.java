@@ -82,7 +82,7 @@ public class AppointmentCreateEdit extends javax.swing.JFrame {
     private void comboChange() {
         jTextFieldPathology.setText(getSelectPat().getPathology());
     }
-    
+
     private void loadAppointToEdit(Appointment appoint) {
         try {
             Patient pat = patWS.getPatientById(appoint.getIdPatient());
@@ -175,7 +175,7 @@ public class AppointmentCreateEdit extends javax.swing.JFrame {
         jLabelwallpaper = new javax.swing.JLabel();
         jLabelwallpaper1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(705, 520));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -280,10 +280,19 @@ public class AppointmentCreateEdit extends javax.swing.JFrame {
     private void jButtonMakeAppointmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMakeAppointmentActionPerformed
         try {
             Appointment appt = loadAppointmentFromPanel();
-            String hourAppt = appt.getHour().split(":")[0];
+            String[] hourArr = appt.getHour().split(":");
+            String hour = hourArr[0];
+            if(hourArr[0].length()==1){
+                hour="0"+hourArr[0];
+            }
+            String min = hourArr[1];
+            if(hourArr[1].length()==1){
+                min="0"+hourArr[1];
+            }
+            appt.setHour(hour+":"+min);
             for (Appointment a : apptList) {
                 String hourA = a.getHour().split(":")[0];
-                if (a.getDate().equals(appt.getDate()) && hourA.equals(hourAppt)) {
+                if (a.getDate().equals(appt.getDate()) && hourA.equals(hour)) {
                     throw new RuntimeException("Já existe uma consulta marcada neste dia a esta hora");
                 }
                 if (a.getDate().equals(appt.getDate()) && a.getIdPatient() == appt.getIdPatient()) {
@@ -294,9 +303,17 @@ public class AppointmentCreateEdit extends javax.swing.JFrame {
 
             NotificationWS nWS = new NotificationWS();
             int idApp = Integer.parseInt(appWS.saveEditAppointment(appt).getMsg());
-            nWS.createEditNotification(new Notification(0, 0, idApp,
-                    0, (byte) 0, "Foi criada uma nova consulta!",
-                    (byte) 0, appt.getIdPatient(), appt.getIdHealthProfessional()));
+            
+            if (idApp != 0) {
+                nWS.createEditNotification(new Notification(0, 0, idApp,
+                        0, (byte) 0, "Foi criada uma nova consulta!",
+                        (byte) 0, appt.getIdPatient(), appt.getIdHealthProfessional()));
+            } else {
+                nWS.createEditNotification(new Notification(0, 0, appt.getIdAppointment(),
+                        0, (byte) 0, "Foi criada uma nova consulta!",
+                        (byte) 0, appt.getIdPatient(), appt.getIdHealthProfessional()));
+            }
+
             new Schedule().setVisible(true);
             dispose();
         } catch (Exception e) {

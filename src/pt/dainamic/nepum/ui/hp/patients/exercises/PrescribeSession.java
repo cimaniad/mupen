@@ -15,11 +15,13 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import org.apache.log4j.Logger;
 import pt.dainamic.nepum.model.Block;
+import pt.dainamic.nepum.model.Notification;
 import pt.dainamic.nepum.model.Patient;
 import pt.dainamic.nepum.model.Session;
 import pt.dainamic.nepum.ui.hp.patients.PatientProfile;
 import pt.dainamic.nepum.util.PlaceholderTextField;
 import pt.dainamic.nepum.ws.BlockWS;
+import pt.dainamic.nepum.ws.NotificationWS;
 import pt.dainamic.nepum.ws.SessionWS;
 
 /**
@@ -122,7 +124,7 @@ public class PrescribeSession extends javax.swing.JFrame {
         jScrollPaneList = new javax.swing.JScrollPane();
         jTableList = new javax.swing.JTable();
         jButtonSearch = new javax.swing.JButton();
-        jTextFieldSearch = new PlaceholderTextField("pesquise pelo nome do bloco");
+        jTextFieldSearch = new javax.swing.JTextField();
         jButtonDelete = new javax.swing.JButton();
         jButtonPrescribe = new javax.swing.JButton();
         jLabelDeadline = new javax.swing.JLabel();
@@ -130,7 +132,7 @@ public class PrescribeSession extends javax.swing.JFrame {
         jLabelInformation = new javax.swing.JLabel();
         jLabelwallpaper = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(705, 520));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -151,7 +153,7 @@ public class PrescribeSession extends javax.swing.JFrame {
                 jButtonRegistActionPerformed(evt);
             }
         });
-        jPanelInformation.add(jButtonRegist, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 160, 160, 40));
+        jPanelInformation.add(jButtonRegist, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 160, 180, 30));
 
         jButtonBack.setText("Voltar");
         jButtonBack.addActionListener(new java.awt.event.ActionListener() {
@@ -159,7 +161,7 @@ public class PrescribeSession extends javax.swing.JFrame {
                 jButtonBackActionPerformed(evt);
             }
         });
-        jPanelInformation.add(jButtonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 280, 160, 40));
+        jPanelInformation.add(jButtonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 280, 180, 30));
 
         jTableList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -226,7 +228,7 @@ public class PrescribeSession extends javax.swing.JFrame {
                 jButtonDeleteActionPerformed(evt);
             }
         });
-        jPanelInformation.add(jButtonDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 220, 160, 40));
+        jPanelInformation.add(jButtonDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 220, 180, 30));
 
         jButtonPrescribe.setText("Prescrever");
         jButtonPrescribe.addActionListener(new java.awt.event.ActionListener() {
@@ -234,7 +236,7 @@ public class PrescribeSession extends javax.swing.JFrame {
                 jButtonPrescribeActionPerformed(evt);
             }
         });
-        jPanelInformation.add(jButtonPrescribe, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 100, 160, 40));
+        jPanelInformation.add(jButtonPrescribe, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 100, 180, 30));
 
         jLabelDeadline.setText("Data limite:");
         jPanelInformation.add(jLabelDeadline, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, -1, 20));
@@ -292,7 +294,12 @@ public class PrescribeSession extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(PrescribeSession.this, "Nenhum bloco selecionado", "Erro Bloco", JOptionPane.ERROR_MESSAGE);
         }else{
             try{
-        sWS.saveSession(loadSession());
+       int idSession= Integer.parseInt(sWS.saveSession(loadSession()).getMsg());
+        
+       NotificationWS nWS = new NotificationWS();
+            nWS.createEditNotification(new Notification(0, 0, 0,
+                    idSession, (byte) 0, "Foi-lhe prescrita uma sessão! ",
+                    (byte) 0, p.getIdPatient(), idHP));
             }catch (Exception e){
                 log.error(e.getMessage());
                  JOptionPane.showMessageDialog(PrescribeSession.this, e.getMessage(), "Erro Bloco", JOptionPane.ERROR_MESSAGE);
@@ -344,6 +351,6 @@ public class PrescribeSession extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelWallpaper;
     private javax.swing.JScrollPane jScrollPaneList;
     private javax.swing.JTable jTableList;
-    private PlaceholderTextField jTextFieldSearch;
+    private javax.swing.JTextField jTextFieldSearch;
     // End of variables declaration//GEN-END:variables
 }

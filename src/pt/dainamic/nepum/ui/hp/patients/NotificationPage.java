@@ -10,9 +10,14 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import org.apache.log4j.Logger;
+import pt.dainamic.nepum.model.Comment;
 import pt.dainamic.nepum.model.Notification;
 import pt.dainamic.nepum.model.Patient;
 import pt.dainamic.nepum.ui.hp.appointments.FEAppointment;
+import pt.dainamic.nepum.ui.hp.patients.exercises.ExerciseInterface;
+import pt.dainamic.nepum.ws.CommentWS;
+import pt.dainamic.nepum.ws.ExerciseWS;
+import pt.dainamic.nepum.ws.NotificationWS;
 import pt.dainamic.nepum.ws.PatientWS;
 
 /**
@@ -28,6 +33,8 @@ public class NotificationPage extends javax.swing.JFrame {
     private List<Patient> pList;
     private PatientWS pWS;
     private PatientsList p;
+    private NotificationWS nWS;
+    private CommentWS cmWS;
 
     /**
      * Creates new form NotificationPage
@@ -37,6 +44,8 @@ public class NotificationPage extends javax.swing.JFrame {
             this.p = pa;
             nList = notifications;
             pWS = new PatientWS();
+            cmWS = new CommentWS();
+            nWS = new NotificationWS();
             pList = pWS.getPatientsByHealthProfessional(idHealthProfessional);
             initComponents();
             drawTable();
@@ -52,6 +61,7 @@ public class NotificationPage extends javax.swing.JFrame {
         for (Notification n : nList) {
             tableModel.addRow(new Object[]{"->" + n.getDescription()});
         }
+
     }
 
     private void initializeTable() {
@@ -83,7 +93,7 @@ public class NotificationPage extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -126,15 +136,25 @@ public class NotificationPage extends javax.swing.JFrame {
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         if (evt.getClickCount() == 2) {
+
             if (getNotificationAtTable().getIdAppointment() != 0) {
                 new FEAppointment(getNotificationAtTable().getIdAppointment()).setVisible(true);
+
                 dispose();
                 p.dispose();
-            } else if(getNotificationAtTable().getIdSession()!=0){
+
+            } else if (getNotificationAtTable().getIdSession() != 0) {
                 new PatientProfile(pWS.getPatientById(getNotificationAtTable().getIdPatient())).setVisible(true);
-            }else if(getNotificationAtTable().getIdComment()!=0){
+
+            } else if (getNotificationAtTable().getIdComment() != 0) {
+                Comment c = cmWS.getComment(getNotificationAtTable().getIdComment());
+                ExerciseWS eWS = new ExerciseWS();
+                System.out.println(c.getIdExercise());
+                new ExerciseInterface(eWS.getExerciseById(c.getIdExercise()), c).setVisible(true);
+                dispose();
                 
             }
+            nWS.deleteNotification(getNotificationAtTable().getIdNotification());
         }
     }//GEN-LAST:event_jTable1MouseClicked
 

@@ -159,7 +159,7 @@ public class AdminProfile extends javax.swing.JFrame {
                 jButtonEditProfileActionPerformed(evt);
             }
         });
-        jPanelInformation.add(jButtonEditProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 330, -1, -1));
+        jPanelInformation.add(jButtonEditProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 330, -1, -1));
 
         jButtonBack.setText("Voltar");
         jButtonBack.addActionListener(new java.awt.event.ActionListener() {
@@ -167,42 +167,42 @@ public class AdminProfile extends javax.swing.JFrame {
                 jButtonBackActionPerformed(evt);
             }
         });
-        jPanelInformation.add(jButtonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 330, -1, -1));
+        jPanelInformation.add(jButtonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 330, -1, -1));
 
         jTextFieldName.setEditable(false);
-        jTextFieldName.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jTextFieldName.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jPanelInformation.add(jTextFieldName, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, 150, -1));
 
         jTextFieldBirthDate.setEditable(false);
-        jTextFieldBirthDate.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jTextFieldBirthDate.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jPanelInformation.add(jTextFieldBirthDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, 150, -1));
 
         jTextFieldEmail.setEditable(false);
-        jTextFieldEmail.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jTextFieldEmail.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jPanelInformation.add(jTextFieldEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 200, -1));
 
         jTextFieldAdress.setEditable(false);
-        jTextFieldAdress.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jTextFieldAdress.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jPanelInformation.add(jTextFieldAdress, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 410, -1));
 
         jTextFieldLastName.setEditable(false);
-        jTextFieldLastName.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jTextFieldLastName.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jPanelInformation.add(jTextFieldLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 50, 140, -1));
 
         jTextFieldBloodGroup.setEditable(false);
-        jTextFieldBloodGroup.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jTextFieldBloodGroup.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jPanelInformation.add(jTextFieldBloodGroup, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 170, 40, -1));
 
         jTextFieldNatio.setEditable(false);
-        jTextFieldNatio.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jTextFieldNatio.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jPanelInformation.add(jTextFieldNatio, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 80, 140, -1));
 
         jTextFieldNCC.setEditable(false);
-        jTextFieldNCC.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jTextFieldNCC.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jPanelInformation.add(jTextFieldNCC, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 140, 140, -1));
 
         jTextFieldNTel.setEditable(false);
-        jTextFieldNTel.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jTextFieldNTel.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jPanelInformation.add(jTextFieldNTel, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 150, -1));
 
         jLabelInformation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/backGround/second.jpg"))); // NOI18N

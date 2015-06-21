@@ -25,6 +25,7 @@ import pt.dainamic.nepum.model.Notification;
 import pt.dainamic.nepum.model.Patient;
 import pt.dainamic.nepum.ui.hp.appointments.FEAppointment;
 import pt.dainamic.nepum.util.JTableRenderer;
+import pt.dainamic.nepum.util.PlaceholderTextField;
 import pt.dainamic.nepum.ws.NotificationWS;
 import pt.dainamic.nepum.ws.PatientWS;
 
@@ -80,11 +81,11 @@ public class PatientsList extends javax.swing.JFrame {
         jScrollPaneList = new javax.swing.JScrollPane();
         jTableList = new javax.swing.JTable();
         jButtonSearch = new javax.swing.JButton();
-        jTextFieldSearch = new javax.swing.JTextField();
+         jTextFieldSearch = new javax.swing.JTextField();
         jLabelInformation = new javax.swing.JLabel();
         jLabelwallpaper = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(705, 520));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -105,7 +106,7 @@ public class PatientsList extends javax.swing.JFrame {
                 jButtonRegistActionPerformed(evt);
             }
         });
-        jPanelInformation.add(jButtonRegist, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 330, -1, -1));
+        jPanelInformation.add(jButtonRegist, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 330, -1, -1));
 
         jButtonBack.setText("Voltar");
         jButtonBack.addActionListener(new java.awt.event.ActionListener() {
@@ -113,7 +114,7 @@ public class PatientsList extends javax.swing.JFrame {
                 jButtonBackActionPerformed(evt);
             }
         });
-        jPanelInformation.add(jButtonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 330, -1, -1));
+        jPanelInformation.add(jButtonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 330, -1, -1));
 
         jTableList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -196,9 +197,9 @@ public class PatientsList extends javax.swing.JFrame {
             dispose();
         }
 
-            if (!getPatientAtTable().getNotifications().isEmpty() && evt.getClickCount() == 1
-                    && jTableList.getSelectedColumn() == 3) {
-                new NotificationPage(getPatientAtTable().getNotifications(),this).setVisible(true);
+        if (!getPatientAtTable().getNotifications().isEmpty() && evt.getClickCount() == 1
+                && jTableList.getSelectedColumn() == 3) {
+            new NotificationPage(getPatientAtTable().getNotifications(), this).setVisible(true);
 
         }
 
@@ -234,7 +235,7 @@ public class PatientsList extends javax.swing.JFrame {
                 ImageIcon icon;
                 int notifications = 0;
                 for (Notification n : nList) {
-                    if (n.getIdPatient() == p.getIdPatient() && n.getSaw() == 0) {
+                    if (n.getIdPatient() == p.getIdPatient()) {
                         ++notifications;
                         if (notifications == 1) {
                             icon = new ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/icons/notificação laranja SF.PNG"));
@@ -344,6 +345,7 @@ public class PatientsList extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPaneList;
     private javax.swing.JTable jTableList;
     private javax.swing.JTextField jTextFieldSearch;
+	private PlaceholderTextField placeholderFieldSearch;
     // End of variables declaration//GEN-END:variables
 
     private Object ImageIcon(Image scaledInstance) {

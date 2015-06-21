@@ -9,7 +9,6 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import javax.swing.JPasswordField;
-import javax.swing.text.Document;
 
 @SuppressWarnings("serial")
 public class PlaceholderPassField extends JPasswordField {
@@ -29,8 +28,12 @@ public class PlaceholderPassField extends JPasswordField {
     @Override
     protected void paintComponent(final Graphics pG) {
         super.paintComponent(pG);
-
-        if (placeholder.length() == 0 || getText().length() > 0) {
+        int t=0;
+        for(char c: getPassword()){
+            t++;
+        }
+        
+        if (placeholder.length() == 0 || t > 0) {
             return;
         }
 

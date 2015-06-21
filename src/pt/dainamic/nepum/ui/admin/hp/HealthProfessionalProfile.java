@@ -179,7 +179,7 @@ public class HealthProfessionalProfile extends javax.swing.JFrame {
                 jButtonBackActionPerformed(evt);
             }
         });
-        jPanelInformation.add(jButtonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 330, -1, -1));
+        jPanelInformation.add(jButtonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 320, -1, -1));
 
         jCheckBoxDevelopmentProfessional.setText("Profissional de Desenvolvimento");
         jCheckBoxDevelopmentProfessional.addActionListener(new java.awt.event.ActionListener() {
@@ -190,23 +190,23 @@ public class HealthProfessionalProfile extends javax.swing.JFrame {
         jPanelInformation.add(jCheckBoxDevelopmentProfessional, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 230, 260, 40));
 
         jTextFieldnCChp.setEditable(false);
-        jTextFieldnCChp.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jTextFieldnCChp.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jPanelInformation.add(jTextFieldnCChp, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, 150, -1));
 
         jTextFieldTelhp.setEditable(false);
-        jTextFieldTelhp.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jTextFieldTelhp.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jPanelInformation.add(jTextFieldTelhp, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 150, -1));
 
         BirthDatehp.setEditable(false);
-        BirthDatehp.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        BirthDatehp.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jPanelInformation.add(BirthDatehp, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 150, -1));
 
         jTextFieldnamehp.setEditable(false);
-        jTextFieldnamehp.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jTextFieldnamehp.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jPanelInformation.add(jTextFieldnamehp, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, 150, 20));
 
         jTextFieldnifhp.setEditable(false);
-        jTextFieldnifhp.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jTextFieldnifhp.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jTextFieldnifhp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldnifhpActionPerformed(evt);
@@ -215,15 +215,15 @@ public class HealthProfessionalProfile extends javax.swing.JFrame {
         jPanelInformation.add(jTextFieldnifhp, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 150, -1));
 
         jTextFieldInstitutionhp.setEditable(false);
-        jTextFieldInstitutionhp.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jTextFieldInstitutionhp.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jPanelInformation.add(jTextFieldInstitutionhp, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 260, 150, -1));
 
         jTextFieldLastNamehp.setEditable(false);
-        jTextFieldLastNamehp.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jTextFieldLastNamehp.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jPanelInformation.add(jTextFieldLastNamehp, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 48, 150, -1));
 
         jTextFieldGenderhp.setEditable(false);
-        jTextFieldGenderhp.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jTextFieldGenderhp.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jTextFieldGenderhp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldGenderhpActionPerformed(evt);
@@ -232,19 +232,19 @@ public class HealthProfessionalProfile extends javax.swing.JFrame {
         jPanelInformation.add(jTextFieldGenderhp, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 150, -1));
 
         jTextFieldNationalityhp.setEditable(false);
-        jTextFieldNationalityhp.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jTextFieldNationalityhp.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jPanelInformation.add(jTextFieldNationalityhp, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 138, 150, -1));
 
         jTextFieldAdresshp.setEditable(false);
-        jTextFieldAdresshp.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jTextFieldAdresshp.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jPanelInformation.add(jTextFieldAdresshp, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 410, -1));
 
         jTextFieldMaritalStatehp.setEditable(false);
-        jTextFieldMaritalStatehp.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jTextFieldMaritalStatehp.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jPanelInformation.add(jTextFieldMaritalStatehp, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 170, 150, -1));
 
         jTextField11.setEditable(false);
-        jTextField11.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jTextField11.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jPanelInformation.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 200, 40, -1));
 
         jButtonEdit.setText("Promover/Despromover");
@@ -253,7 +253,7 @@ public class HealthProfessionalProfile extends javax.swing.JFrame {
                 jButtonEditActionPerformed(evt);
             }
         });
-        jPanelInformation.add(jButtonEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 330, -1, -1));
+        jPanelInformation.add(jButtonEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 320, -1, -1));
 
         jButtonDelete.setText("Eliminar");
         jButtonDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -261,10 +261,10 @@ public class HealthProfessionalProfile extends javax.swing.JFrame {
                 jButtonDeleteActionPerformed(evt);
             }
         });
-        jPanelInformation.add(jButtonDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 330, -1, -1));
+        jPanelInformation.add(jButtonDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 320, -1, -1));
 
         jTextFieldEmailhp.setEditable(false);
-        jTextFieldEmailhp.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jTextFieldEmailhp.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jPanelInformation.add(jTextFieldEmailhp, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 150, -1));
 
         jLabelInformation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/backGround/second.jpg"))); // NOI18N
