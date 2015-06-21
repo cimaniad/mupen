@@ -5,12 +5,14 @@
  */
 package pt.dainamic.nepum.ui.hp.patients;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
-import pt.dainamic.nepum.model.LoginSession;
+import javax.swing.table.DefaultTableModel;
+import org.apache.log4j.Logger;
 import pt.dainamic.nepum.model.Notification;
 import pt.dainamic.nepum.model.Patient;
-import pt.dainamic.nepum.ui.hp.HealthProfessionalMenu;
+import pt.dainamic.nepum.ui.hp.appointments.FEAppointment;
 import pt.dainamic.nepum.ws.PatientWS;
 
 /**
@@ -18,21 +20,53 @@ import pt.dainamic.nepum.ws.PatientWS;
  * @author Utilizador
  */
 public class NotificationPage extends javax.swing.JFrame {
-    
-    private PatientWS pWS;
+
+    private DefaultTableModel tableModel;
+    private Logger log = Logger.getLogger(Notification.class);
+    private int idHealthProfessional;
     private List<Notification> nList;
-    
+    private List<Patient> pList;
+    private PatientWS pWS;
+    private PatientsList p;
+
     /**
      * Creates new form NotificationPage
      */
-    public NotificationPage() {
-        
-            initComponents();
-            
+    public NotificationPage(ArrayList<Notification> notifications, PatientsList pa) {
+        try {
+            this.p = pa;
+            nList = notifications;
             pWS = new PatientWS();
-            
-            
-        
+            pList = pWS.getPatientsByHealthProfessional(idHealthProfessional);
+            initComponents();
+            drawTable();
+        } catch (Exception e) {
+            log.error(e.getMessage());
+            JOptionPane.showMessageDialog(NotificationPage.this, e.getMessage(),
+                    "Lista de Notiicações", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    private void drawTable() {
+        initializeTable();
+        for (Notification n : nList) {
+            tableModel.addRow(new Object[]{"->" + n.getDescription()});
+        }
+    }
+
+    private void initializeTable() {
+        tableModel = new DefaultTableModel() {
+            @Override
+            public boolean isCellEditable(int i, int i1) {
+                return false;
+            }
+        };
+        jTable1.setModel(tableModel);
+        tableModel.addColumn("Notificações");
+    }
+
+    public Notification getNotificationAtTable() {
+        return nList.get(jTable1.getSelectedRow());
     }
 
     /**
@@ -47,7 +81,6 @@ public class NotificationPage extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
-        jLabelTitle = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -59,12 +92,17 @@ public class NotificationPage extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Lista"
+
             }
         ));
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 400, 130));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 240));
 
         jButton1.setText("Voltar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -72,11 +110,7 @@ public class NotificationPage extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(293, 263, 90, 30));
-
-        jLabelTitle.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabelTitle.setText("Notificação");
-        getContentPane().add(jLabelTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 110, 20));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 260, 90, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/backGround/second.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
@@ -86,19 +120,31 @@ public class NotificationPage extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        if (evt.getClickCount() == 2) {
+            if (getNotificationAtTable().getIdAppointment() != 0) {
+                new FEAppointment(getNotificationAtTable().getIdAppointment()).setVisible(true);
+                dispose();
+                p.dispose();
+            } else if(getNotificationAtTable().getIdSession()!=0){
+                new PatientProfile(pWS.getPatientById(getNotificationAtTable().getIdPatient())).setVisible(true);
+            }else if(getNotificationAtTable().getIdComment()!=0){
+                
+            }
+        }
+    }//GEN-LAST:event_jTable1MouseClicked
 
     /**
      * @param args the command line arguments
      */
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabelTitle;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables

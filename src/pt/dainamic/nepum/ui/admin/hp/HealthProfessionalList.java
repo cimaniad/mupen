@@ -66,7 +66,7 @@ public class HealthProfessionalList extends javax.swing.JFrame {
         jButtonRegist = new javax.swing.JButton();
         jButtonBack = new javax.swing.JButton();
         jButtonSearch = new javax.swing.JButton();
-        placeholderFieldSearch = new PlaceholderTextField("");
+        placeholderFieldSearch = new PlaceholderTextField("Pequise por nome ou contacto");
         jScrollPaneList = new javax.swing.JScrollPane();
         jTableList = new javax.swing.JTable();
         jLabelInformation = new javax.swing.JLabel();
@@ -111,7 +111,6 @@ public class HealthProfessionalList extends javax.swing.JFrame {
         });
         jPanelInformation.add(jButtonSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 50, -1, -1));
 
-        placeholderFieldSearch.setPlaceholder("Pequise por nome ou contacto");
         placeholderFieldSearch.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 placeholderFieldSearchKeyPressed(evt);
@@ -241,6 +240,7 @@ public class HealthProfessionalList extends javax.swing.JFrame {
             }
         } catch (Exception ex) {
             log.error(ex.getMessage());
+            ex.printStackTrace();
             JOptionPane.showMessageDialog(HealthProfessionalList.this, "Erro ao carregar a tabela dos \nprofissionais de saude",
                     "Erro  Profissional de saude", JOptionPane.ERROR_MESSAGE);
         }

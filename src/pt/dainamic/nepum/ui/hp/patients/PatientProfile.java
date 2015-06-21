@@ -212,7 +212,7 @@ public class PatientProfile extends javax.swing.JFrame {
         jPanelInformation.add(jTextFieldNIF, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 150, -1));
 
         jTextFieldEmailp.setEditable(false);
-        jPanelInformation.add(jTextFieldEmailp, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, 150, -1));
+        jPanelInformation.add(jTextFieldEmailp, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, 190, -1));
 
         jTextFieldNumCCp.setEditable(false);
         jPanelInformation.add(jTextFieldNumCCp, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 170, 140, -1));

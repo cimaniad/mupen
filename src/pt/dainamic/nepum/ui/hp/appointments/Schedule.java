@@ -160,33 +160,33 @@ public class Schedule extends javax.swing.JFrame {
                 jButtonBackActionPerformed(evt);
             }
         });
-        jPanelInformation.add(jButtonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 340, -1, -1));
+        jPanelInformation.add(jButtonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 340, -1, -1));
 
-        jButtonMakeAppointment.setText("Marcar consulta");
+        jButtonMakeAppointment.setText("Marcar Consulta");
         jButtonMakeAppointment.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonMakeAppointmentActionPerformed(evt);
             }
         });
-        jPanelInformation.add(jButtonMakeAppointment, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 340, -1, -1));
+        jPanelInformation.add(jButtonMakeAppointment, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 340, -1, -1));
 
-        jButtonSeeEvent.setText("Ver consulta");
+        jButtonSeeEvent.setText("Ver Consulta");
         jButtonSeeEvent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonSeeEventActionPerformed(evt);
             }
         });
-        jPanelInformation.add(jButtonSeeEvent, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 340, -1, -1));
+        jPanelInformation.add(jButtonSeeEvent, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 340, -1, -1));
 
         jLabelAproved.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabelAproved.setForeground(new java.awt.Color(0, 204, 51));
-        jLabelAproved.setText("Consulta aprovada");
-        jPanelInformation.add(jLabelAproved, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, 130, -1));
+        jLabelAproved.setText("Consulta Aprovada");
+        jPanelInformation.add(jLabelAproved, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, 130, -1));
 
         jLabelUnAproved.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabelUnAproved.setForeground(new java.awt.Color(173, 0, 2));
-        jLabelUnAproved.setText("Consulta por aprovar");
-        jPanelInformation.add(jLabelUnAproved, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 290, -1, -1));
+        jLabelUnAproved.setText("Consulta por Aprovar ou Expirada");
+        jPanelInformation.add(jLabelUnAproved, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, -1, -1));
 
         jLabelInformation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/backGround/second.jpg"))); // NOI18N
         jPanelInformation.add(jLabelInformation, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 380));
@@ -194,7 +194,7 @@ public class Schedule extends javax.swing.JFrame {
         jPanelWallpaper.add(jPanelInformation, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 680, 380));
 
         jLabelwallpaper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/backGround/first.jpg"))); // NOI18N
-        jPanelWallpaper.add(jLabelwallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 500));
+        jPanelWallpaper.add(jLabelwallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         getContentPane().add(jPanelWallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 500));
 
@@ -228,24 +228,24 @@ public class Schedule extends javax.swing.JFrame {
         Date today = formatDate(Calendar.getInstance().getTime());
         if (selectDay.before(today)) {
 
-            jButtonMakeAppointment.setVisible(false);
+            jButtonMakeAppointment.setEnabled(false);
 
         } else {
 
-            jButtonMakeAppointment.setVisible(true);
+            jButtonMakeAppointment.setEnabled(true);
 
         }
         if (!apList.isEmpty()) {
             for (Appointment a : apList) {
                 if (selectDay.equals(dateParse(a.getDate()))) {
-                    jButtonSeeEvent.setVisible(true);
+                    jButtonSeeEvent.setEnabled(true);
                     return;
                 } else {
-                    jButtonSeeEvent.setVisible(false);
+                    jButtonSeeEvent.setEnabled(false);
                 }
             }
         } else {
-            jButtonSeeEvent.setVisible(false);
+            jButtonSeeEvent.setEnabled(false);
         }
 
     }//GEN-LAST:event_jCalendarPropertyChange

@@ -22,19 +22,19 @@ import pt.dainamic.nepum.model.Notification;
  * @author Utilizador
  */
 public class NotificationWS {
-    
+
     private WrapperWS wrapperWS;
     private CloseableHttpResponse responseWS;
     private Gson gson;
     private static Logger log = Logger.getLogger(AppointmentWS.class);
-    
-     public NotificationWS() {
+
+    public NotificationWS() {
         gson = new Gson();
         wrapperWS = WrapperWS.getWrapperWS();
 
     }
-     
- public List<Notification> getHPNotifications(int idHealthProfessional) {
+
+    public List<Notification> getHPNotifications(int idHealthProfessional) {
         List<Notification> nList = null;
 
         List<NameValuePair> params = new ArrayList<>();           //array com os params necessários para registar um terapeuta
@@ -51,7 +51,7 @@ public class NotificationWS {
                 throw new RuntimeException("Ocorreu um erro ao aceder aos dados da notificação");
             }
 
-            Type type = new TypeToken<List<Appointment>>() {
+            Type type = new TypeToken<List<Notification>>() {
             }.getType();  //tipo do para o qual queros retornar a responseWS Json
             nList = gson.fromJson(jsonResp, type);
 
@@ -60,21 +60,76 @@ public class NotificationWS {
             throw new RuntimeException(e.getMessage());
         }
         log.debug("\n\t Notification data access success");
-        log.debug("\n\tApoints : " + nList.toString());
+        log.debug("\n\tNotifications : " + nList.toString());
         return nList;
 
     }
- 
-  private List<NameValuePair> getAllParams(Notification a) {
+
+    public List<Notification> getNotificationsByIdPatient(int idPatient) {
+        List<Notification> nList = null;
+
+        List<NameValuePair> params = new ArrayList<>();           //array com os params necessários para registar um terapeuta
+        params.add(new BasicNameValuePair("idPatient", String.valueOf(idPatient)));
+        try {
+            responseWS = wrapperWS.sendRequest("Notification",
+                    "getNotificationsByIdPatient", params);    //efetua o pedido ao WS
+            String jsonResp = wrapperWS.readResponse(responseWS);         //Passa a responseWS para uma string
+
+            int httpResponseCod = responseWS.getStatusLine().getStatusCode();
+            if (httpResponseCod != 200) {
+                Validation v = gson.fromJson(jsonResp, Validation.class);    //Conversão do objecto Json para o objecto Java
+                log.error("\n\tCod: " + httpResponseCod + "\tMsg: " + v.getMsg());
+                throw new RuntimeException("Ocorreu um erro ao aceder aos dados da notificação");
+            }
+
+            Type type = new TypeToken<List<Notification>>() {
+            }.getType();  //tipo do para o qual queros retornar a responseWS Json
+            nList = gson.fromJson(jsonResp, type);
+
+        } catch (RuntimeException e) {
+            log.error("\n\t" + e.getMessage());
+            throw new RuntimeException(e.getMessage());
+        }
+        log.debug("\n\t Notification data access success");
+        log.debug("\n\tNotifications : " + nList.toString());
+        return nList;
+
+    }
+
+    public void createEditNotification(Notification n) {
+        try {
+            responseWS = wrapperWS.sendRequest("Notification",
+                    "createEditNotification", getAllParams(n));    //efetua o pedido ao WS
+            String validacao = wrapperWS.readResponse(responseWS);         //Passa a resposta para uma string
+
+            Validation v = gson.fromJson(validacao, Validation.class);    //Conversão do objecto Json para o objecto Java
+            int httpResponseCod = responseWS.getStatusLine().getStatusCode();
+            if (httpResponseCod != 201) {
+                log.error("\n\tError saving Notification: " + v.getMsg() + "\tCod:" + httpResponseCod);
+                log.error(v.getMsg());
+                throw new RuntimeException("Ocorreu um erro ao registar a Notificação");
+            }
+
+        } catch (RuntimeException e) {
+            log.error(e.getMessage());
+            throw new RuntimeException(e.getMessage());
+        }
+        log.debug("Notification saved with sucess");
+
+    }
+
+    private List<NameValuePair> getAllParams(Notification a) {
         List<NameValuePair> params = new ArrayList<>();           //array com os params necessários para registar um paciente
         params.add(new BasicNameValuePair("idNotification", String.valueOf(a.getIdNotification())));
         params.add(new BasicNameValuePair("idAppointment", String.valueOf(a.getIdAppointment())));
-        params.add(new BasicNameValuePair("saw", String.valueOf(a.isSaw())));
-        params.add(new BasicNameValuePair("sessionDescription", String.valueOf(a.getSessionDescription())));
-        params.add(new BasicNameValuePair("appointmentDescription", a.getAppointmentDescription()));
-        params.add(new BasicNameValuePair("patient", String.valueOf(a.isPatient())));
-        
+        params.add(new BasicNameValuePair("idSession", String.valueOf(a.getIdSession())));
+        params.add(new BasicNameValuePair("idPatient", String.valueOf(a.getIdPatient())));
+        params.add(new BasicNameValuePair("idHealthProfessional", String.valueOf(a.getIdHealthProfessional())));
+        params.add(new BasicNameValuePair("saw", String.valueOf(a.getSaw())));
+        params.add(new BasicNameValuePair("description", a.getDescription()));
+        params.add(new BasicNameValuePair("isPatientN", String.valueOf(a.getIsPatientN())));
+
         return params;
     }
-    
+
 }

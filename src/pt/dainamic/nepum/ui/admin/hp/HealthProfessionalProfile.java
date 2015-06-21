@@ -61,7 +61,13 @@ public class HealthProfessionalProfile extends javax.swing.JFrame {
         this.jTextFieldMaritalStatehp.setText(hp.getMaritalStatus());
         this.jTextFieldInstitutionhp.setText(hp.getInstitution());
         this.jTextField11.setText(hp.getBloodGroup());
-
+        System.out.println(hp.getDevelopmentProfessional());
+        if(hp.getDevelopmentProfessional() == 1){
+            this.jCheckBoxDevelopmentProfessional.setSelected(true);
+        }
+        else{
+            this.jCheckBoxDevelopmentProfessional.setSelected(false);
+        }
         if (hp.getPicture().equals("profile")) {
             ImageIcon pic = new ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/pics/profile.PNG"));
             jLabelPhoto.setIcon(new ImageIcon(pic.getImage().getScaledInstance(
@@ -134,11 +140,11 @@ public class HealthProfessionalProfile extends javax.swing.JFrame {
         jLabelBirthDate.setText(" Data de nascimento:");
         jPanelInformation.add(jLabelBirthDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, -1, 20));
 
-        jLabelTel.setText("  Nº Telemovel:");
-        jPanelInformation.add(jLabelTel, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 80, 20));
+        jLabelTel.setText("  Nº Tel:");
+        jPanelInformation.add(jLabelTel, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 50, 20));
 
         jLabelCC.setText("  Nº CC:");
-        jPanelInformation.add(jLabelCC, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 40, 20));
+        jPanelInformation.add(jLabelCC, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 60, 20));
 
         jLabelEmail.setText("    Email: ");
         jPanelInformation.add(jLabelEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 200, -1, 20));
@@ -147,7 +153,7 @@ public class HealthProfessionalProfile extends javax.swing.JFrame {
         jPanelInformation.add(jLabelLastName, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 50, 50, 20));
 
         jLabelGender.setText("    Sexo:");
-        jPanelInformation.add(jLabelGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 80, 40, 20));
+        jPanelInformation.add(jLabelGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 80, 50, 20));
 
         jLabelNationality.setText("  Nacionalidade:");
         jPanelInformation.add(jLabelNationality, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 90, 20));
@@ -175,8 +181,13 @@ public class HealthProfessionalProfile extends javax.swing.JFrame {
         });
         jPanelInformation.add(jButtonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 330, -1, -1));
 
-        jCheckBoxDevelopmentProfessional.setText("Profissional de desenvolvimento");
-        jPanelInformation.add(jCheckBoxDevelopmentProfessional, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 230, 180, -1));
+        jCheckBoxDevelopmentProfessional.setText("Profissional de Desenvolvimento");
+        jCheckBoxDevelopmentProfessional.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxDevelopmentProfessionalActionPerformed(evt);
+            }
+        });
+        jPanelInformation.add(jCheckBoxDevelopmentProfessional, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 230, 260, 40));
 
         jTextFieldnCChp.setEditable(false);
         jTextFieldnCChp.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -236,13 +247,13 @@ public class HealthProfessionalProfile extends javax.swing.JFrame {
         jTextField11.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jPanelInformation.add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 200, 40, -1));
 
-        jButtonEdit.setText("Editar");
+        jButtonEdit.setText("Promover/Despromover");
         jButtonEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonEditActionPerformed(evt);
             }
         });
-        jPanelInformation.add(jButtonEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 330, -1, -1));
+        jPanelInformation.add(jButtonEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 330, -1, -1));
 
         jButtonDelete.setText("Eliminar");
         jButtonDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -279,7 +290,16 @@ public class HealthProfessionalProfile extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonBackActionPerformed
 
     private void jButtonEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditActionPerformed
-        // TODO add your handling code here:
+        try {
+
+            HealthProfessionalWS hpWS = new HealthProfessionalWS();
+            hpWS.saveEditHealthProfessional(loadHealthProfessionalFromPanel());
+            new HealthProfessionalProfile(hp).setVisible(true);
+            dispose();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(HealthProfessionalProfile.this,
+                    e.getMessage(), "Erro ao promover/despromover o profissional", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_jButtonEditActionPerformed
 
     private void jButtonDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDeleteActionPerformed
@@ -302,7 +322,12 @@ public class HealthProfessionalProfile extends javax.swing.JFrame {
     private void jTextFieldGenderhpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldGenderhpActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldGenderhpActionPerformed
-private Image getImageFromServer(String picture, int with, int heigth) {
+
+    private void jCheckBoxDevelopmentProfessionalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxDevelopmentProfessionalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBoxDevelopmentProfessionalActionPerformed
+
+    private Image getImageFromServer(String picture, int with, int heigth) {
         try {
             URL url = new URL(picture.trim());
             log.debug("\n\tProfile Image: " + url.toString());
@@ -322,6 +347,12 @@ private Image getImageFromServer(String picture, int with, int heigth) {
         icons.add(new ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/logo.png")).getImage());
         icons.add(new ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/logo-icon.png")).getImage());
         setIconImages(icons);
+    }
+    
+    private HealthProfessional loadHealthProfessionalFromPanel() {
+        byte developmentPro = jCheckBoxDevelopmentProfessional.isSelected() ? (byte)1 : (byte)0;
+        hp.setDevelopmentProfessional(developmentPro);
+        return hp;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -13,63 +13,75 @@ public class Notification {
     
     private int idNotification;
     private int idAppointment;
-    private boolean saw;
-    private String sessionDescription;
-    private String appointmentDescription;
-    private boolean patient;
+    private int idSession;
+    private int idComment;
+    private byte saw;
+    private String description;
+    private byte isPatientN;
+    private int idPatient;
+    private int idHealthProfessional;
 
-    public Notification(int idNotification, int idAppointment, boolean saw, String sessionDescription, String appointmentDescription, boolean patient) {
+    public Notification(int idNotification, int idComment,int idAppointment, int idSession, byte saw, String description, byte isPatientN, int idPatient, int idHealthProfessional) {
         this.idNotification = idNotification;
         this.idAppointment = idAppointment;
+        this.idSession = idSession;
         this.saw = saw;
-        this.sessionDescription = sessionDescription;
-        this.appointmentDescription = appointmentDescription;
-        this.patient = patient;
+        this.description = description;
+        this.isPatientN = isPatientN;
+        this.idPatient = idPatient;
+        this.idHealthProfessional = idHealthProfessional;
     }
 
-    public String getSessionDescription() {
-        return sessionDescription;
+    public int getIdComment() {
+        return idComment;
     }
-
-    public void setSessionDescription(String sessionDescription) {
-        this.sessionDescription = sessionDescription;
-    }
-
-    public String getAppointmentDescription() {
-        return appointmentDescription;
-    }
-
-    public void setAppointmentDescription(String appointmentDescription) {
-        this.appointmentDescription = appointmentDescription;
-    }
-
-    public boolean isPatient() {
-        return patient;
-    }
-
-    public void setPatient(boolean patient) {
-        this.patient = patient;
-    }
-
-    
 
     public int getIdNotification() {
         return idNotification;
     }
 
-
     public int getIdAppointment() {
         return idAppointment;
     }
 
-    public boolean isSaw() {
+    public int getIdSession() {
+        return idSession;
+    }
+
+    public byte getSaw() {
         return saw;
     }
 
-    public void setSaw(boolean saw) {
+    public String getDescription() {
+        return description;
+    }
+
+    public byte getIsPatientN() {
+        return isPatientN;
+    }
+
+    public int getIdPatient() {
+        return idPatient;
+    }
+
+    public int getIdHealthProfessional() {
+        return idHealthProfessional;
+    }
+
+    public void setSaw(byte saw) {
         this.saw = saw;
     }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setIsPatientN(byte isPatientN) {
+        this.isPatientN = isPatientN;
+    }
     
+
+   
     
     
 }

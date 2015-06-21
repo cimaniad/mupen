@@ -191,7 +191,7 @@ public class PatientWS {
             int httpResponseCod = responseWS.getStatusLine().getStatusCode();
             if (httpResponseCod != 200) {
                 Validation v = gson.fromJson(jsonResp, Validation.class);    //Conversão do objecto Json para o objecto Java
-                log.error("\n\tCod: " + v.getCod() + "\tMsg: " + v.getMsg());
+                log.error("\n\tCod: " + httpResponseCod + "\tMsg: " + v.getMsg());
                 throw new RuntimeException("Ocorreu um erro ao aceder aos dados do Paciente");
             }
 

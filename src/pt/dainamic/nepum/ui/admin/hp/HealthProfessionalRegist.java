@@ -163,6 +163,11 @@ public class HealthProfessionalRegist extends javax.swing.JFrame {
         jComboBoxMaritalStatus.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Solteiro", "Casado", "Divorciado", "Viúvo" }));
         jPanelInformation.add(jComboBoxMaritalStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 200, 170, -1));
 
+        jTextFieldName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldNameActionPerformed(evt);
+            }
+        });
         jTextFieldName.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 jTextFieldNameKeyTyped(evt);
@@ -208,7 +213,7 @@ public class HealthProfessionalRegist extends javax.swing.JFrame {
         jPanelInformation.add(jTextFieldAdress, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, 430, -1));
 
         jCheckBoxDevelopmentProfessional.setText("Profissional de desenvolvimento");
-        jPanelInformation.add(jCheckBoxDevelopmentProfessional, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 230, 180, -1));
+        jPanelInformation.add(jCheckBoxDevelopmentProfessional, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 230, 220, -1));
 
         jComboBoxGender.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Masculino", "Feminino" }));
         jPanelInformation.add(jComboBoxGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 170, -1));
@@ -298,6 +303,10 @@ public class HealthProfessionalRegist extends javax.swing.JFrame {
         numberConsume(evt);
     }//GEN-LAST:event_jTextFieldInstitutionKeyTyped
 
+    private void jTextFieldNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldNameActionPerformed
+
     private void numberConsume(KeyEvent evt) {
         String numbers = "0123456789";
         if (numbers.contains(evt.getKeyChar() + "")) {
@@ -353,7 +362,7 @@ public class HealthProfessionalRegist extends javax.swing.JFrame {
         int numTel = 0;
         int numCC = 0;
         int nif = 0;
-        boolean developmentPro = jCheckBoxDevelopmentProfessional.isSelected() == true ? true : false;
+        byte developmentPro = jCheckBoxDevelopmentProfessional.isSelected() == true ? (byte)1 : (byte)0;
         try {
             if (jTextFieldTel.getText().trim().length() != 9) {
                 throw new RuntimeException("O NºTel deve ter 9 digitos!");

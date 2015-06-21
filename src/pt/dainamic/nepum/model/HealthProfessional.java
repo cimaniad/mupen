@@ -17,7 +17,7 @@ public class HealthProfessional extends User {
     private String maritalStatus;
     private String gender;
     private String institution;
-    private boolean developmentProfessional;
+    private byte developmentProfessional;
 
     /**
      * Metdo construtor por defeito
@@ -48,7 +48,7 @@ public class HealthProfessional extends User {
     public HealthProfessional(String name, String lastName, int numCC, String adress,
             int numTel, int nif, String email, String maritalStatus, String birthDate,
             String bloodGroup, String nacionality, String gender, String password,
-            String picture, String institution, boolean developmentProfessional) {
+            String picture, String institution, byte developmentProfessional) {
         super(name, lastName, numCC, picture, adress, numTel, email, birthDate, bloodGroup, nacionality, password);
         this.nif = nif;
         this.maritalStatus = maritalStatus;
@@ -94,13 +94,15 @@ public class HealthProfessional extends User {
         this.institution = institution;
     }
 
-    public boolean isDevelopmentProfessional() {
+    public byte getDevelopmentProfessional() {
         return developmentProfessional;
     }
 
-    public void setDevelopmentProfessional(boolean developmentProfessional) {
+    public void setDevelopmentProfessional(byte developmentProfessional) {
         this.developmentProfessional = developmentProfessional;
     }
+
+    
 
     /**
      * Reescrita do metodo toString

@@ -43,7 +43,7 @@ public class SessionWS {
 
             int httpResponseCod = responseWS.getStatusLine().getStatusCode();
             if (httpResponseCod != 201) {
-                log.error("\n\tCod: " + v.getCod() + "\tMsg: " + v.getMsg());
+                log.error("\n\tCod: " + httpResponseCod + "\tMsg: " + v.getMsg());
                 throw new RuntimeException("Ocorreu um erro ao prescrever sessão");
             }
 

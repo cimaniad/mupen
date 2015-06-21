@@ -13,70 +13,56 @@ package pt.dainamic.nepum.model;
 public class Exercise {
 
     private int idExercise;
-    private int idSubDomain;
-    private String designation;
-    private String structure;
+    private String description;
+    private int level;
     private String name;
     private String picture;
+    private int time;
+    private String domain;
+    private String subDomain;
 
-    public Exercise(int idExercise, int idSubDomain, String designation, String structure, String name, String picture) {
+    public Exercise(int idExercise, String description, int level, String name, String picture, int time, String domain, String subDomain) {
         this.idExercise = idExercise;
-        this.idSubDomain = idSubDomain;
-        this.designation = designation;
-        this.structure = structure;
+        this.description = description;
+        this.level = level;
         this.name = name;
         this.picture = picture;
+        this.time = time;
+        this.domain = domain;
+        this.subDomain = subDomain;
     }
-
 
     public int getIdExercise() {
         return idExercise;
     }
 
-
-    public int getIdSubDomain() {
-        return idSubDomain;
+    public String getDescription() {
+        return description;
     }
 
-    public void setIdSubdomain(int idSubdomain) {
-        this.idSubDomain = idSubdomain;
-    }
-
-    public String getDesignation() {
-        return designation;
-    }
-
-    public void setDesignation(String designation) {
-        this.designation = designation;
-    }
-
-    public String getStructure() {
-        return structure;
-    }
-
-    public void setStructure(String structure) {
-        this.structure = structure;
+    public int getLevel() {
+        return level;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getPicture() {
         return picture;
     }
 
-    public void setPicture(String picture) {
-        this.picture = picture;
+    public int getTime() {
+        return time;
     }
 
-    @Override
-    public String toString() {
-        return "Exercise{" + "idExercise=" + idExercise + ", idSubDomain=" + idSubDomain + ", designation=" + designation + ", structure=" + structure + ", name=" + name + ", picture=" + picture + '}';
+    public String getDomain() {
+        return domain;
     }
+
+    public String getSubDomain() {
+        return subDomain;
+    }
+
     
 }

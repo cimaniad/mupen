@@ -80,33 +80,33 @@
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="590" y="340" width="-1" height="-1"/>
+                  <AbsoluteConstraints x="320" y="340" width="-1" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
             <Component class="javax.swing.JButton" name="jButtonMakeAppointment">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Marcar consulta"/>
+                <Property name="text" type="java.lang.String" value="Marcar Consulta"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonMakeAppointmentActionPerformed"/>
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="350" y="340" width="-1" height="-1"/>
+                  <AbsoluteConstraints x="390" y="340" width="-1" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
             <Component class="javax.swing.JButton" name="jButtonSeeEvent">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Ver consulta"/>
+                <Property name="text" type="java.lang.String" value="Ver Consulta"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonSeeEventActionPerformed"/>
               </Events>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="480" y="340" width="-1" height="-1"/>
+                  <AbsoluteConstraints x="510" y="340" width="-1" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -118,11 +118,11 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="cc" red="0" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Consulta aprovada"/>
+                <Property name="text" type="java.lang.String" value="Consulta Aprovada"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="80" y="290" width="130" height="-1"/>
+                  <AbsoluteConstraints x="70" y="290" width="130" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -134,11 +134,11 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="2" green="0" red="ad" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Consulta por aprovar"/>
+                <Property name="text" type="java.lang.String" value="Consulta por Aprovar ou Expirada"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="300" y="290" width="-1" height="-1"/>
+                  <AbsoluteConstraints x="70" y="310" width="-1" height="-1"/>
                 </Constraint>
               </Constraints>
             </Component>

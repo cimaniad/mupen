@@ -15,8 +15,10 @@ import javax.swing.JOptionPane;
 import org.apache.log4j.Logger;
 import pt.dainamic.nepum.model.Appointment;
 import pt.dainamic.nepum.model.LoginSession;
+import pt.dainamic.nepum.model.Notification;
 import pt.dainamic.nepum.model.Patient;
 import pt.dainamic.nepum.ws.AppointmentWS;
+import pt.dainamic.nepum.ws.NotificationWS;
 import pt.dainamic.nepum.ws.PatientWS;
 
 /**
@@ -287,10 +289,14 @@ public class AppointmentCreateEdit extends javax.swing.JFrame {
                 if (a.getDate().equals(appt.getDate()) && a.getIdPatient() == appt.getIdPatient()) {
                     throw new RuntimeException("Só é possivel marcar uma consulta por dia para cada paciente. ");
                 }
-                
+
             }
 
-            appWS.saveEditAppointment(appt);
+            NotificationWS nWS = new NotificationWS();
+            int idApp = Integer.parseInt(appWS.saveEditAppointment(appt).getMsg());
+            nWS.createEditNotification(new Notification(0, 0, idApp,
+                    0, (byte) 0, "Foi criada uma nova consulta!",
+                    (byte) 0, appt.getIdPatient(), appt.getIdHealthProfessional()));
             new Schedule().setVisible(true);
             dispose();
         } catch (Exception e) {

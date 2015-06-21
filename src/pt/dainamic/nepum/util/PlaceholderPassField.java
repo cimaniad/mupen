@@ -16,28 +16,11 @@ public class PlaceholderPassField extends JPasswordField {
 
     private String placeholder;
 
-    public PlaceholderPassField() {
+    public PlaceholderPassField(String txt) {
+      super();
+      setPlaceholder(txt);
     }
 
-    public PlaceholderPassField(
-        final Document pDoc,
-        final String pText,
-        final int pColumns)
-    {
-        super(pDoc, pText, pColumns);
-    }
-
-    public PlaceholderPassField(final int pColumns) {
-        super(pColumns);
-    }
-
-    public PlaceholderPassField(final String pText) {
-        super(pText);
-    }
-
-    public PlaceholderPassField(final String pText, final int pColumns) {
-        super(pText, pColumns);
-    }
 
     public String getPlaceholder() {
         return placeholder;
@@ -60,7 +43,7 @@ public class PlaceholderPassField extends JPasswordField {
             .getMaxAscent() + getInsets().top);
     }
 
-    public void setPlaceholder(final String s) {
+    private void setPlaceholder(final String s) {
         placeholder = s;
     }
 

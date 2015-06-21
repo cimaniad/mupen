@@ -55,4 +55,29 @@ public class LoginWS {
         return session;
 
     }
+
+    public void getPassword(String email, int numCc) {
+
+        List<NameValuePair> p = new ArrayList<>();           //array com os params necessários para registar um terapeuta
+        p.add(new BasicNameValuePair("email", email));
+        p.add(new BasicNameValuePair("numCc", String.valueOf(numCc)));
+
+        try {
+            responseWS = wrapperWS.sendRequest("Login", "getPassword", p);    //efetua o pedido ao WS
+            String validacao = wrapperWS.readResponse(responseWS);         //Passa a resposta para uma string
+
+            Validation v = gson.fromJson(validacao, Validation.class);    //Conversão do objecto Json para o objecto Java
+            int httpResponseCod = responseWS.getStatusLine().getStatusCode();
+            if (httpResponseCod != 201) {
+                log.error("\n\tError recovering password: " + v.getMsg() + "\tCod:" + httpResponseCod);
+                log.error(v.getMsg());
+                throw new RuntimeException("Ocorreu um erro no pedido de password");
+            }
+
+        } catch (RuntimeException e) {
+            log.error(e.getMessage());
+            throw new RuntimeException(e.getMessage());
+        }
+        log.debug("Password recovered with sucess");
+    }
 }

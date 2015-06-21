@@ -21,8 +21,11 @@ import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 import org.apache.log4j.Logger;
 import pt.dainamic.nepum.model.LoginSession;
+import pt.dainamic.nepum.model.Notification;
 import pt.dainamic.nepum.model.Patient;
+import pt.dainamic.nepum.ui.hp.appointments.FEAppointment;
 import pt.dainamic.nepum.util.JTableRenderer;
+import pt.dainamic.nepum.ws.NotificationWS;
 import pt.dainamic.nepum.ws.PatientWS;
 
 /**
@@ -36,6 +39,8 @@ public class PatientsList extends javax.swing.JFrame {
     private PatientWS pWS;
     private int idHealthProfessional;
     private List<Patient> pList;
+    private List<Notification> nList;
+    private NotificationWS nWS;
 
     /**
      * Creates new form PatientesList
@@ -44,8 +49,10 @@ public class PatientsList extends javax.swing.JFrame {
         try {
             initComponents();
             setIcon();
+            nWS = new NotificationWS();
             pWS = new PatientWS();
             idHealthProfessional = LoginSession.getInstance().getIdHealthProfessional();
+            nList = nWS.getHPNotifications(idHealthProfessional);
             pList = pWS.getPatientsByHealthProfessional(idHealthProfessional);
             drawTable();
         } catch (Exception e) {
@@ -188,13 +195,14 @@ public class PatientsList extends javax.swing.JFrame {
             new PatientProfile(getPatientAtTable()).setVisible(true);
             dispose();
         }
-        
-        
-        if (getPatientAtTable().getNotification() == 1 && evt.getClickCount() == 1 && jTableList.getSelectedColumn()== 3) {
-            
-            new NotificationPage().setVisible(true);
+
+            if (!getPatientAtTable().getNotifications().isEmpty() && evt.getClickCount() == 1
+                    && jTableList.getSelectedColumn() == 3) {
+                new NotificationPage(getPatientAtTable().getNotifications(),this).setVisible(true);
+
         }
-        
+
+
     }//GEN-LAST:event_jTableListMouseClicked
 
     private void jTextFieldSearchKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_placeholderFieldSearchKeyPressed
@@ -221,38 +229,25 @@ public class PatientsList extends javax.swing.JFrame {
     private void drawTable() {
         try {
             initializeTable();
-            int width = jTableList.getColumnModel().getColumn(2).getWidth();
-            int height = 60;
-            
-        for (Patient p : pList) {
-                ImageIcon icon;
-                if(p.getNotification()== 1){
-                     icon = new ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/icons/notificação laranja SF.PNG"));
-                }else{ 
-                     icon = new ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/icons/mecanico.PNG"));
-                }
-                if (p.getPicture().equals("profile")) {
-                    ImageIcon pic = new ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/pics/profile.PNG"));
-                    
-                    
-                    tableModel.addRow(new Object[]{p.getName(), p.getLastName(),
-                        new ImageIcon(pic.getImage().getScaledInstance(width, height, Image.SCALE_DEFAULT)),
-                        
-                        new ImageIcon(icon.getImage().getScaledInstance(40, 40, Image.SCALE_DEFAULT))
-                    
-                    });
-                }else{
-                     
-                    tableModel.addRow(new Object[]{p.getName(), p.getLastName(),
-                        
-                        new ImageIcon(getImageFromServer(p.getPicture(), width, height)),
-                        
-                        new ImageIcon(icon.getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT))
-                        
-                    
-                    });
-                }
 
+            for (Patient p : pList) {
+                ImageIcon icon;
+                int notifications = 0;
+                for (Notification n : nList) {
+                    if (n.getIdPatient() == p.getIdPatient() && n.getSaw() == 0) {
+                        ++notifications;
+                        if (notifications == 1) {
+                            icon = new ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/icons/notificação laranja SF.PNG"));
+                            addRow(p, icon);
+                        }
+                        System.out.println(n.toString());
+                        p.addNotification(n);
+                    }
+                }
+                if (notifications == 0) {
+                    icon = new ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/icons/notificação cinza SF.PNG"));
+                    addRow(p, icon);
+                }
             }
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -262,7 +257,29 @@ public class PatientsList extends javax.swing.JFrame {
         }
     }
 
+    public void addRow(Patient p, ImageIcon icon) {
+        int width = jTableList.getColumnModel().getColumn(2).getWidth();
+        int height = 60;
+        if (p.getPicture().equals("profile")) {
+            ImageIcon pic = new ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/pics/profile.PNG"));
+
+            tableModel.addRow(new Object[]{p.getName(), p.getLastName(),
+                new ImageIcon(pic.getImage().getScaledInstance(width, height, Image.SCALE_DEFAULT)),
+                new ImageIcon(icon.getImage().getScaledInstance(40, 40, Image.SCALE_DEFAULT))
+
+            });
+        } else {
+
+            tableModel.addRow(new Object[]{p.getName(), p.getLastName(),
+                new ImageIcon(getImageFromServer(p.getPicture(), width, height)),
+                new ImageIcon(icon.getImage().getScaledInstance(40, 40, Image.SCALE_DEFAULT))
+
+            });
+        }
+    }
+
     private Patient getPatientAtTable() {
+
         return pList.get(jTableList.getSelectedRow());
     }
 

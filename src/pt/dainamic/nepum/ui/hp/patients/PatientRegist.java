@@ -241,7 +241,7 @@ public class PatientRegist extends javax.swing.JFrame {
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(PatientRegist.this,
-                    e.getMessage(), "Erro ao registar Patiente", JOptionPane.ERROR_MESSAGE);
+                    e.getMessage(), "Erro ao registar Paciente", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButtonRegistActionPerformed
 

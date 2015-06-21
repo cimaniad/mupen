@@ -1,0 +1,622 @@
+2015-06-19 21:44:36,653 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.WrapperWS.<init> 41 - Connection established with the WS
+2015-06-19 21:44:36,663 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.WrapperWS.sendRequest 72 - Request executed with sucess
+2015-06-19 21:44:36,673 DEBUG [AWT-EventQueue-0] - org.apache.http.client.protocol.RequestAddCookies.process 122 - CookieSpec selected: default
+2015-06-19 21:44:36,673 DEBUG [AWT-EventQueue-0] - org.apache.http.client.protocol.RequestAuthCache.process 76 - Auth cache not set in the context
+2015-06-19 21:44:36,673 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.requestConnection 249 - Connection request: [route: {}->http://dainamic.dsi.uminho.pt:80][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+2015-06-19 21:44:36,683 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.leaseConnection 282 - Connection leased: [id: 0][route: {}->http://dainamic.dsi.uminho.pt:80][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+2015-06-19 21:44:36,693 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 234 - Opening connection {}->http://dainamic.dsi.uminho.pt:80
+2015-06-19 21:44:36,693 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect 131 - Connecting to dainamic.dsi.uminho.pt/192.168.223.3:80
+2015-06-19 21:44:36,703 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect 138 - Connection established 172.26.64.55:50676<->192.168.223.3:80
+2015-06-19 21:44:36,703 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 255 - Executing request POST /api/ HTTP/1.1
+2015-06-19 21:44:36,703 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 260 - Target auth state: UNCHALLENGED
+2015-06-19 21:44:36,703 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 266 - Proxy auth state: UNCHALLENGED
+2015-06-19 21:44:36,703 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 124 - http-outgoing-0 >> POST /api/ HTTP/1.1
+2015-06-19 21:44:36,703 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Content-Length: 81
+2015-06-19 21:44:36,703 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+2015-06-19 21:44:36,703 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Host: dainamic.dsi.uminho.pt
+2015-06-19 21:44:36,703 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Connection: Keep-Alive
+2015-06-19 21:44:36,703 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.4 (Java 1.5 minimum; Java/1.8.0_25)
+2015-06-19 21:44:36,703 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Accept-Encoding: gzip,deflate
+2015-06-19 21:44:36,703 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "POST /api/ HTTP/1.1[\r][\n]"
+2015-06-19 21:44:36,703 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Content-Length: 81[\r][\n]"
+2015-06-19 21:44:36,703 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Content-Type: application/x-www-form-urlencoded; charset=UTF-8[\r][\n]"
+2015-06-19 21:44:36,703 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Host: dainamic.dsi.uminho.pt[\r][\n]"
+2015-06-19 21:44:36,703 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+2015-06-19 21:44:36,703 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.4 (Java 1.5 minimum; Java/1.8.0_25)[\r][\n]"
+2015-06-19 21:44:36,703 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+2015-06-19 21:44:36,703 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "[\r][\n]"
+2015-06-19 21:44:36,703 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 86 - http-outgoing-0 >> "email=tiagosold%40gmail.com&password=tiago123&object=Login&function=validateLogin"
+2015-06-19 21:44:36,713 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
+2015-06-19 21:44:36,713 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Date: Fri, 19 Jun 2015 20:44:36 GMT[\r][\n]"
+2015-06-19 21:44:36,713 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.1e-fips mod_fcgid/2.3.9 PHP/5.4.16[\r][\n]"
+2015-06-19 21:44:36,713 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "X-Powered-By: PHP/5.4.16[\r][\n]"
+2015-06-19 21:44:36,713 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Keep-Alive: timeout=5, max=100[\r][\n]"
+2015-06-19 21:44:36,713 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Connection: Keep-Alive[\r][\n]"
+2015-06-19 21:44:36,713 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Transfer-Encoding: chunked[\r][\n]"
+2015-06-19 21:44:36,713 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Content-Type: text/html; charset=UTF-8[\r][\n]"
+2015-06-19 21:44:36,713 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "[\r][\n]"
+2015-06-19 21:44:36,713 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "8f[\r][\n]"
+2015-06-19 21:44:36,713 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "{"msg":"validation success","error":false,"idHealthProfessional":"2","name":"Lelo","email":"tiagosold@gmail.com","developmentProfessional":"1"}[\r][\n]"
+2015-06-19 21:44:36,723 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "0[\r][\n]"
+2015-06-19 21:44:36,723 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "[\r][\n]"
+2015-06-19 21:44:36,723 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 113 - http-outgoing-0 << HTTP/1.1 200 OK
+2015-06-19 21:44:36,723 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Date: Fri, 19 Jun 2015 20:44:36 GMT
+2015-06-19 21:44:36,723 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.1e-fips mod_fcgid/2.3.9 PHP/5.4.16
+2015-06-19 21:44:36,723 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << X-Powered-By: PHP/5.4.16
+2015-06-19 21:44:36,723 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Keep-Alive: timeout=5, max=100
+2015-06-19 21:44:36,723 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Connection: Keep-Alive
+2015-06-19 21:44:36,723 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Transfer-Encoding: chunked
+2015-06-19 21:44:36,723 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Content-Type: text/html; charset=UTF-8
+2015-06-19 21:44:36,723 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 284 - Connection can be kept alive for 5000 MILLISECONDS
+2015-06-19 21:44:36,723 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.releaseConnection 314 - Connection [id: 0][route: {}->http://dainamic.dsi.uminho.pt:80] can be kept alive for 5.0 seconds
+2015-06-19 21:44:36,723 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.releaseConnection 320 - Connection released: [id: 0][route: {}->http://dainamic.dsi.uminho.pt:80][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+2015-06-19 21:44:36,733 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.WrapperWS.readResponse 99 - Response from server: {"msg":"validation success","error":false,"idHealthProfessional":"2","name":"Lelo","email":"tiagosold@gmail.com","developmentProfessional":"1"}
+2015-06-19 21:44:36,733 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.LoginWS.validateLogin 53 - 
+	login validation success
+2015-06-19 21:44:36,733 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.LoginWS.validateLogin 54 - 
+	 Admin with id 0/n Hp with id 2
+2015-06-19 21:44:38,775 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.WrapperWS.sendRequest 72 - Request executed with sucess
+2015-06-19 21:44:38,775 DEBUG [AWT-EventQueue-0] - org.apache.http.client.protocol.RequestAddCookies.process 122 - CookieSpec selected: default
+2015-06-19 21:44:38,775 DEBUG [AWT-EventQueue-0] - org.apache.http.client.protocol.RequestAuthCache.process 76 - Auth cache not set in the context
+2015-06-19 21:44:38,775 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.requestConnection 249 - Connection request: [route: {}->http://dainamic.dsi.uminho.pt:80][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+2015-06-19 21:44:38,775 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.leaseConnection 282 - Connection leased: [id: 0][route: {}->http://dainamic.dsi.uminho.pt:80][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+2015-06-19 21:44:38,775 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 255 - Executing request POST /api/ HTTP/1.1
+2015-06-19 21:44:38,775 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 260 - Target auth state: UNCHALLENGED
+2015-06-19 21:44:38,775 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 266 - Proxy auth state: UNCHALLENGED
+2015-06-19 21:44:38,775 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 124 - http-outgoing-0 >> POST /api/ HTTP/1.1
+2015-06-19 21:44:38,785 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Content-Length: 78
+2015-06-19 21:44:38,785 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+2015-06-19 21:44:38,785 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Host: dainamic.dsi.uminho.pt
+2015-06-19 21:44:38,785 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Connection: Keep-Alive
+2015-06-19 21:44:38,785 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.4 (Java 1.5 minimum; Java/1.8.0_25)
+2015-06-19 21:44:38,785 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Accept-Encoding: gzip,deflate
+2015-06-19 21:44:38,785 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "POST /api/ HTTP/1.1[\r][\n]"
+2015-06-19 21:44:38,785 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Content-Length: 78[\r][\n]"
+2015-06-19 21:44:38,785 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Content-Type: application/x-www-form-urlencoded; charset=UTF-8[\r][\n]"
+2015-06-19 21:44:38,785 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Host: dainamic.dsi.uminho.pt[\r][\n]"
+2015-06-19 21:44:38,785 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+2015-06-19 21:44:38,785 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.4 (Java 1.5 minimum; Java/1.8.0_25)[\r][\n]"
+2015-06-19 21:44:38,785 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+2015-06-19 21:44:38,785 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "[\r][\n]"
+2015-06-19 21:44:38,785 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 86 - http-outgoing-0 >> "idHealthProfessional=2&object=Patient&function=getPatientsByHealthProfessional"
+2015-06-19 21:44:38,795 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
+2015-06-19 21:44:38,795 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Date: Fri, 19 Jun 2015 20:44:39 GMT[\r][\n]"
+2015-06-19 21:44:38,795 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.1e-fips mod_fcgid/2.3.9 PHP/5.4.16[\r][\n]"
+2015-06-19 21:44:38,795 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "X-Powered-By: PHP/5.4.16[\r][\n]"
+2015-06-19 21:44:38,795 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Keep-Alive: timeout=5, max=99[\r][\n]"
+2015-06-19 21:44:38,795 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Connection: Keep-Alive[\r][\n]"
+2015-06-19 21:44:38,795 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Transfer-Encoding: chunked[\r][\n]"
+2015-06-19 21:44:38,795 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Content-Type: text/html; charset=UTF-8[\r][\n]"
+2015-06-19 21:44:38,795 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "[\r][\n]"
+2015-06-19 21:44:38,795 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "3cc[\r][\n]"
+2015-06-19 21:44:38,795 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "[{"0":"23","idPatient":"23","1":"2","idHealthProfessional":"2","2":"tiago_-ribeiro@hotmail.com","email":"tiago_-ribeiro@hotmail.com","3":"ola","password":"ola","4":"Tiago","name":"Tiago","5":"Ribeiro","lastName":"Ribeiro","6":"32145673","numCC":"32145673","7":"934716345","numTel":"934716345","8":"1990-10-30","birthDate":"1990-10-30","9":"masculino","gender":"masculino","10":"autista","pathology":"autista","11":"Portuguesa","nationality":"Portuguesa","12":"rua x, freguesia y, cidade z","adress":"rua x, freguesia y, cidade z","13":"273645128","nif":"273645128","14":"casado","maritalStatus":"casado","15":"A-","bloodGroup":"A-","16":"Este paciente apresenta um elevado defice de aten\u00e7\u00e3o.","description":"Este paciente apresenta um elevado defice de aten\u00e7\u00e3o.","17":"http:\/\/dainamic.dsi.uminho.pt\/api\/images\/Patients\/915318902.png","picture":"http:\/\/dainamic.dsi.uminho.pt\/api\/images\/Patients\/915318902.png","18":"0","notification":"0"},{[\r][\n]"
+2015-06-19 21:44:38,795 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "2f9[\r][\n]"
+2015-06-19 21:44:38,795 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << ""0":"25","idPatient":"25","1":"2","idHealthProfessional":"2","2":"manuel@gmail.com","email":"manuel@gmail.com","3":"CVIGVMZA","password":"CVIGVMZA","4":"Manuel ant\u00f3nio ","name":"Manuel ant\u00f3nio ","5":"Gon\u00e7alves Pedroso","lastName":"Gon\u00e7alves Pedroso","6":"43857635","numCC":"43857635","7":"921487634","numTel":"921487634","8":"1970-05-14","birthDate":"1970-05-14","9":"O+","gender":"O+","10":"Alzheimer","pathology":"Alzheimer","11":"","nationality":"","12":"","adress":"","13":"0","nif":"0","14":"Casado","maritalStatus":"Casado","15":"O+","bloodGroup":"O+","16":"Paciente com grande defice de aten\u00e7\u00e3o","description":"Paciente com grande defice de aten\u00e7\u00e3o","17":"profile","picture":"profile","18":"1","notification":"1"}][\r][\n]"
+2015-06-19 21:44:38,795 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "0[\r][\n]"
+2015-06-19 21:44:38,795 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "[\r][\n]"
+2015-06-19 21:44:38,795 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 113 - http-outgoing-0 << HTTP/1.1 200 OK
+2015-06-19 21:44:38,795 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Date: Fri, 19 Jun 2015 20:44:39 GMT
+2015-06-19 21:44:38,795 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.1e-fips mod_fcgid/2.3.9 PHP/5.4.16
+2015-06-19 21:44:38,795 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << X-Powered-By: PHP/5.4.16
+2015-06-19 21:44:38,795 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Keep-Alive: timeout=5, max=99
+2015-06-19 21:44:38,795 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Connection: Keep-Alive
+2015-06-19 21:44:38,795 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Transfer-Encoding: chunked
+2015-06-19 21:44:38,795 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Content-Type: text/html; charset=UTF-8
+2015-06-19 21:44:38,795 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 284 - Connection can be kept alive for 5000 MILLISECONDS
+2015-06-19 21:44:38,795 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.releaseConnection 314 - Connection [id: 0][route: {}->http://dainamic.dsi.uminho.pt:80] can be kept alive for 5.0 seconds
+2015-06-19 21:44:38,795 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.releaseConnection 320 - Connection released: [id: 0][route: {}->http://dainamic.dsi.uminho.pt:80][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+2015-06-19 21:44:38,795 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.WrapperWS.readResponse 99 - Response from server: [{"0":"23","idPatient":"23","1":"2","idHealthProfessional":"2","2":"tiago_-ribeiro@hotmail.com","email":"tiago_-ribeiro@hotmail.com","3":"ola","password":"ola","4":"Tiago","name":"Tiago","5":"Ribeiro","lastName":"Ribeiro","6":"32145673","numCC":"32145673","7":"934716345","numTel":"934716345","8":"1990-10-30","birthDate":"1990-10-30","9":"masculino","gender":"masculino","10":"autista","pathology":"autista","11":"Portuguesa","nationality":"Portuguesa","12":"rua x, freguesia y, cidade z","adress":"rua x, freguesia y, cidade z","13":"273645128","nif":"273645128","14":"casado","maritalStatus":"casado","15":"A-","bloodGroup":"A-","16":"Este paciente apresenta um elevado defice de aten\u00e7\u00e3o.","description":"Este paciente apresenta um elevado defice de aten\u00e7\u00e3o.","17":"http:\/\/dainamic.dsi.uminho.pt\/api\/images\/Patients\/915318902.png","picture":"http:\/\/dainamic.dsi.uminho.pt\/api\/images\/Patients\/915318902.png","18":"0","notification":"0"},{"0":"25","idPatient":"25","1":"2","idHealthProfessional":"2","2":"manuel@gmail.com","email":"manuel@gmail.com","3":"CVIGVMZA","password":"CVIGVMZA","4":"Manuel ant\u00f3nio ","name":"Manuel ant\u00f3nio ","5":"Gon\u00e7alves Pedroso","lastName":"Gon\u00e7alves Pedroso","6":"43857635","numCC":"43857635","7":"921487634","numTel":"921487634","8":"1970-05-14","birthDate":"1970-05-14","9":"O+","gender":"O+","10":"Alzheimer","pathology":"Alzheimer","11":"","nationality":"","12":"","adress":"","13":"0","nif":"0","14":"Casado","maritalStatus":"Casado","15":"O+","bloodGroup":"O+","16":"Paciente com grande defice de aten\u00e7\u00e3o","description":"Paciente com grande defice de aten\u00e7\u00e3o","17":"profile","picture":"profile","18":"1","notification":"1"}]
+2015-06-19 21:44:38,845 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.PatientWS.getPatientsByHealthProfessional 235 - 
+	Patient data access success
+2015-06-19 21:44:38,845 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.PatientWS.getPatientsByHealthProfessional 236 - 
+	Ps : [Patient{idPatient=23, name=Tiago, lastName=Ribeiro, numCC=32145673, adress=rua x, freguesia y, cidade z, numTel=934716345, nif=273645128, email=tiago_-ribeiro@hotmail.com, maritalStatus=casado, birthDate=1990-10-30, bloodGroup=A-, nationality=Portuguesa, gender=masculino, password=ola, pathology=autista, description=Este paciente apresenta um elevado defice de atenção., picture=http://dainamic.dsi.uminho.pt/api/images/Patients/915318902.png, idHealthProfessional=2}, Patient{idPatient=25, name=Manuel antónio , lastName=Gonçalves Pedroso, numCC=43857635, adress=, numTel=921487634, nif=0, email=manuel@gmail.com, maritalStatus=Casado, birthDate=1970-05-14, bloodGroup=O+, nationality=, gender=O+, password=CVIGVMZA, pathology=Alzheimer, description=Paciente com grande defice de atenção, picture=profile, idHealthProfessional=2}]
+2015-06-19 21:44:38,885 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ui.hp.patients.PatientsList.getImageFromServer 300 - http://dainamic.dsi.uminho.pt/api/images/Patients/915318902.png
+2015-06-19 22:10:09,709 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.WrapperWS.<init> 41 - Connection established with the WS
+2015-06-19 22:10:09,719 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.WrapperWS.sendRequest 72 - Request executed with sucess
+2015-06-19 22:10:09,729 DEBUG [AWT-EventQueue-0] - org.apache.http.client.protocol.RequestAddCookies.process 122 - CookieSpec selected: default
+2015-06-19 22:10:09,729 DEBUG [AWT-EventQueue-0] - org.apache.http.client.protocol.RequestAuthCache.process 76 - Auth cache not set in the context
+2015-06-19 22:10:09,739 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.requestConnection 249 - Connection request: [route: {}->http://dainamic.dsi.uminho.pt:80][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+2015-06-19 22:10:09,739 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.leaseConnection 282 - Connection leased: [id: 0][route: {}->http://dainamic.dsi.uminho.pt:80][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+2015-06-19 22:10:09,749 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 234 - Opening connection {}->http://dainamic.dsi.uminho.pt:80
+2015-06-19 22:10:09,749 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect 131 - Connecting to dainamic.dsi.uminho.pt/192.168.223.3:80
+2015-06-19 22:10:09,759 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect 138 - Connection established 172.26.64.55:50853<->192.168.223.3:80
+2015-06-19 22:10:09,759 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 255 - Executing request POST /api/ HTTP/1.1
+2015-06-19 22:10:09,759 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 260 - Target auth state: UNCHALLENGED
+2015-06-19 22:10:09,759 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 266 - Proxy auth state: UNCHALLENGED
+2015-06-19 22:10:09,759 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 124 - http-outgoing-0 >> POST /api/ HTTP/1.1
+2015-06-19 22:10:09,759 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Content-Length: 81
+2015-06-19 22:10:09,759 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+2015-06-19 22:10:09,759 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Host: dainamic.dsi.uminho.pt
+2015-06-19 22:10:09,759 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Connection: Keep-Alive
+2015-06-19 22:10:09,759 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.4 (Java 1.5 minimum; Java/1.8.0_25)
+2015-06-19 22:10:09,759 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Accept-Encoding: gzip,deflate
+2015-06-19 22:10:09,759 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "POST /api/ HTTP/1.1[\r][\n]"
+2015-06-19 22:10:09,759 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Content-Length: 81[\r][\n]"
+2015-06-19 22:10:09,759 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Content-Type: application/x-www-form-urlencoded; charset=UTF-8[\r][\n]"
+2015-06-19 22:10:09,759 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Host: dainamic.dsi.uminho.pt[\r][\n]"
+2015-06-19 22:10:09,759 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+2015-06-19 22:10:09,759 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.4 (Java 1.5 minimum; Java/1.8.0_25)[\r][\n]"
+2015-06-19 22:10:09,759 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+2015-06-19 22:10:09,759 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "[\r][\n]"
+2015-06-19 22:10:09,759 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 86 - http-outgoing-0 >> "email=tiagosold%40gmail.com&password=tiago123&object=Login&function=validateLogin"
+2015-06-19 22:10:09,769 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
+2015-06-19 22:10:09,769 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Date: Fri, 19 Jun 2015 21:10:10 GMT[\r][\n]"
+2015-06-19 22:10:09,769 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.1e-fips mod_fcgid/2.3.9 PHP/5.4.16[\r][\n]"
+2015-06-19 22:10:09,769 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "X-Powered-By: PHP/5.4.16[\r][\n]"
+2015-06-19 22:10:09,769 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Keep-Alive: timeout=5, max=100[\r][\n]"
+2015-06-19 22:10:09,769 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Connection: Keep-Alive[\r][\n]"
+2015-06-19 22:10:09,769 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Transfer-Encoding: chunked[\r][\n]"
+2015-06-19 22:10:09,769 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Content-Type: text/html; charset=UTF-8[\r][\n]"
+2015-06-19 22:10:09,769 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "[\r][\n]"
+2015-06-19 22:10:09,769 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "8f[\r][\n]"
+2015-06-19 22:10:09,769 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "{"msg":"validation success","error":false,"idHealthProfessional":"2","name":"Lelo","email":"tiagosold@gmail.com","developmentProfessional":"1"}[\r][\n]"
+2015-06-19 22:10:09,769 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "0[\r][\n]"
+2015-06-19 22:10:09,769 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "[\r][\n]"
+2015-06-19 22:10:09,779 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 113 - http-outgoing-0 << HTTP/1.1 200 OK
+2015-06-19 22:10:09,779 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Date: Fri, 19 Jun 2015 21:10:10 GMT
+2015-06-19 22:10:09,779 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.1e-fips mod_fcgid/2.3.9 PHP/5.4.16
+2015-06-19 22:10:09,779 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << X-Powered-By: PHP/5.4.16
+2015-06-19 22:10:09,779 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Keep-Alive: timeout=5, max=100
+2015-06-19 22:10:09,779 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Connection: Keep-Alive
+2015-06-19 22:10:09,779 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Transfer-Encoding: chunked
+2015-06-19 22:10:09,779 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Content-Type: text/html; charset=UTF-8
+2015-06-19 22:10:09,779 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 284 - Connection can be kept alive for 5000 MILLISECONDS
+2015-06-19 22:10:09,779 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.releaseConnection 314 - Connection [id: 0][route: {}->http://dainamic.dsi.uminho.pt:80] can be kept alive for 5.0 seconds
+2015-06-19 22:10:09,779 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.releaseConnection 320 - Connection released: [id: 0][route: {}->http://dainamic.dsi.uminho.pt:80][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+2015-06-19 22:10:09,779 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.WrapperWS.readResponse 99 - Response from server: {"msg":"validation success","error":false,"idHealthProfessional":"2","name":"Lelo","email":"tiagosold@gmail.com","developmentProfessional":"1"}
+2015-06-19 22:10:09,789 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.LoginWS.validateLogin 53 - 
+	login validation success
+2015-06-19 22:10:09,789 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.LoginWS.validateLogin 54 - 
+	 Admin with id 0/n Hp with id 2
+2015-06-19 22:10:13,350 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.WrapperWS.sendRequest 72 - Request executed with sucess
+2015-06-19 22:10:13,350 DEBUG [AWT-EventQueue-0] - org.apache.http.client.protocol.RequestAddCookies.process 122 - CookieSpec selected: default
+2015-06-19 22:10:13,350 DEBUG [AWT-EventQueue-0] - org.apache.http.client.protocol.RequestAuthCache.process 76 - Auth cache not set in the context
+2015-06-19 22:10:13,350 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.requestConnection 249 - Connection request: [route: {}->http://dainamic.dsi.uminho.pt:80][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+2015-06-19 22:10:13,350 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.leaseConnection 282 - Connection leased: [id: 0][route: {}->http://dainamic.dsi.uminho.pt:80][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+2015-06-19 22:10:13,350 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 255 - Executing request POST /api/ HTTP/1.1
+2015-06-19 22:10:13,350 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 260 - Target auth state: UNCHALLENGED
+2015-06-19 22:10:13,350 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 266 - Proxy auth state: UNCHALLENGED
+2015-06-19 22:10:13,350 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 124 - http-outgoing-0 >> POST /api/ HTTP/1.1
+2015-06-19 22:10:13,350 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Content-Length: 78
+2015-06-19 22:10:13,350 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+2015-06-19 22:10:13,350 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Host: dainamic.dsi.uminho.pt
+2015-06-19 22:10:13,350 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Connection: Keep-Alive
+2015-06-19 22:10:13,360 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.4 (Java 1.5 minimum; Java/1.8.0_25)
+2015-06-19 22:10:13,360 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Accept-Encoding: gzip,deflate
+2015-06-19 22:10:13,360 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "POST /api/ HTTP/1.1[\r][\n]"
+2015-06-19 22:10:13,360 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Content-Length: 78[\r][\n]"
+2015-06-19 22:10:13,360 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Content-Type: application/x-www-form-urlencoded; charset=UTF-8[\r][\n]"
+2015-06-19 22:10:13,360 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Host: dainamic.dsi.uminho.pt[\r][\n]"
+2015-06-19 22:10:13,360 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+2015-06-19 22:10:13,360 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.4 (Java 1.5 minimum; Java/1.8.0_25)[\r][\n]"
+2015-06-19 22:10:13,360 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+2015-06-19 22:10:13,360 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "[\r][\n]"
+2015-06-19 22:10:13,360 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 86 - http-outgoing-0 >> "idHealthProfessional=2&object=Patient&function=getPatientsByHealthProfessional"
+2015-06-19 22:10:13,870 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
+2015-06-19 22:10:13,870 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Date: Fri, 19 Jun 2015 21:10:13 GMT[\r][\n]"
+2015-06-19 22:10:13,870 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.1e-fips mod_fcgid/2.3.9 PHP/5.4.16[\r][\n]"
+2015-06-19 22:10:13,870 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "X-Powered-By: PHP/5.4.16[\r][\n]"
+2015-06-19 22:10:13,870 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Keep-Alive: timeout=5, max=99[\r][\n]"
+2015-06-19 22:10:13,870 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Connection: Keep-Alive[\r][\n]"
+2015-06-19 22:10:13,870 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Transfer-Encoding: chunked[\r][\n]"
+2015-06-19 22:10:13,870 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Content-Type: text/html; charset=UTF-8[\r][\n]"
+2015-06-19 22:10:13,870 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "[\r][\n]"
+2015-06-19 22:10:13,870 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "6c5[\r][\n]"
+2015-06-19 22:10:13,870 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "[{"0":"23","idPatient":"23","1":"2","idHealthProfessional":"2","2":"tiago_-ribeiro@hotmail.com","email":"tiago_-ribeiro@hotmail.com","3":"ola","password":"ola","4":"Tiago","name":"Tiago","5":"Ribeiro","lastName":"Ribeiro","6":"32145673","numCC":"32145673","7":"934716345","numTel":"934716345","8":"1990-10-30","birthDate":"1990-10-30","9":"masculino","gender":"masculino","10":"autista","pathology":"autista","11":"Portuguesa","nationality":"Portuguesa","12":"rua x, freguesia y, cidade z","adress":"rua x, freguesia y, cidade z","13":"273645128","nif":"273645128","14":"casado","maritalStatus":"casado","15":"A-","bloodGroup":"A-","16":"Este paciente apresenta um elevado defice de aten\u00e7\u00e3o.","description":"Este paciente apresenta um elevado defice de aten\u00e7\u00e3o.","17":"http:\/\/dainamic.dsi.uminho.pt\/api\/images\/Patients\/915318902.png","picture":"http:\/\/dainamic.dsi.uminho.pt\/api\/images\/Patients\/915318902.png","18":"0","notification":"0"},{"0":"25","idPatient":"25","1":"2","idHealthProfessional":"2","2":"manuel@gmail.com","email":"manuel@gmail.com","3":"CVIGVMZA","password":"CVIGVMZA","4":"Manuel ant\u00f3nio ","name":"Manuel ant\u00f3nio ","5":"Gon\u00e7alves Pedroso","lastName":"Gon\u00e7alves Pedroso","6":"43857635","numCC":"43857635","7":"921487634","numTel":"921487634","8":"1970-05-14","birthDate":"1970-05-14","9":"O+","gender":"O+","10":"Alzheimer","pathology":"Alzheimer","11":"","nationality":"","12":"","adress":"","13":"0","nif":"0","14":"Casado","maritalStatus":"Casado","15":"O+","bloodGroup":"O+","16":"Paciente com grande defice de aten\u00e7\u00e3o","description":"Paciente com grande defice de aten\u00e7\u00e3o","17":"profile","picture":"profile","18":"1","notification":"1"}][\r][\n]"
+2015-06-19 22:10:13,870 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "0[\r][\n]"
+2015-06-19 22:10:13,870 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "[\r][\n]"
+2015-06-19 22:10:13,870 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 113 - http-outgoing-0 << HTTP/1.1 200 OK
+2015-06-19 22:10:13,870 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Date: Fri, 19 Jun 2015 21:10:13 GMT
+2015-06-19 22:10:13,870 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.1e-fips mod_fcgid/2.3.9 PHP/5.4.16
+2015-06-19 22:10:13,870 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << X-Powered-By: PHP/5.4.16
+2015-06-19 22:10:13,870 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Keep-Alive: timeout=5, max=99
+2015-06-19 22:10:13,870 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Connection: Keep-Alive
+2015-06-19 22:10:13,870 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Transfer-Encoding: chunked
+2015-06-19 22:10:13,880 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Content-Type: text/html; charset=UTF-8
+2015-06-19 22:10:13,880 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 284 - Connection can be kept alive for 5000 MILLISECONDS
+2015-06-19 22:10:13,880 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.releaseConnection 314 - Connection [id: 0][route: {}->http://dainamic.dsi.uminho.pt:80] can be kept alive for 5.0 seconds
+2015-06-19 22:10:13,880 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.releaseConnection 320 - Connection released: [id: 0][route: {}->http://dainamic.dsi.uminho.pt:80][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+2015-06-19 22:10:13,880 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.WrapperWS.readResponse 99 - Response from server: [{"0":"23","idPatient":"23","1":"2","idHealthProfessional":"2","2":"tiago_-ribeiro@hotmail.com","email":"tiago_-ribeiro@hotmail.com","3":"ola","password":"ola","4":"Tiago","name":"Tiago","5":"Ribeiro","lastName":"Ribeiro","6":"32145673","numCC":"32145673","7":"934716345","numTel":"934716345","8":"1990-10-30","birthDate":"1990-10-30","9":"masculino","gender":"masculino","10":"autista","pathology":"autista","11":"Portuguesa","nationality":"Portuguesa","12":"rua x, freguesia y, cidade z","adress":"rua x, freguesia y, cidade z","13":"273645128","nif":"273645128","14":"casado","maritalStatus":"casado","15":"A-","bloodGroup":"A-","16":"Este paciente apresenta um elevado defice de aten\u00e7\u00e3o.","description":"Este paciente apresenta um elevado defice de aten\u00e7\u00e3o.","17":"http:\/\/dainamic.dsi.uminho.pt\/api\/images\/Patients\/915318902.png","picture":"http:\/\/dainamic.dsi.uminho.pt\/api\/images\/Patients\/915318902.png","18":"0","notification":"0"},{"0":"25","idPatient":"25","1":"2","idHealthProfessional":"2","2":"manuel@gmail.com","email":"manuel@gmail.com","3":"CVIGVMZA","password":"CVIGVMZA","4":"Manuel ant\u00f3nio ","name":"Manuel ant\u00f3nio ","5":"Gon\u00e7alves Pedroso","lastName":"Gon\u00e7alves Pedroso","6":"43857635","numCC":"43857635","7":"921487634","numTel":"921487634","8":"1970-05-14","birthDate":"1970-05-14","9":"O+","gender":"O+","10":"Alzheimer","pathology":"Alzheimer","11":"","nationality":"","12":"","adress":"","13":"0","nif":"0","14":"Casado","maritalStatus":"Casado","15":"O+","bloodGroup":"O+","16":"Paciente com grande defice de aten\u00e7\u00e3o","description":"Paciente com grande defice de aten\u00e7\u00e3o","17":"profile","picture":"profile","18":"1","notification":"1"}]
+2015-06-19 22:10:13,890 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.PatientWS.getPatientsByHealthProfessional 235 - 
+	Patient data access success
+2015-06-19 22:10:13,890 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.PatientWS.getPatientsByHealthProfessional 236 - 
+	Ps : [Patient{idPatient=23, name=Tiago, lastName=Ribeiro, numCC=32145673, adress=rua x, freguesia y, cidade z, numTel=934716345, nif=273645128, email=tiago_-ribeiro@hotmail.com, maritalStatus=casado, birthDate=1990-10-30, bloodGroup=A-, nationality=Portuguesa, gender=masculino, password=ola, pathology=autista, description=Este paciente apresenta um elevado defice de atenção., picture=http://dainamic.dsi.uminho.pt/api/images/Patients/915318902.png, idHealthProfessional=2}, Patient{idPatient=25, name=Manuel antónio , lastName=Gonçalves Pedroso, numCC=43857635, adress=, numTel=921487634, nif=0, email=manuel@gmail.com, maritalStatus=Casado, birthDate=1970-05-14, bloodGroup=O+, nationality=, gender=O+, password=CVIGVMZA, pathology=Alzheimer, description=Paciente com grande defice de atenção, picture=profile, idHealthProfessional=2}]
+2015-06-19 22:10:13,910 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ui.hp.patients.PatientsList.getImageFromServer 301 - http://dainamic.dsi.uminho.pt/api/images/Patients/915318902.png
+2015-06-19 22:13:28,804 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.WrapperWS.sendRequest 72 - Request executed with sucess
+2015-06-19 22:13:28,804 DEBUG [AWT-EventQueue-0] - org.apache.http.client.protocol.RequestAddCookies.process 122 - CookieSpec selected: default
+2015-06-19 22:13:28,804 DEBUG [AWT-EventQueue-0] - org.apache.http.client.protocol.RequestAuthCache.process 76 - Auth cache not set in the context
+2015-06-19 22:13:28,804 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.requestConnection 249 - Connection request: [route: {}->http://dainamic.dsi.uminho.pt:80][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+2015-06-19 22:13:28,814 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.CPool.isExpired 81 - Connection [id:0][route:{}->http://dainamic.dsi.uminho.pt:80][state:null] expired @ Fri Jun 19 22:10:18 BST 2015
+2015-06-19 22:13:28,814 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.DefaultManagedHttpClientConnection.close 79 - http-outgoing-0: Close connection
+2015-06-19 22:13:28,814 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.leaseConnection 282 - Connection leased: [id: 1][route: {}->http://dainamic.dsi.uminho.pt:80][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+2015-06-19 22:13:28,814 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 234 - Opening connection {}->http://dainamic.dsi.uminho.pt:80
+2015-06-19 22:13:28,814 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect 131 - Connecting to dainamic.dsi.uminho.pt/192.168.223.3:80
+2015-06-19 22:13:28,814 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect 138 - Connection established 172.26.64.55:50872<->192.168.223.3:80
+2015-06-19 22:13:28,814 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 255 - Executing request POST /api/ HTTP/1.1
+2015-06-19 22:13:28,814 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 260 - Target auth state: UNCHALLENGED
+2015-06-19 22:13:28,814 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 266 - Proxy auth state: UNCHALLENGED
+2015-06-19 22:13:28,814 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 124 - http-outgoing-1 >> POST /api/ HTTP/1.1
+2015-06-19 22:13:28,814 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-1 >> Content-Length: 78
+2015-06-19 22:13:28,814 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-1 >> Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+2015-06-19 22:13:28,814 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-1 >> Host: dainamic.dsi.uminho.pt
+2015-06-19 22:13:28,814 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-1 >> Connection: Keep-Alive
+2015-06-19 22:13:28,814 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-1 >> User-Agent: Apache-HttpClient/4.4 (Java 1.5 minimum; Java/1.8.0_25)
+2015-06-19 22:13:28,814 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-1 >> Accept-Encoding: gzip,deflate
+2015-06-19 22:13:28,814 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-1 >> "POST /api/ HTTP/1.1[\r][\n]"
+2015-06-19 22:13:28,824 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-1 >> "Content-Length: 78[\r][\n]"
+2015-06-19 22:13:28,824 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-1 >> "Content-Type: application/x-www-form-urlencoded; charset=UTF-8[\r][\n]"
+2015-06-19 22:13:28,824 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-1 >> "Host: dainamic.dsi.uminho.pt[\r][\n]"
+2015-06-19 22:13:28,824 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-1 >> "Connection: Keep-Alive[\r][\n]"
+2015-06-19 22:13:28,824 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-1 >> "User-Agent: Apache-HttpClient/4.4 (Java 1.5 minimum; Java/1.8.0_25)[\r][\n]"
+2015-06-19 22:13:28,824 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-1 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+2015-06-19 22:13:28,824 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-1 >> "[\r][\n]"
+2015-06-19 22:13:28,824 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 86 - http-outgoing-1 >> "idHealthProfessional=2&object=Patient&function=getPatientsByHealthProfessional"
+2015-06-19 22:13:29,344 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-1 << "HTTP/1.1 200 OK[\r][\n]"
+2015-06-19 22:13:29,344 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-1 << "Date: Fri, 19 Jun 2015 21:13:29 GMT[\r][\n]"
+2015-06-19 22:13:29,344 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-1 << "Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.1e-fips mod_fcgid/2.3.9 PHP/5.4.16[\r][\n]"
+2015-06-19 22:13:29,344 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-1 << "X-Powered-By: PHP/5.4.16[\r][\n]"
+2015-06-19 22:13:29,344 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-1 << "Keep-Alive: timeout=5, max=100[\r][\n]"
+2015-06-19 22:13:29,344 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-1 << "Connection: Keep-Alive[\r][\n]"
+2015-06-19 22:13:29,344 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-1 << "Transfer-Encoding: chunked[\r][\n]"
+2015-06-19 22:13:29,344 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-1 << "Content-Type: text/html; charset=UTF-8[\r][\n]"
+2015-06-19 22:13:29,344 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-1 << "[\r][\n]"
+2015-06-19 22:13:29,344 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-1 << "6c5[\r][\n]"
+2015-06-19 22:13:29,344 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-1 << "[{"0":"23","idPatient":"23","1":"2","idHealthProfessional":"2","2":"tiago_-ribeiro@hotmail.com","email":"tiago_-ribeiro@hotmail.com","3":"ola","password":"ola","4":"Tiago","name":"Tiago","5":"Ribeiro","lastName":"Ribeiro","6":"32145673","numCC":"32145673","7":"934716345","numTel":"934716345","8":"1990-10-30","birthDate":"1990-10-30","9":"masculino","gender":"masculino","10":"autista","pathology":"autista","11":"Portuguesa","nationality":"Portuguesa","12":"rua x, freguesia y, cidade z","adress":"rua x, freguesia y, cidade z","13":"273645128","nif":"273645128","14":"casado","maritalStatus":"casado","15":"A-","bloodGroup":"A-","16":"Este paciente apresenta um elevado defice de aten\u00e7\u00e3o.","description":"Este paciente apresenta um elevado defice de aten\u00e7\u00e3o.","17":"http:\/\/dainamic.dsi.uminho.pt\/api\/images\/Patients\/915318902.png","picture":"http:\/\/dainamic.dsi.uminho.pt\/api\/images\/Patients\/915318902.png","18":"0","notification":"0"},{"0":"25","idPatient":"25","1":"2","idHealthProfessional":"2","2":"manuel@gmail.com","email":"manuel@gmail.com","3":"CVIGVMZA","password":"CVIGVMZA","4":"Manuel ant\u00f3nio ","name":"Manuel ant\u00f3nio ","5":"Gon\u00e7alves Pedroso","lastName":"Gon\u00e7alves Pedroso","6":"43857635","numCC":"43857635","7":"921487634","numTel":"921487634","8":"1970-05-14","birthDate":"1970-05-14","9":"O+","gender":"O+","10":"Alzheimer","pathology":"Alzheimer","11":"","nationality":"","12":"","adress":"","13":"0","nif":"0","14":"Casado","maritalStatus":"Casado","15":"O+","bloodGroup":"O+","16":"Paciente com grande defice de aten\u00e7\u00e3o","description":"Paciente com grande defice de aten\u00e7\u00e3o","17":"profile","picture":"profile","18":"1","notification":"1"}][\r][\n]"
+2015-06-19 22:13:29,344 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-1 << "0[\r][\n]"
+2015-06-19 22:13:29,344 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-1 << "[\r][\n]"
+2015-06-19 22:13:29,344 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 113 - http-outgoing-1 << HTTP/1.1 200 OK
+2015-06-19 22:13:29,344 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-1 << Date: Fri, 19 Jun 2015 21:13:29 GMT
+2015-06-19 22:13:29,344 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-1 << Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.1e-fips mod_fcgid/2.3.9 PHP/5.4.16
+2015-06-19 22:13:29,344 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-1 << X-Powered-By: PHP/5.4.16
+2015-06-19 22:13:29,344 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-1 << Keep-Alive: timeout=5, max=100
+2015-06-19 22:13:29,344 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-1 << Connection: Keep-Alive
+2015-06-19 22:13:29,344 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-1 << Transfer-Encoding: chunked
+2015-06-19 22:13:29,344 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-1 << Content-Type: text/html; charset=UTF-8
+2015-06-19 22:13:29,344 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 284 - Connection can be kept alive for 5000 MILLISECONDS
+2015-06-19 22:13:29,354 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.releaseConnection 314 - Connection [id: 1][route: {}->http://dainamic.dsi.uminho.pt:80] can be kept alive for 5.0 seconds
+2015-06-19 22:13:29,354 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.releaseConnection 320 - Connection released: [id: 1][route: {}->http://dainamic.dsi.uminho.pt:80][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+2015-06-19 22:13:29,354 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.WrapperWS.readResponse 99 - Response from server: [{"0":"23","idPatient":"23","1":"2","idHealthProfessional":"2","2":"tiago_-ribeiro@hotmail.com","email":"tiago_-ribeiro@hotmail.com","3":"ola","password":"ola","4":"Tiago","name":"Tiago","5":"Ribeiro","lastName":"Ribeiro","6":"32145673","numCC":"32145673","7":"934716345","numTel":"934716345","8":"1990-10-30","birthDate":"1990-10-30","9":"masculino","gender":"masculino","10":"autista","pathology":"autista","11":"Portuguesa","nationality":"Portuguesa","12":"rua x, freguesia y, cidade z","adress":"rua x, freguesia y, cidade z","13":"273645128","nif":"273645128","14":"casado","maritalStatus":"casado","15":"A-","bloodGroup":"A-","16":"Este paciente apresenta um elevado defice de aten\u00e7\u00e3o.","description":"Este paciente apresenta um elevado defice de aten\u00e7\u00e3o.","17":"http:\/\/dainamic.dsi.uminho.pt\/api\/images\/Patients\/915318902.png","picture":"http:\/\/dainamic.dsi.uminho.pt\/api\/images\/Patients\/915318902.png","18":"0","notification":"0"},{"0":"25","idPatient":"25","1":"2","idHealthProfessional":"2","2":"manuel@gmail.com","email":"manuel@gmail.com","3":"CVIGVMZA","password":"CVIGVMZA","4":"Manuel ant\u00f3nio ","name":"Manuel ant\u00f3nio ","5":"Gon\u00e7alves Pedroso","lastName":"Gon\u00e7alves Pedroso","6":"43857635","numCC":"43857635","7":"921487634","numTel":"921487634","8":"1970-05-14","birthDate":"1970-05-14","9":"O+","gender":"O+","10":"Alzheimer","pathology":"Alzheimer","11":"","nationality":"","12":"","adress":"","13":"0","nif":"0","14":"Casado","maritalStatus":"Casado","15":"O+","bloodGroup":"O+","16":"Paciente com grande defice de aten\u00e7\u00e3o","description":"Paciente com grande defice de aten\u00e7\u00e3o","17":"profile","picture":"profile","18":"1","notification":"1"}]
+2015-06-19 22:13:29,364 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.PatientWS.getPatientsByHealthProfessional 235 - 
+	Patient data access success
+2015-06-19 22:13:29,364 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.PatientWS.getPatientsByHealthProfessional 236 - 
+	Ps : [Patient{idPatient=23, name=Tiago, lastName=Ribeiro, numCC=32145673, adress=rua x, freguesia y, cidade z, numTel=934716345, nif=273645128, email=tiago_-ribeiro@hotmail.com, maritalStatus=casado, birthDate=1990-10-30, bloodGroup=A-, nationality=Portuguesa, gender=masculino, password=ola, pathology=autista, description=Este paciente apresenta um elevado defice de atenção., picture=http://dainamic.dsi.uminho.pt/api/images/Patients/915318902.png, idHealthProfessional=2}, Patient{idPatient=25, name=Manuel antónio , lastName=Gonçalves Pedroso, numCC=43857635, adress=, numTel=921487634, nif=0, email=manuel@gmail.com, maritalStatus=Casado, birthDate=1970-05-14, bloodGroup=O+, nationality=, gender=O+, password=CVIGVMZA, pathology=Alzheimer, description=Paciente com grande defice de atenção, picture=profile, idHealthProfessional=2}]
+2015-06-19 22:13:29,364 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ui.hp.patients.PatientsList.getImageFromServer 301 - http://dainamic.dsi.uminho.pt/api/images/Patients/915318902.png
+2015-06-19 22:21:50,336 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.WrapperWS.<init> 41 - Connection established with the WS
+2015-06-19 22:21:50,336 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.WrapperWS.sendRequest 72 - Request executed with sucess
+2015-06-19 22:21:50,346 DEBUG [AWT-EventQueue-0] - org.apache.http.client.protocol.RequestAddCookies.process 122 - CookieSpec selected: default
+2015-06-19 22:21:50,356 DEBUG [AWT-EventQueue-0] - org.apache.http.client.protocol.RequestAuthCache.process 76 - Auth cache not set in the context
+2015-06-19 22:21:50,356 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.requestConnection 249 - Connection request: [route: {}->http://dainamic.dsi.uminho.pt:80][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+2015-06-19 22:21:50,366 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.leaseConnection 282 - Connection leased: [id: 0][route: {}->http://dainamic.dsi.uminho.pt:80][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+2015-06-19 22:21:50,366 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 234 - Opening connection {}->http://dainamic.dsi.uminho.pt:80
+2015-06-19 22:21:50,376 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect 131 - Connecting to dainamic.dsi.uminho.pt/192.168.223.3:80
+2015-06-19 22:21:50,426 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect 138 - Connection established 172.26.64.55:50911<->192.168.223.3:80
+2015-06-19 22:21:50,426 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 255 - Executing request POST /api/ HTTP/1.1
+2015-06-19 22:21:50,426 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 260 - Target auth state: UNCHALLENGED
+2015-06-19 22:21:50,426 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 266 - Proxy auth state: UNCHALLENGED
+2015-06-19 22:21:50,426 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 124 - http-outgoing-0 >> POST /api/ HTTP/1.1
+2015-06-19 22:21:50,426 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Content-Length: 81
+2015-06-19 22:21:50,436 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+2015-06-19 22:21:50,436 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Host: dainamic.dsi.uminho.pt
+2015-06-19 22:21:50,436 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Connection: Keep-Alive
+2015-06-19 22:21:50,436 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.4 (Java 1.5 minimum; Java/1.8.0_25)
+2015-06-19 22:21:50,436 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Accept-Encoding: gzip,deflate
+2015-06-19 22:21:50,436 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "POST /api/ HTTP/1.1[\r][\n]"
+2015-06-19 22:21:50,436 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Content-Length: 81[\r][\n]"
+2015-06-19 22:21:50,436 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Content-Type: application/x-www-form-urlencoded; charset=UTF-8[\r][\n]"
+2015-06-19 22:21:50,436 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Host: dainamic.dsi.uminho.pt[\r][\n]"
+2015-06-19 22:21:50,436 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+2015-06-19 22:21:50,436 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.4 (Java 1.5 minimum; Java/1.8.0_25)[\r][\n]"
+2015-06-19 22:21:50,436 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+2015-06-19 22:21:50,436 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "[\r][\n]"
+2015-06-19 22:21:50,436 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 86 - http-outgoing-0 >> "email=tiagosold%40gmail.com&password=tiago123&object=Login&function=validateLogin"
+2015-06-19 22:21:50,446 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
+2015-06-19 22:21:50,446 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Date: Fri, 19 Jun 2015 21:21:50 GMT[\r][\n]"
+2015-06-19 22:21:50,446 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.1e-fips mod_fcgid/2.3.9 PHP/5.4.16[\r][\n]"
+2015-06-19 22:21:50,446 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "X-Powered-By: PHP/5.4.16[\r][\n]"
+2015-06-19 22:21:50,446 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Keep-Alive: timeout=5, max=100[\r][\n]"
+2015-06-19 22:21:50,446 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Connection: Keep-Alive[\r][\n]"
+2015-06-19 22:21:50,446 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Transfer-Encoding: chunked[\r][\n]"
+2015-06-19 22:21:50,446 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Content-Type: text/html; charset=UTF-8[\r][\n]"
+2015-06-19 22:21:50,446 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "[\r][\n]"
+2015-06-19 22:21:50,446 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "8f[\r][\n]"
+2015-06-19 22:21:50,446 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "{"msg":"validation success","error":false,"idHealthProfessional":"2","name":"Lelo","email":"tiagosold@gmail.com","developmentProfessional":"1"}[\r][\n]"
+2015-06-19 22:21:50,446 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "0[\r][\n]"
+2015-06-19 22:21:50,456 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "[\r][\n]"
+2015-06-19 22:21:50,456 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 113 - http-outgoing-0 << HTTP/1.1 200 OK
+2015-06-19 22:21:50,456 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Date: Fri, 19 Jun 2015 21:21:50 GMT
+2015-06-19 22:21:50,456 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.1e-fips mod_fcgid/2.3.9 PHP/5.4.16
+2015-06-19 22:21:50,456 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << X-Powered-By: PHP/5.4.16
+2015-06-19 22:21:50,456 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Keep-Alive: timeout=5, max=100
+2015-06-19 22:21:50,456 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Connection: Keep-Alive
+2015-06-19 22:21:50,456 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Transfer-Encoding: chunked
+2015-06-19 22:21:50,456 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Content-Type: text/html; charset=UTF-8
+2015-06-19 22:21:50,466 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 284 - Connection can be kept alive for 5000 MILLISECONDS
+2015-06-19 22:21:50,466 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.releaseConnection 314 - Connection [id: 0][route: {}->http://dainamic.dsi.uminho.pt:80] can be kept alive for 5.0 seconds
+2015-06-19 22:21:50,466 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.releaseConnection 320 - Connection released: [id: 0][route: {}->http://dainamic.dsi.uminho.pt:80][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+2015-06-19 22:21:50,466 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.WrapperWS.readResponse 99 - Response from server: {"msg":"validation success","error":false,"idHealthProfessional":"2","name":"Lelo","email":"tiagosold@gmail.com","developmentProfessional":"1"}
+2015-06-19 22:21:50,466 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.LoginWS.validateLogin 53 - 
+	login validation success
+2015-06-19 22:21:50,466 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.LoginWS.validateLogin 54 - 
+	 Admin with id 0/n Hp with id 2
+2015-06-19 22:21:52,827 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.WrapperWS.sendRequest 72 - Request executed with sucess
+2015-06-19 22:21:52,828 DEBUG [AWT-EventQueue-0] - org.apache.http.client.protocol.RequestAddCookies.process 122 - CookieSpec selected: default
+2015-06-19 22:21:52,828 DEBUG [AWT-EventQueue-0] - org.apache.http.client.protocol.RequestAuthCache.process 76 - Auth cache not set in the context
+2015-06-19 22:21:52,828 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.requestConnection 249 - Connection request: [route: {}->http://dainamic.dsi.uminho.pt:80][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+2015-06-19 22:21:52,828 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.leaseConnection 282 - Connection leased: [id: 0][route: {}->http://dainamic.dsi.uminho.pt:80][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+2015-06-19 22:21:52,829 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 255 - Executing request POST /api/ HTTP/1.1
+2015-06-19 22:21:52,829 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 260 - Target auth state: UNCHALLENGED
+2015-06-19 22:21:52,829 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 266 - Proxy auth state: UNCHALLENGED
+2015-06-19 22:21:52,829 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 124 - http-outgoing-0 >> POST /api/ HTTP/1.1
+2015-06-19 22:21:52,829 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Content-Length: 78
+2015-06-19 22:21:52,830 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+2015-06-19 22:21:52,830 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Host: dainamic.dsi.uminho.pt
+2015-06-19 22:21:52,830 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Connection: Keep-Alive
+2015-06-19 22:21:52,830 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.4 (Java 1.5 minimum; Java/1.8.0_25)
+2015-06-19 22:21:52,831 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Accept-Encoding: gzip,deflate
+2015-06-19 22:21:52,831 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "POST /api/ HTTP/1.1[\r][\n]"
+2015-06-19 22:21:52,831 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Content-Length: 78[\r][\n]"
+2015-06-19 22:21:52,831 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Content-Type: application/x-www-form-urlencoded; charset=UTF-8[\r][\n]"
+2015-06-19 22:21:52,832 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Host: dainamic.dsi.uminho.pt[\r][\n]"
+2015-06-19 22:21:52,833 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+2015-06-19 22:21:52,833 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.4 (Java 1.5 minimum; Java/1.8.0_25)[\r][\n]"
+2015-06-19 22:21:52,833 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+2015-06-19 22:21:52,833 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "[\r][\n]"
+2015-06-19 22:21:52,834 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 86 - http-outgoing-0 >> "idHealthProfessional=2&object=Patient&function=getPatientsByHealthProfessional"
+2015-06-19 22:21:52,841 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
+2015-06-19 22:21:52,841 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Date: Fri, 19 Jun 2015 21:21:53 GMT[\r][\n]"
+2015-06-19 22:21:52,841 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.1e-fips mod_fcgid/2.3.9 PHP/5.4.16[\r][\n]"
+2015-06-19 22:21:52,842 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "X-Powered-By: PHP/5.4.16[\r][\n]"
+2015-06-19 22:21:52,842 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Keep-Alive: timeout=5, max=99[\r][\n]"
+2015-06-19 22:21:52,842 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Connection: Keep-Alive[\r][\n]"
+2015-06-19 22:21:52,842 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Transfer-Encoding: chunked[\r][\n]"
+2015-06-19 22:21:52,843 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Content-Type: text/html; charset=UTF-8[\r][\n]"
+2015-06-19 22:21:52,843 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "[\r][\n]"
+2015-06-19 22:21:52,843 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "3cc[\r][\n]"
+2015-06-19 22:21:52,843 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "[{"0":"23","idPatient":"23","1":"2","idHealthProfessional":"2","2":"tiago_-ribeiro@hotmail.com","email":"tiago_-ribeiro@hotmail.com","3":"ola","password":"ola","4":"Tiago","name":"Tiago","5":"Ribeiro","lastName":"Ribeiro","6":"32145673","numCC":"32145673","7":"934716345","numTel":"934716345","8":"1990-10-30","birthDate":"1990-10-30","9":"masculino","gender":"masculino","10":"autista","pathology":"autista","11":"Portuguesa","nationality":"Portuguesa","12":"rua x, freguesia y, cidade z","adress":"rua x, freguesia y, cidade z","13":"273645128","nif":"273645128","14":"casado","maritalStatus":"casado","15":"A-","bloodGroup":"A-","16":"Este paciente apresenta um elevado defice de aten\u00e7\u00e3o.","description":"Este paciente apresenta um elevado defice de aten\u00e7\u00e3o.","17":"http:\/\/dainamic.dsi.uminho.pt\/api\/images\/Patients\/915318902.png","picture":"http:\/\/dainamic.dsi.uminho.pt\/api\/images\/Patients\/915318902.png","18":"0","notification":"0"},{[\r][\n]"
+2015-06-19 22:21:52,844 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "2f9[\r][\n]"
+2015-06-19 22:21:52,844 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << ""0":"25","idPatient":"25","1":"2","idHealthProfessional":"2","2":"manuel@gmail.com","email":"manuel@gmail.com","3":"CVIGVMZA","password":"CVIGVMZA","4":"Manuel ant\u00f3nio ","name":"Manuel ant\u00f3nio ","5":"Gon\u00e7alves Pedroso","lastName":"Gon\u00e7alves Pedroso","6":"43857635","numCC":"43857635","7":"921487634","numTel":"921487634","8":"1970-05-14","birthDate":"1970-05-14","9":"O+","gender":"O+","10":"Alzheimer","pathology":"Alzheimer","11":"","nationality":"","12":"","adress":"","13":"0","nif":"0","14":"Casado","maritalStatus":"Casado","15":"O+","bloodGroup":"O+","16":"Paciente com grande defice de aten\u00e7\u00e3o","description":"Paciente com grande defice de aten\u00e7\u00e3o","17":"profile","picture":"profile","18":"1","notification":"1"}][\r][\n]"
+2015-06-19 22:21:52,844 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "0[\r][\n]"
+2015-06-19 22:21:52,844 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "[\r][\n]"
+2015-06-19 22:21:52,845 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 113 - http-outgoing-0 << HTTP/1.1 200 OK
+2015-06-19 22:21:52,845 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Date: Fri, 19 Jun 2015 21:21:53 GMT
+2015-06-19 22:21:52,845 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.1e-fips mod_fcgid/2.3.9 PHP/5.4.16
+2015-06-19 22:21:52,845 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << X-Powered-By: PHP/5.4.16
+2015-06-19 22:21:52,845 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Keep-Alive: timeout=5, max=99
+2015-06-19 22:21:52,846 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Connection: Keep-Alive
+2015-06-19 22:21:52,846 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Transfer-Encoding: chunked
+2015-06-19 22:21:52,846 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Content-Type: text/html; charset=UTF-8
+2015-06-19 22:21:52,847 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 284 - Connection can be kept alive for 5000 MILLISECONDS
+2015-06-19 22:21:52,847 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.releaseConnection 314 - Connection [id: 0][route: {}->http://dainamic.dsi.uminho.pt:80] can be kept alive for 5.0 seconds
+2015-06-19 22:21:52,847 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.releaseConnection 320 - Connection released: [id: 0][route: {}->http://dainamic.dsi.uminho.pt:80][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+2015-06-19 22:21:52,848 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.WrapperWS.readResponse 99 - Response from server: [{"0":"23","idPatient":"23","1":"2","idHealthProfessional":"2","2":"tiago_-ribeiro@hotmail.com","email":"tiago_-ribeiro@hotmail.com","3":"ola","password":"ola","4":"Tiago","name":"Tiago","5":"Ribeiro","lastName":"Ribeiro","6":"32145673","numCC":"32145673","7":"934716345","numTel":"934716345","8":"1990-10-30","birthDate":"1990-10-30","9":"masculino","gender":"masculino","10":"autista","pathology":"autista","11":"Portuguesa","nationality":"Portuguesa","12":"rua x, freguesia y, cidade z","adress":"rua x, freguesia y, cidade z","13":"273645128","nif":"273645128","14":"casado","maritalStatus":"casado","15":"A-","bloodGroup":"A-","16":"Este paciente apresenta um elevado defice de aten\u00e7\u00e3o.","description":"Este paciente apresenta um elevado defice de aten\u00e7\u00e3o.","17":"http:\/\/dainamic.dsi.uminho.pt\/api\/images\/Patients\/915318902.png","picture":"http:\/\/dainamic.dsi.uminho.pt\/api\/images\/Patients\/915318902.png","18":"0","notification":"0"},{"0":"25","idPatient":"25","1":"2","idHealthProfessional":"2","2":"manuel@gmail.com","email":"manuel@gmail.com","3":"CVIGVMZA","password":"CVIGVMZA","4":"Manuel ant\u00f3nio ","name":"Manuel ant\u00f3nio ","5":"Gon\u00e7alves Pedroso","lastName":"Gon\u00e7alves Pedroso","6":"43857635","numCC":"43857635","7":"921487634","numTel":"921487634","8":"1970-05-14","birthDate":"1970-05-14","9":"O+","gender":"O+","10":"Alzheimer","pathology":"Alzheimer","11":"","nationality":"","12":"","adress":"","13":"0","nif":"0","14":"Casado","maritalStatus":"Casado","15":"O+","bloodGroup":"O+","16":"Paciente com grande defice de aten\u00e7\u00e3o","description":"Paciente com grande defice de aten\u00e7\u00e3o","17":"profile","picture":"profile","18":"1","notification":"1"}]
+2015-06-19 22:21:52,848 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.PatientWS.getPatientsByHealthProfessional 235 - 
+	Patient data access success
+2015-06-19 22:21:52,848 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.PatientWS.getPatientsByHealthProfessional 236 - 
+	Ps : [Patient{idPatient=23, name=Tiago, lastName=Ribeiro, numCC=32145673, adress=rua x, freguesia y, cidade z, numTel=934716345, nif=273645128, email=tiago_-ribeiro@hotmail.com, maritalStatus=casado, birthDate=1990-10-30, bloodGroup=A-, nationality=Portuguesa, gender=masculino, password=ola, pathology=autista, description=Este paciente apresenta um elevado defice de atenção., picture=http://dainamic.dsi.uminho.pt/api/images/Patients/915318902.png, idHealthProfessional=2}, Patient{idPatient=25, name=Manuel antónio , lastName=Gonçalves Pedroso, numCC=43857635, adress=, numTel=921487634, nif=0, email=manuel@gmail.com, maritalStatus=Casado, birthDate=1970-05-14, bloodGroup=O+, nationality=, gender=O+, password=CVIGVMZA, pathology=Alzheimer, description=Paciente com grande defice de atenção, picture=profile, idHealthProfessional=2}]
+2015-06-19 22:21:52,848 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ui.hp.patients.PatientsList.getImageFromServer 301 - http://dainamic.dsi.uminho.pt/api/images/Patients/915318902.png
+2015-06-19 22:22:33,248 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.WrapperWS.<init> 41 - Connection established with the WS
+2015-06-19 22:22:33,258 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.WrapperWS.sendRequest 72 - Request executed with sucess
+2015-06-19 22:22:33,258 DEBUG [AWT-EventQueue-0] - org.apache.http.client.protocol.RequestAddCookies.process 122 - CookieSpec selected: default
+2015-06-19 22:22:33,268 DEBUG [AWT-EventQueue-0] - org.apache.http.client.protocol.RequestAuthCache.process 76 - Auth cache not set in the context
+2015-06-19 22:22:33,268 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.requestConnection 249 - Connection request: [route: {}->http://dainamic.dsi.uminho.pt:80][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+2015-06-19 22:22:33,278 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.leaseConnection 282 - Connection leased: [id: 0][route: {}->http://dainamic.dsi.uminho.pt:80][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+2015-06-19 22:22:33,278 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 234 - Opening connection {}->http://dainamic.dsi.uminho.pt:80
+2015-06-19 22:22:33,288 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect 131 - Connecting to dainamic.dsi.uminho.pt/192.168.223.3:80
+2015-06-19 22:22:33,288 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect 138 - Connection established 172.26.64.55:50917<->192.168.223.3:80
+2015-06-19 22:22:33,288 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 255 - Executing request POST /api/ HTTP/1.1
+2015-06-19 22:22:33,288 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 260 - Target auth state: UNCHALLENGED
+2015-06-19 22:22:33,298 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 266 - Proxy auth state: UNCHALLENGED
+2015-06-19 22:22:33,298 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 124 - http-outgoing-0 >> POST /api/ HTTP/1.1
+2015-06-19 22:22:33,298 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Content-Length: 81
+2015-06-19 22:22:33,298 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+2015-06-19 22:22:33,298 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Host: dainamic.dsi.uminho.pt
+2015-06-19 22:22:33,298 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Connection: Keep-Alive
+2015-06-19 22:22:33,298 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.4 (Java 1.5 minimum; Java/1.8.0_25)
+2015-06-19 22:22:33,298 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Accept-Encoding: gzip,deflate
+2015-06-19 22:22:33,298 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "POST /api/ HTTP/1.1[\r][\n]"
+2015-06-19 22:22:33,298 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Content-Length: 81[\r][\n]"
+2015-06-19 22:22:33,298 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Content-Type: application/x-www-form-urlencoded; charset=UTF-8[\r][\n]"
+2015-06-19 22:22:33,298 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Host: dainamic.dsi.uminho.pt[\r][\n]"
+2015-06-19 22:22:33,298 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+2015-06-19 22:22:33,298 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.4 (Java 1.5 minimum; Java/1.8.0_25)[\r][\n]"
+2015-06-19 22:22:33,298 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+2015-06-19 22:22:33,298 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "[\r][\n]"
+2015-06-19 22:22:33,298 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 86 - http-outgoing-0 >> "email=tiagosold%40gmail.com&password=tiago123&object=Login&function=validateLogin"
+2015-06-19 22:22:33,308 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
+2015-06-19 22:22:33,308 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Date: Fri, 19 Jun 2015 21:22:33 GMT[\r][\n]"
+2015-06-19 22:22:33,308 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.1e-fips mod_fcgid/2.3.9 PHP/5.4.16[\r][\n]"
+2015-06-19 22:22:33,308 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "X-Powered-By: PHP/5.4.16[\r][\n]"
+2015-06-19 22:22:33,308 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Keep-Alive: timeout=5, max=100[\r][\n]"
+2015-06-19 22:22:33,308 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Connection: Keep-Alive[\r][\n]"
+2015-06-19 22:22:33,308 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Transfer-Encoding: chunked[\r][\n]"
+2015-06-19 22:22:33,308 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Content-Type: text/html; charset=UTF-8[\r][\n]"
+2015-06-19 22:22:33,308 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "[\r][\n]"
+2015-06-19 22:22:33,308 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "8f[\r][\n]"
+2015-06-19 22:22:33,308 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "{"msg":"validation success","error":false,"idHealthProfessional":"2","name":"Lelo","email":"tiagosold@gmail.com","developmentProfessional":"1"}[\r][\n]"
+2015-06-19 22:22:33,308 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "0[\r][\n]"
+2015-06-19 22:22:33,308 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "[\r][\n]"
+2015-06-19 22:22:33,308 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 113 - http-outgoing-0 << HTTP/1.1 200 OK
+2015-06-19 22:22:33,308 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Date: Fri, 19 Jun 2015 21:22:33 GMT
+2015-06-19 22:22:33,308 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.1e-fips mod_fcgid/2.3.9 PHP/5.4.16
+2015-06-19 22:22:33,308 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << X-Powered-By: PHP/5.4.16
+2015-06-19 22:22:33,308 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Keep-Alive: timeout=5, max=100
+2015-06-19 22:22:33,308 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Connection: Keep-Alive
+2015-06-19 22:22:33,308 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Transfer-Encoding: chunked
+2015-06-19 22:22:33,318 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Content-Type: text/html; charset=UTF-8
+2015-06-19 22:22:33,318 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 284 - Connection can be kept alive for 5000 MILLISECONDS
+2015-06-19 22:22:33,318 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.releaseConnection 314 - Connection [id: 0][route: {}->http://dainamic.dsi.uminho.pt:80] can be kept alive for 5.0 seconds
+2015-06-19 22:22:33,318 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.releaseConnection 320 - Connection released: [id: 0][route: {}->http://dainamic.dsi.uminho.pt:80][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+2015-06-19 22:22:33,318 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.WrapperWS.readResponse 99 - Response from server: {"msg":"validation success","error":false,"idHealthProfessional":"2","name":"Lelo","email":"tiagosold@gmail.com","developmentProfessional":"1"}
+2015-06-19 22:22:33,328 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.LoginWS.validateLogin 53 - 
+	login validation success
+2015-06-19 22:22:33,328 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.LoginWS.validateLogin 54 - 
+	 Admin with id 0/n Hp with id 2
+2015-06-19 22:22:34,628 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.WrapperWS.sendRequest 72 - Request executed with sucess
+2015-06-19 22:22:34,628 DEBUG [AWT-EventQueue-0] - org.apache.http.client.protocol.RequestAddCookies.process 122 - CookieSpec selected: default
+2015-06-19 22:22:34,638 DEBUG [AWT-EventQueue-0] - org.apache.http.client.protocol.RequestAuthCache.process 76 - Auth cache not set in the context
+2015-06-19 22:22:34,638 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.requestConnection 249 - Connection request: [route: {}->http://dainamic.dsi.uminho.pt:80][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+2015-06-19 22:22:34,638 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.leaseConnection 282 - Connection leased: [id: 0][route: {}->http://dainamic.dsi.uminho.pt:80][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+2015-06-19 22:22:34,638 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 255 - Executing request POST /api/ HTTP/1.1
+2015-06-19 22:22:34,638 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 260 - Target auth state: UNCHALLENGED
+2015-06-19 22:22:34,638 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 266 - Proxy auth state: UNCHALLENGED
+2015-06-19 22:22:34,638 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 124 - http-outgoing-0 >> POST /api/ HTTP/1.1
+2015-06-19 22:22:34,638 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Content-Length: 78
+2015-06-19 22:22:34,638 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+2015-06-19 22:22:34,638 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Host: dainamic.dsi.uminho.pt
+2015-06-19 22:22:34,638 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Connection: Keep-Alive
+2015-06-19 22:22:34,638 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.4 (Java 1.5 minimum; Java/1.8.0_25)
+2015-06-19 22:22:34,638 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Accept-Encoding: gzip,deflate
+2015-06-19 22:22:34,638 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "POST /api/ HTTP/1.1[\r][\n]"
+2015-06-19 22:22:34,638 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Content-Length: 78[\r][\n]"
+2015-06-19 22:22:34,638 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Content-Type: application/x-www-form-urlencoded; charset=UTF-8[\r][\n]"
+2015-06-19 22:22:34,638 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Host: dainamic.dsi.uminho.pt[\r][\n]"
+2015-06-19 22:22:34,638 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+2015-06-19 22:22:34,638 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.4 (Java 1.5 minimum; Java/1.8.0_25)[\r][\n]"
+2015-06-19 22:22:34,638 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+2015-06-19 22:22:34,638 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "[\r][\n]"
+2015-06-19 22:22:34,638 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 86 - http-outgoing-0 >> "idHealthProfessional=2&object=Patient&function=getPatientsByHealthProfessional"
+2015-06-19 22:22:34,648 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
+2015-06-19 22:22:34,648 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Date: Fri, 19 Jun 2015 21:22:34 GMT[\r][\n]"
+2015-06-19 22:22:34,648 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.1e-fips mod_fcgid/2.3.9 PHP/5.4.16[\r][\n]"
+2015-06-19 22:22:34,648 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "X-Powered-By: PHP/5.4.16[\r][\n]"
+2015-06-19 22:22:34,648 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Keep-Alive: timeout=5, max=99[\r][\n]"
+2015-06-19 22:22:34,648 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Connection: Keep-Alive[\r][\n]"
+2015-06-19 22:22:34,648 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Transfer-Encoding: chunked[\r][\n]"
+2015-06-19 22:22:34,648 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Content-Type: text/html; charset=UTF-8[\r][\n]"
+2015-06-19 22:22:34,648 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "[\r][\n]"
+2015-06-19 22:22:34,648 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "3cc[\r][\n]"
+2015-06-19 22:22:34,648 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "[{"0":"23","idPatient":"23","1":"2","idHealthProfessional":"2","2":"tiago_-ribeiro@hotmail.com","email":"tiago_-ribeiro@hotmail.com","3":"ola","password":"ola","4":"Tiago","name":"Tiago","5":"Ribeiro","lastName":"Ribeiro","6":"32145673","numCC":"32145673","7":"934716345","numTel":"934716345","8":"1990-10-30","birthDate":"1990-10-30","9":"masculino","gender":"masculino","10":"autista","pathology":"autista","11":"Portuguesa","nationality":"Portuguesa","12":"rua x, freguesia y, cidade z","adress":"rua x, freguesia y, cidade z","13":"273645128","nif":"273645128","14":"casado","maritalStatus":"casado","15":"A-","bloodGroup":"A-","16":"Este paciente apresenta um elevado defice de aten\u00e7\u00e3o.","description":"Este paciente apresenta um elevado defice de aten\u00e7\u00e3o.","17":"http:\/\/dainamic.dsi.uminho.pt\/api\/images\/Patients\/915318902.png","picture":"http:\/\/dainamic.dsi.uminho.pt\/api\/images\/Patients\/915318902.png","18":"0","notification":"0"},{[\r][\n]"
+2015-06-19 22:22:34,648 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "2f9[\r][\n]"
+2015-06-19 22:22:34,648 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << ""0":"25","idPatient":"25","1":"2","idHealthProfessional":"2","2":"manuel@gmail.com","email":"manuel@gmail.com","3":"CVIGVMZA","password":"CVIGVMZA","4":"Manuel ant\u00f3nio ","name":"Manuel ant\u00f3nio ","5":"Gon\u00e7alves Pedroso","lastName":"Gon\u00e7alves Pedroso","6":"43857635","numCC":"43857635","7":"921487634","numTel":"921487634","8":"1970-05-14","birthDate":"1970-05-14","9":"O+","gender":"O+","10":"Alzheimer","pathology":"Alzheimer","11":"","nationality":"","12":"","adress":"","13":"0","nif":"0","14":"Casado","maritalStatus":"Casado","15":"O+","bloodGroup":"O+","16":"Paciente com grande defice de aten\u00e7\u00e3o","description":"Paciente com grande defice de aten\u00e7\u00e3o","17":"profile","picture":"profile","18":"1","notification":"1"}][\r][\n]"
+2015-06-19 22:22:34,648 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "0[\r][\n]"
+2015-06-19 22:22:34,648 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "[\r][\n]"
+2015-06-19 22:22:34,648 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 113 - http-outgoing-0 << HTTP/1.1 200 OK
+2015-06-19 22:22:34,648 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Date: Fri, 19 Jun 2015 21:22:34 GMT
+2015-06-19 22:22:34,648 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.1e-fips mod_fcgid/2.3.9 PHP/5.4.16
+2015-06-19 22:22:34,648 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << X-Powered-By: PHP/5.4.16
+2015-06-19 22:22:34,648 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Keep-Alive: timeout=5, max=99
+2015-06-19 22:22:34,648 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Connection: Keep-Alive
+2015-06-19 22:22:34,648 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Transfer-Encoding: chunked
+2015-06-19 22:22:34,648 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Content-Type: text/html; charset=UTF-8
+2015-06-19 22:22:34,648 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 284 - Connection can be kept alive for 5000 MILLISECONDS
+2015-06-19 22:22:34,648 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.releaseConnection 314 - Connection [id: 0][route: {}->http://dainamic.dsi.uminho.pt:80] can be kept alive for 5.0 seconds
+2015-06-19 22:22:34,648 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.releaseConnection 320 - Connection released: [id: 0][route: {}->http://dainamic.dsi.uminho.pt:80][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+2015-06-19 22:22:34,648 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.WrapperWS.readResponse 99 - Response from server: [{"0":"23","idPatient":"23","1":"2","idHealthProfessional":"2","2":"tiago_-ribeiro@hotmail.com","email":"tiago_-ribeiro@hotmail.com","3":"ola","password":"ola","4":"Tiago","name":"Tiago","5":"Ribeiro","lastName":"Ribeiro","6":"32145673","numCC":"32145673","7":"934716345","numTel":"934716345","8":"1990-10-30","birthDate":"1990-10-30","9":"masculino","gender":"masculino","10":"autista","pathology":"autista","11":"Portuguesa","nationality":"Portuguesa","12":"rua x, freguesia y, cidade z","adress":"rua x, freguesia y, cidade z","13":"273645128","nif":"273645128","14":"casado","maritalStatus":"casado","15":"A-","bloodGroup":"A-","16":"Este paciente apresenta um elevado defice de aten\u00e7\u00e3o.","description":"Este paciente apresenta um elevado defice de aten\u00e7\u00e3o.","17":"http:\/\/dainamic.dsi.uminho.pt\/api\/images\/Patients\/915318902.png","picture":"http:\/\/dainamic.dsi.uminho.pt\/api\/images\/Patients\/915318902.png","18":"0","notification":"0"},{"0":"25","idPatient":"25","1":"2","idHealthProfessional":"2","2":"manuel@gmail.com","email":"manuel@gmail.com","3":"CVIGVMZA","password":"CVIGVMZA","4":"Manuel ant\u00f3nio ","name":"Manuel ant\u00f3nio ","5":"Gon\u00e7alves Pedroso","lastName":"Gon\u00e7alves Pedroso","6":"43857635","numCC":"43857635","7":"921487634","numTel":"921487634","8":"1970-05-14","birthDate":"1970-05-14","9":"O+","gender":"O+","10":"Alzheimer","pathology":"Alzheimer","11":"","nationality":"","12":"","adress":"","13":"0","nif":"0","14":"Casado","maritalStatus":"Casado","15":"O+","bloodGroup":"O+","16":"Paciente com grande defice de aten\u00e7\u00e3o","description":"Paciente com grande defice de aten\u00e7\u00e3o","17":"profile","picture":"profile","18":"1","notification":"1"}]
+2015-06-19 22:22:34,648 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.PatientWS.getPatientsByHealthProfessional 235 - 
+	Patient data access success
+2015-06-19 22:22:34,648 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.PatientWS.getPatientsByHealthProfessional 236 - 
+	Ps : [Patient{idPatient=23, name=Tiago, lastName=Ribeiro, numCC=32145673, adress=rua x, freguesia y, cidade z, numTel=934716345, nif=273645128, email=tiago_-ribeiro@hotmail.com, maritalStatus=casado, birthDate=1990-10-30, bloodGroup=A-, nationality=Portuguesa, gender=masculino, password=ola, pathology=autista, description=Este paciente apresenta um elevado defice de atenção., picture=http://dainamic.dsi.uminho.pt/api/images/Patients/915318902.png, idHealthProfessional=2}, Patient{idPatient=25, name=Manuel antónio , lastName=Gonçalves Pedroso, numCC=43857635, adress=, numTel=921487634, nif=0, email=manuel@gmail.com, maritalStatus=Casado, birthDate=1970-05-14, bloodGroup=O+, nationality=, gender=O+, password=CVIGVMZA, pathology=Alzheimer, description=Paciente com grande defice de atenção, picture=profile, idHealthProfessional=2}]
+2015-06-19 22:22:34,658 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ui.hp.patients.PatientsList.getImageFromServer 301 - http://dainamic.dsi.uminho.pt/api/images/Patients/915318902.png
+2015-06-19 22:57:32,791 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.WrapperWS.<init> 41 - Connection established with the WS
+2015-06-19 22:57:32,801 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.WrapperWS.sendRequest 72 - Request executed with sucess
+2015-06-19 22:57:32,811 DEBUG [AWT-EventQueue-0] - org.apache.http.client.protocol.RequestAddCookies.process 122 - CookieSpec selected: default
+2015-06-19 22:57:32,811 DEBUG [AWT-EventQueue-0] - org.apache.http.client.protocol.RequestAuthCache.process 76 - Auth cache not set in the context
+2015-06-19 22:57:32,821 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.requestConnection 249 - Connection request: [route: {}->http://dainamic.dsi.uminho.pt:80][total kept alive: 0; route allocated: 0 of 2; total allocated: 0 of 20]
+2015-06-19 22:57:32,821 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.leaseConnection 282 - Connection leased: [id: 0][route: {}->http://dainamic.dsi.uminho.pt:80][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+2015-06-19 22:57:32,831 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 234 - Opening connection {}->http://dainamic.dsi.uminho.pt:80
+2015-06-19 22:57:32,831 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect 131 - Connecting to dainamic.dsi.uminho.pt/192.168.223.3:80
+2015-06-19 22:57:32,841 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect 138 - Connection established 172.26.64.55:51139<->192.168.223.3:80
+2015-06-19 22:57:32,841 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 255 - Executing request POST /api/ HTTP/1.1
+2015-06-19 22:57:32,841 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 260 - Target auth state: UNCHALLENGED
+2015-06-19 22:57:32,841 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 266 - Proxy auth state: UNCHALLENGED
+2015-06-19 22:57:32,841 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 124 - http-outgoing-0 >> POST /api/ HTTP/1.1
+2015-06-19 22:57:32,841 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Content-Length: 81
+2015-06-19 22:57:32,841 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+2015-06-19 22:57:32,841 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Host: dainamic.dsi.uminho.pt
+2015-06-19 22:57:32,851 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Connection: Keep-Alive
+2015-06-19 22:57:32,851 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.4 (Java 1.5 minimum; Java/1.8.0_25)
+2015-06-19 22:57:32,851 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Accept-Encoding: gzip,deflate
+2015-06-19 22:57:32,851 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "POST /api/ HTTP/1.1[\r][\n]"
+2015-06-19 22:57:32,851 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Content-Length: 81[\r][\n]"
+2015-06-19 22:57:32,851 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Content-Type: application/x-www-form-urlencoded; charset=UTF-8[\r][\n]"
+2015-06-19 22:57:32,851 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Host: dainamic.dsi.uminho.pt[\r][\n]"
+2015-06-19 22:57:32,851 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+2015-06-19 22:57:32,851 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.4 (Java 1.5 minimum; Java/1.8.0_25)[\r][\n]"
+2015-06-19 22:57:32,851 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+2015-06-19 22:57:32,851 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "[\r][\n]"
+2015-06-19 22:57:32,851 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 86 - http-outgoing-0 >> "email=tiagosold%40gmail.com&password=tiago123&object=Login&function=validateLogin"
+2015-06-19 22:57:32,861 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
+2015-06-19 22:57:32,861 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Date: Fri, 19 Jun 2015 21:57:33 GMT[\r][\n]"
+2015-06-19 22:57:32,861 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.1e-fips mod_fcgid/2.3.9 PHP/5.4.16[\r][\n]"
+2015-06-19 22:57:32,861 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "X-Powered-By: PHP/5.4.16[\r][\n]"
+2015-06-19 22:57:32,861 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Keep-Alive: timeout=5, max=100[\r][\n]"
+2015-06-19 22:57:32,861 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Connection: Keep-Alive[\r][\n]"
+2015-06-19 22:57:32,861 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Transfer-Encoding: chunked[\r][\n]"
+2015-06-19 22:57:32,861 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Content-Type: text/html; charset=UTF-8[\r][\n]"
+2015-06-19 22:57:32,861 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "[\r][\n]"
+2015-06-19 22:57:32,861 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "8f[\r][\n]"
+2015-06-19 22:57:32,861 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "{"msg":"validation success","error":false,"idHealthProfessional":"2","name":"Lelo","email":"tiagosold@gmail.com","developmentProfessional":"1"}[\r][\n]"
+2015-06-19 22:57:32,861 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "0[\r][\n]"
+2015-06-19 22:57:32,861 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "[\r][\n]"
+2015-06-19 22:57:32,861 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 113 - http-outgoing-0 << HTTP/1.1 200 OK
+2015-06-19 22:57:32,861 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Date: Fri, 19 Jun 2015 21:57:33 GMT
+2015-06-19 22:57:32,861 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.1e-fips mod_fcgid/2.3.9 PHP/5.4.16
+2015-06-19 22:57:32,861 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << X-Powered-By: PHP/5.4.16
+2015-06-19 22:57:32,861 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Keep-Alive: timeout=5, max=100
+2015-06-19 22:57:32,861 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Connection: Keep-Alive
+2015-06-19 22:57:32,861 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Transfer-Encoding: chunked
+2015-06-19 22:57:32,861 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Content-Type: text/html; charset=UTF-8
+2015-06-19 22:57:32,861 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 284 - Connection can be kept alive for 5000 MILLISECONDS
+2015-06-19 22:57:32,871 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.releaseConnection 314 - Connection [id: 0][route: {}->http://dainamic.dsi.uminho.pt:80] can be kept alive for 5.0 seconds
+2015-06-19 22:57:32,871 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.releaseConnection 320 - Connection released: [id: 0][route: {}->http://dainamic.dsi.uminho.pt:80][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+2015-06-19 22:57:32,871 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.WrapperWS.readResponse 99 - Response from server: {"msg":"validation success","error":false,"idHealthProfessional":"2","name":"Lelo","email":"tiagosold@gmail.com","developmentProfessional":"1"}
+2015-06-19 22:57:32,871 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.LoginWS.validateLogin 53 - 
+	login validation success
+2015-06-19 22:57:32,871 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.LoginWS.validateLogin 54 - 
+	 Admin with id 0/n Hp with id 2
+2015-06-19 22:57:34,261 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.WrapperWS.sendRequest 72 - Request executed with sucess
+2015-06-19 22:57:34,261 DEBUG [AWT-EventQueue-0] - org.apache.http.client.protocol.RequestAddCookies.process 122 - CookieSpec selected: default
+2015-06-19 22:57:34,261 DEBUG [AWT-EventQueue-0] - org.apache.http.client.protocol.RequestAuthCache.process 76 - Auth cache not set in the context
+2015-06-19 22:57:34,261 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.requestConnection 249 - Connection request: [route: {}->http://dainamic.dsi.uminho.pt:80][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+2015-06-19 22:57:34,261 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.leaseConnection 282 - Connection leased: [id: 0][route: {}->http://dainamic.dsi.uminho.pt:80][total kept alive: 0; route allocated: 1 of 2; total allocated: 1 of 20]
+2015-06-19 22:57:34,261 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 255 - Executing request POST /api/ HTTP/1.1
+2015-06-19 22:57:34,261 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 260 - Target auth state: UNCHALLENGED
+2015-06-19 22:57:34,261 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 266 - Proxy auth state: UNCHALLENGED
+2015-06-19 22:57:34,261 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 124 - http-outgoing-0 >> POST /api/ HTTP/1.1
+2015-06-19 22:57:34,261 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Content-Length: 78
+2015-06-19 22:57:34,261 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+2015-06-19 22:57:34,261 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Host: dainamic.dsi.uminho.pt
+2015-06-19 22:57:34,261 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Connection: Keep-Alive
+2015-06-19 22:57:34,261 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.4 (Java 1.5 minimum; Java/1.8.0_25)
+2015-06-19 22:57:34,261 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onRequestSubmitted 127 - http-outgoing-0 >> Accept-Encoding: gzip,deflate
+2015-06-19 22:57:34,261 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "POST /api/ HTTP/1.1[\r][\n]"
+2015-06-19 22:57:34,261 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Content-Length: 78[\r][\n]"
+2015-06-19 22:57:34,261 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Content-Type: application/x-www-form-urlencoded; charset=UTF-8[\r][\n]"
+2015-06-19 22:57:34,261 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Host: dainamic.dsi.uminho.pt[\r][\n]"
+2015-06-19 22:57:34,261 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+2015-06-19 22:57:34,261 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.4 (Java 1.5 minimum; Java/1.8.0_25)[\r][\n]"
+2015-06-19 22:57:34,261 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+2015-06-19 22:57:34,261 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 >> "[\r][\n]"
+2015-06-19 22:57:34,261 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 86 - http-outgoing-0 >> "idHealthProfessional=2&object=Patient&function=getPatientsByHealthProfessional"
+2015-06-19 22:57:34,271 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
+2015-06-19 22:57:34,291 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Date: Fri, 19 Jun 2015 21:57:34 GMT[\r][\n]"
+2015-06-19 22:57:34,291 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.1e-fips mod_fcgid/2.3.9 PHP/5.4.16[\r][\n]"
+2015-06-19 22:57:34,291 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "X-Powered-By: PHP/5.4.16[\r][\n]"
+2015-06-19 22:57:34,291 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Keep-Alive: timeout=5, max=99[\r][\n]"
+2015-06-19 22:57:34,291 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Connection: Keep-Alive[\r][\n]"
+2015-06-19 22:57:34,291 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Transfer-Encoding: chunked[\r][\n]"
+2015-06-19 22:57:34,291 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "Content-Type: text/html; charset=UTF-8[\r][\n]"
+2015-06-19 22:57:34,291 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "[\r][\n]"
+2015-06-19 22:57:34,291 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "3cc[\r][\n]"
+2015-06-19 22:57:34,291 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "[{"0":"23","idPatient":"23","1":"2","idHealthProfessional":"2","2":"tiago_-ribeiro@hotmail.com","email":"tiago_-ribeiro@hotmail.com","3":"ola","password":"ola","4":"Tiago","name":"Tiago","5":"Ribeiro","lastName":"Ribeiro","6":"32145673","numCC":"32145673","7":"934716345","numTel":"934716345","8":"1990-10-30","birthDate":"1990-10-30","9":"masculino","gender":"masculino","10":"autista","pathology":"autista","11":"Portuguesa","nationality":"Portuguesa","12":"rua x, freguesia y, cidade z","adress":"rua x, freguesia y, cidade z","13":"273645128","nif":"273645128","14":"casado","maritalStatus":"casado","15":"A-","bloodGroup":"A-","16":"Este paciente apresenta um elevado defice de aten\u00e7\u00e3o.","description":"Este paciente apresenta um elevado defice de aten\u00e7\u00e3o.","17":"http:\/\/dainamic.dsi.uminho.pt\/api\/images\/Patients\/915318902.png","picture":"http:\/\/dainamic.dsi.uminho.pt\/api\/images\/Patients\/915318902.png","18":"0","notification":"0"},{[\r][\n]"
+2015-06-19 22:57:34,291 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "2f9[\r][\n]"
+2015-06-19 22:57:34,291 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << ""0":"25","idPatient":"25","1":"2","idHealthProfessional":"2","2":"manuel@gmail.com","email":"manuel@gmail.com","3":"CVIGVMZA","password":"CVIGVMZA","4":"Manuel ant\u00f3nio ","name":"Manuel ant\u00f3nio ","5":"Gon\u00e7alves Pedroso","lastName":"Gon\u00e7alves Pedroso","6":"43857635","numCC":"43857635","7":"921487634","numTel":"921487634","8":"1970-05-14","birthDate":"1970-05-14","9":"O+","gender":"O+","10":"Alzheimer","pathology":"Alzheimer","11":"","nationality":"","12":"","adress":"","13":"0","nif":"0","14":"Casado","maritalStatus":"Casado","15":"O+","bloodGroup":"O+","16":"Paciente com grande defice de aten\u00e7\u00e3o","description":"Paciente com grande defice de aten\u00e7\u00e3o","17":"profile","picture":"profile","18":"1","notification":"1"}][\r][\n]"
+2015-06-19 22:57:34,291 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "0[\r][\n]"
+2015-06-19 22:57:34,291 DEBUG [AWT-EventQueue-0] - org.apache.http.wire.wire 72 - http-outgoing-0 << "[\r][\n]"
+2015-06-19 22:57:34,301 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 113 - http-outgoing-0 << HTTP/1.1 200 OK
+2015-06-19 22:57:34,301 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Date: Fri, 19 Jun 2015 21:57:34 GMT
+2015-06-19 22:57:34,301 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.1e-fips mod_fcgid/2.3.9 PHP/5.4.16
+2015-06-19 22:57:34,301 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << X-Powered-By: PHP/5.4.16
+2015-06-19 22:57:34,301 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Keep-Alive: timeout=5, max=99
+2015-06-19 22:57:34,301 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Connection: Keep-Alive
+2015-06-19 22:57:34,301 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Transfer-Encoding: chunked
+2015-06-19 22:57:34,301 DEBUG [AWT-EventQueue-0] - org.apache.http.headers.onResponseReceived 116 - http-outgoing-0 << Content-Type: text/html; charset=UTF-8
+2015-06-19 22:57:34,301 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.execchain.MainClientExec.execute 284 - Connection can be kept alive for 5000 MILLISECONDS
+2015-06-19 22:57:34,301 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.releaseConnection 314 - Connection [id: 0][route: {}->http://dainamic.dsi.uminho.pt:80] can be kept alive for 5.0 seconds
+2015-06-19 22:57:34,301 DEBUG [AWT-EventQueue-0] - org.apache.http.impl.conn.PoolingHttpClientConnectionManager.releaseConnection 320 - Connection released: [id: 0][route: {}->http://dainamic.dsi.uminho.pt:80][total kept alive: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+2015-06-19 22:57:34,301 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.WrapperWS.readResponse 99 - Response from server: [{"0":"23","idPatient":"23","1":"2","idHealthProfessional":"2","2":"tiago_-ribeiro@hotmail.com","email":"tiago_-ribeiro@hotmail.com","3":"ola","password":"ola","4":"Tiago","name":"Tiago","5":"Ribeiro","lastName":"Ribeiro","6":"32145673","numCC":"32145673","7":"934716345","numTel":"934716345","8":"1990-10-30","birthDate":"1990-10-30","9":"masculino","gender":"masculino","10":"autista","pathology":"autista","11":"Portuguesa","nationality":"Portuguesa","12":"rua x, freguesia y, cidade z","adress":"rua x, freguesia y, cidade z","13":"273645128","nif":"273645128","14":"casado","maritalStatus":"casado","15":"A-","bloodGroup":"A-","16":"Este paciente apresenta um elevado defice de aten\u00e7\u00e3o.","description":"Este paciente apresenta um elevado defice de aten\u00e7\u00e3o.","17":"http:\/\/dainamic.dsi.uminho.pt\/api\/images\/Patients\/915318902.png","picture":"http:\/\/dainamic.dsi.uminho.pt\/api\/images\/Patients\/915318902.png","18":"0","notification":"0"},{"0":"25","idPatient":"25","1":"2","idHealthProfessional":"2","2":"manuel@gmail.com","email":"manuel@gmail.com","3":"CVIGVMZA","password":"CVIGVMZA","4":"Manuel ant\u00f3nio ","name":"Manuel ant\u00f3nio ","5":"Gon\u00e7alves Pedroso","lastName":"Gon\u00e7alves Pedroso","6":"43857635","numCC":"43857635","7":"921487634","numTel":"921487634","8":"1970-05-14","birthDate":"1970-05-14","9":"O+","gender":"O+","10":"Alzheimer","pathology":"Alzheimer","11":"","nationality":"","12":"","adress":"","13":"0","nif":"0","14":"Casado","maritalStatus":"Casado","15":"O+","bloodGroup":"O+","16":"Paciente com grande defice de aten\u00e7\u00e3o","description":"Paciente com grande defice de aten\u00e7\u00e3o","17":"profile","picture":"profile","18":"1","notification":"1"}]
+2015-06-19 22:57:34,311 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.PatientWS.getPatientsByHealthProfessional 235 - 
+	Patient data access success
+2015-06-19 22:57:34,311 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ws.PatientWS.getPatientsByHealthProfessional 236 - 
+	Ps : [Patient{idPatient=23, name=Tiago, lastName=Ribeiro, numCC=32145673, adress=rua x, freguesia y, cidade z, numTel=934716345, nif=273645128, email=tiago_-ribeiro@hotmail.com, maritalStatus=casado, birthDate=1990-10-30, bloodGroup=A-, nationality=Portuguesa, gender=masculino, password=ola, pathology=autista, description=Este paciente apresenta um elevado defice de atenção., picture=http://dainamic.dsi.uminho.pt/api/images/Patients/915318902.png, idHealthProfessional=2}, Patient{idPatient=25, name=Manuel antónio , lastName=Gonçalves Pedroso, numCC=43857635, adress=, numTel=921487634, nif=0, email=manuel@gmail.com, maritalStatus=Casado, birthDate=1970-05-14, bloodGroup=O+, nationality=, gender=O+, password=CVIGVMZA, pathology=Alzheimer, description=Paciente com grande defice de atenção, picture=profile, idHealthProfessional=2}]
+2015-06-19 22:57:34,311 DEBUG [AWT-EventQueue-0] - pt.dainamic.nepum.ui.hp.patients.PatientsList.getImageFromServer 304 - http://dainamic.dsi.uminho.pt/api/images/Patients/915318902.png
