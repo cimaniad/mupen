@@ -50,7 +50,7 @@ public class HealthProfessionalMenu extends javax.swing.JFrame {
         jButtonLogout = new javax.swing.JButton();
         jLabelwallpaper = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(700, 500));
         setResizable(false);
 

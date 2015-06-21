@@ -25,6 +25,7 @@ import pt.dainamic.nepum.model.Notification;
 import pt.dainamic.nepum.model.Patient;
 import pt.dainamic.nepum.ui.hp.appointments.FEAppointment;
 import pt.dainamic.nepum.util.JTableRenderer;
+import pt.dainamic.nepum.util.PlaceholderTextField;
 import pt.dainamic.nepum.ws.NotificationWS;
 import pt.dainamic.nepum.ws.PatientWS;
 
@@ -80,11 +81,11 @@ public class PatientsList extends javax.swing.JFrame {
         jScrollPaneList = new javax.swing.JScrollPane();
         jTableList = new javax.swing.JTable();
         jButtonSearch = new javax.swing.JButton();
-        jTextFieldSearch = new javax.swing.JTextField();
+         placeholderFieldSearch = new PlaceholderTextField("pesquise por nome ou contacto");
         jLabelInformation = new javax.swing.JLabel();
         jLabelwallpaper = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(705, 520));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -105,7 +106,7 @@ public class PatientsList extends javax.swing.JFrame {
                 jButtonRegistActionPerformed(evt);
             }
         });
-        jPanelInformation.add(jButtonRegist, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 330, -1, -1));
+        jPanelInformation.add(jButtonRegist, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 330, -1, -1));
 
         jButtonBack.setText("Voltar");
         jButtonBack.addActionListener(new java.awt.event.ActionListener() {
@@ -113,7 +114,7 @@ public class PatientsList extends javax.swing.JFrame {
                 jButtonBackActionPerformed(evt);
             }
         });
-        jPanelInformation.add(jButtonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 330, -1, -1));
+        jPanelInformation.add(jButtonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 330, -1, -1));
 
         jTableList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -156,12 +157,12 @@ public class PatientsList extends javax.swing.JFrame {
         });
         jPanelInformation.add(jButtonSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 50, -1, -1));
 
-        jTextFieldSearch.addKeyListener(new java.awt.event.KeyAdapter() {
+        placeholderFieldSearch.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTextFieldSearchKeyPressed(evt);
+                placeholderFieldSearchKeyPressed(evt);
             }
         });
-        jPanelInformation.add(jTextFieldSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, 210, -1));
+        jPanelInformation.add(placeholderFieldSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, 210, -1));
 
         jLabelInformation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/backGround/second.jpg"))); // NOI18N
         jLabelInformation.setMaximumSize(new java.awt.Dimension(680, 380));
@@ -196,25 +197,25 @@ public class PatientsList extends javax.swing.JFrame {
             dispose();
         }
 
-            if (!getPatientAtTable().getNotifications().isEmpty() && evt.getClickCount() == 1
-                    && jTableList.getSelectedColumn() == 3) {
-                new NotificationPage(getPatientAtTable().getNotifications(),this).setVisible(true);
+        if (!getPatientAtTable().getNotifications().isEmpty() && evt.getClickCount() == 1
+                && jTableList.getSelectedColumn() == 3) {
+            new NotificationPage(getPatientAtTable().getNotifications(), this).setVisible(true);
 
         }
 
 
     }//GEN-LAST:event_jTableListMouseClicked
 
-    private void jTextFieldSearchKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_placeholderFieldSearchKeyPressed
+    private void placeholderFieldSearchKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_placeholderFieldSearchKeyPressed
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            String input = jTextFieldSearch.getText();
+            String input = placeholderFieldSearch.getText();
             pList = pWS.searchPatient(input, idHealthProfessional);
             drawTable();
         }
     }//GEN-LAST:event_placeholderFieldSearchKeyPressed
 
     private void jButtonSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSearchActionPerformed
-        String input = jTextFieldSearch.getText();
+        String input = placeholderFieldSearch.getText();
         pList = pWS.searchPatient(input, idHealthProfessional);
         drawTable();
     }//GEN-LAST:event_jButtonSearchActionPerformed
@@ -234,7 +235,7 @@ public class PatientsList extends javax.swing.JFrame {
                 ImageIcon icon;
                 int notifications = 0;
                 for (Notification n : nList) {
-                    if (n.getIdPatient() == p.getIdPatient() && n.getSaw() == 0) {
+                    if (n.getIdPatient() == p.getIdPatient()) {
                         ++notifications;
                         if (notifications == 1) {
                             icon = new ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/icons/notificação laranja SF.PNG"));
@@ -343,7 +344,7 @@ public class PatientsList extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelWallpaper;
     private javax.swing.JScrollPane jScrollPaneList;
     private javax.swing.JTable jTableList;
-    private javax.swing.JTextField jTextFieldSearch;
+	private PlaceholderTextField placeholderFieldSearch;
     // End of variables declaration//GEN-END:variables
 
     private Object ImageIcon(Image scaledInstance) {

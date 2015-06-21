@@ -26,12 +26,12 @@ public class NotificationWS {
     private WrapperWS wrapperWS;
     private CloseableHttpResponse responseWS;
     private Gson gson;
-    private static Logger log = Logger.getLogger(AppointmentWS.class);
-
+    private static Logger log = Logger.getLogger(NotificationWS.class);
+ 
     public NotificationWS() {
         gson = new Gson();
         wrapperWS = WrapperWS.getWrapperWS();
-
+        
     }
 
     public List<Notification> getHPNotifications(int idHealthProfessional) {
@@ -96,7 +96,7 @@ public class NotificationWS {
 
     }
 
-    private void createEditNotification(Notification n) {
+    public void createEditNotification(Notification n) {
         try {
             responseWS = wrapperWS.sendRequest("Notification",
                     "createEditNotification", getAllParams(n));    //efetua o pedido ao WS
@@ -117,7 +117,31 @@ public class NotificationWS {
         log.debug("Notification saved with sucess");
 
     }
+    
+    public void deleteNotification(int idNotification ){
+             try {
+                 List<NameValuePair> params = new ArrayList<>();           //array com os params necessários para registar um terapeuta
+        params.add(new BasicNameValuePair("idNotification", String.valueOf(idNotification)));
+                 
+            responseWS = wrapperWS.sendRequest("Notification",
+                    "deleteNotification", params);    //efetua o pedido ao WS
+            String validacao = wrapperWS.readResponse(responseWS);         //Passa a resposta para uma string
 
+            Validation v = gson.fromJson(validacao, Validation.class);    //Conversão do objecto Json para o objecto Java
+            int httpResponseCod = responseWS.getStatusLine().getStatusCode();
+            if (httpResponseCod != 200) {
+                log.error("\n\tError deleting Notification: " + v.getMsg() + "\tCod:" + httpResponseCod);
+                log.error(v.getMsg());
+                throw new RuntimeException("Ocorreu um erro ao apagar a Notificação");
+            }
+
+        } catch (RuntimeException e) {
+            log.error(e.getMessage());
+            throw new RuntimeException(e.getMessage());
+        }
+        log.debug("Notification deleted with sucess");
+
+    }
     private List<NameValuePair> getAllParams(Notification a) {
         List<NameValuePair> params = new ArrayList<>();           //array com os params necessários para registar um paciente
         params.add(new BasicNameValuePair("idNotification", String.valueOf(a.getIdNotification())));
@@ -125,7 +149,7 @@ public class NotificationWS {
         params.add(new BasicNameValuePair("idSession", String.valueOf(a.getIdSession())));
         params.add(new BasicNameValuePair("idPatient", String.valueOf(a.getIdPatient())));
         params.add(new BasicNameValuePair("idHealthProfessional", String.valueOf(a.getIdHealthProfessional())));
-        params.add(new BasicNameValuePair("saw", String.valueOf(a.getSaw())));
+     
         params.add(new BasicNameValuePair("description", a.getDescription()));
         params.add(new BasicNameValuePair("isPatientN", String.valueOf(a.getIsPatientN())));
 

@@ -34,14 +34,14 @@ public class AppointmentWS {
 
     }
 
-    public void saveEditAppointment(Appointment a) {
-
+    public Validation saveEditAppointment(Appointment a) {
+        Validation v;
         try {
             responseWS = wrapperWS.sendRequest("Appointment",
                     "saveEditAppointment", getAllParams(a));    //efetua o pedido ao WS
             String jsonResp = wrapperWS.readResponse(responseWS);         //Passa a responseWS para uma string
 
-            Validation v = gson.fromJson(jsonResp, Validation.class);    //Conversão do objecto Json para o objecto Java
+            v = gson.fromJson(jsonResp, Validation.class);    //Conversão do objecto Json para o objecto Java
 
             int httpResponseCod = responseWS.getStatusLine().getStatusCode();
             if (httpResponseCod != 201) {
@@ -54,6 +54,7 @@ public class AppointmentWS {
             throw new RuntimeException(e.getMessage());
         }
         log.debug("\n\t Appointment saved with success");
+        return v;
     }
 
     public List<Appointment> getHPAppointments(int idHealthProfessional) {

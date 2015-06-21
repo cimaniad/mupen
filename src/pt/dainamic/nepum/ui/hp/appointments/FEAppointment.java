@@ -17,8 +17,10 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import pt.dainamic.nepum.model.Appointment;
 import pt.dainamic.nepum.model.LoginSession;
+import pt.dainamic.nepum.model.Notification;
 import pt.dainamic.nepum.model.Patient;
 import pt.dainamic.nepum.ws.AppointmentWS;
+import pt.dainamic.nepum.ws.NotificationWS;
 import pt.dainamic.nepum.ws.PatientWS;
 
 /**
@@ -309,6 +311,12 @@ public class FEAppointment extends javax.swing.JFrame {
     }
 
     private void jButtonCancelEventActionPerformed(java.awt.event.ActionEvent evt) {
+        Appointment appt = aproveAppointment();
+            
+            NotificationWS nWS = new NotificationWS();
+            nWS.createEditNotification(new Notification(0, 0, appt.getIdAppointment(),
+                    0, (byte) 0, "A consulta do dia "+appt.getDate()+ " foi Cancelada!",
+                    (byte) 0, appt.getIdPatient(), appt.getIdHealthProfessional()));
         new AppointmentCreateEdit(getSelectAppointment()).setVisible(true);
         dispose();
     }
@@ -316,10 +324,19 @@ public class FEAppointment extends javax.swing.JFrame {
     private void jButtonAproveActionPerformed(java.awt.event.ActionEvent evt) {
 
         try {
-
-            apptmWS.saveEditAppointment(aproveAppointment());
+            Appointment appt = aproveAppointment();
+            apptmWS.saveEditAppointment(appt);
+            NotificationWS nWS = new NotificationWS();
+            nWS.createEditNotification(new Notification(0, 0, appt.getIdAppointment(),
+                    0, (byte) 0, "A consulta do dia "+appt.getDate()+ " foi Aprovada!",
+                    (byte) 0, appt.getIdPatient(), appt.getIdHealthProfessional()));
+            
+            
+            
             new Schedule().setVisible(true);
             dispose();
+            
+            
         } catch (Exception e) {
             JOptionPane.showMessageDialog(FEAppointment.this,
                     e.getMessage(), "Erro aprovar consulta", JOptionPane.ERROR_MESSAGE);

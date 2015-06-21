@@ -15,7 +15,11 @@ import java.util.List;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import org.apache.log4j.Logger;
+import pt.dainamic.nepum.model.Comment;
 import pt.dainamic.nepum.model.Exercise;
+import pt.dainamic.nepum.model.Patient;
+import pt.dainamic.nepum.ws.CommentWS;
+import pt.dainamic.nepum.ws.PatientWS;
 
 /**
  *
@@ -23,7 +27,10 @@ import pt.dainamic.nepum.model.Exercise;
  */
 public class ExerciseInterface extends javax.swing.JFrame {
 
+    private PatientWS patWS;
+    private CommentWS cmWS;
     private Logger log = Logger.getLogger(ExerciseInterface.class);
+    private int idPatient;
 
     /**
      * Creates new form ExerciseDescription
@@ -34,11 +41,20 @@ public class ExerciseInterface extends javax.swing.JFrame {
         setField(ex);
     }
 
+    public ExerciseInterface(Exercise ex, Comment a) {
+        initComponents();
+        setIcon();
+        setField(ex);
+        jTextAreaComment.setText(a.getComment());
+        jTextFieldPatient.setText(a.getName()+" "+a.getLastName());
+    }
+
     private void setField(Exercise ex) {
         this.jTextFieldName.setText(ex.getName());
         this.jTextFieldLevel.setText(String.valueOf(ex.getLevel()));
         this.jTextFieldDomain.setText(ex.getDomain());
         this.jTextFieldSubDomain.setText(ex.getSubDomain());
+        
         if (ex.getTime() == 0) {
             this.jTextFieldTime.setText("Tempo ilimitado");
         } else {
@@ -102,11 +118,11 @@ public class ExerciseInterface extends javax.swing.JFrame {
         jLabelComment = new javax.swing.JLabel();
         jScrollPaneComment = new javax.swing.JScrollPane();
         jTextAreaComment = new javax.swing.JTextArea();
-        jTextFieldPaciente = new javax.swing.JTextField();
+        jTextFieldPatient = new javax.swing.JTextField();
         jLabelInformation = new javax.swing.JLabel();
         jLabelwallpaper = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(705, 520));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -162,8 +178,12 @@ public class ExerciseInterface extends javax.swing.JFrame {
 
         jPanelInformation.add(jScrollPaneComment, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 160, 270, 130));
 
-        jTextFieldPaciente.setText("António");
-        jPanelInformation.add(jTextFieldPaciente, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 290, 270, 20));
+        jTextFieldPatient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldPatientActionPerformed(evt);
+            }
+        });
+        jPanelInformation.add(jTextFieldPatient, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 290, 270, 30));
 
         jLabelInformation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pt/dainamic/nepum/images/backGround/second.jpg"))); // NOI18N
         jLabelInformation.setMaximumSize(new java.awt.Dimension(680, 380));
@@ -183,9 +203,13 @@ public class ExerciseInterface extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBackActionPerformed
-
+        
         dispose();
     }//GEN-LAST:event_jButtonBackActionPerformed
+
+    private void jTextFieldPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPatientActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldPatientActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -207,7 +231,7 @@ public class ExerciseInterface extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldDomain;
     private javax.swing.JTextField jTextFieldLevel;
     private javax.swing.JTextField jTextFieldName;
-    private javax.swing.JTextField jTextFieldPaciente;
+    private javax.swing.JTextField jTextFieldPatient;
     private javax.swing.JTextField jTextFieldSubDomain;
     private javax.swing.JTextField jTextFieldTime;
     // End of variables declaration//GEN-END:variables

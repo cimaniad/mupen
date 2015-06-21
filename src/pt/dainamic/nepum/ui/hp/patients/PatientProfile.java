@@ -58,6 +58,7 @@ public class PatientProfile extends javax.swing.JFrame {
         this.jTextFieldAdressp.setText(p.getAdress());
         this.jTextFieldBloodGroupp.setText(p.getBloodGroup());
         this.jTextFieldDescription.setText(p.getDescription());
+        
         this.jTextField6.setText(p.getGender());
         this.jTextFieldMaritalStatus.setText(p.getMaritalStatus());
         if(p.getNif()!=0){
@@ -127,7 +128,7 @@ public class PatientProfile extends javax.swing.JFrame {
         jLabelInformation = new javax.swing.JLabel();
         jLabelwallpaper = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(705, 520));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -185,45 +186,59 @@ public class PatientProfile extends javax.swing.JFrame {
         jPanelInformation.add(jLabelBloodType, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 229, -1, 20));
 
         jTextFieldPathology.setEditable(false);
+        jTextFieldPathology.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jPanelInformation.add(jTextFieldPathology, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 230, 140, -1));
 
         jTextFieldMaritalStatus.setEditable(false);
+        jTextFieldMaritalStatus.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jPanelInformation.add(jTextFieldMaritalStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 200, 140, -1));
 
         jTextFieldAdressp.setEditable(false);
+        jTextFieldAdressp.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jPanelInformation.add(jTextFieldAdressp, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 400, -1));
 
         jTextFieldNationalityp.setEditable(false);
+        jTextFieldNationalityp.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jPanelInformation.add(jTextFieldNationalityp, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 110, 140, -1));
 
         jTextField6.setEditable(false);
+        jTextField6.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jPanelInformation.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, 140, -1));
 
         jTextFieldLastNamep.setEditable(false);
+        jTextFieldLastNamep.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jPanelInformation.add(jTextFieldLastNamep, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 50, 140, -1));
 
         jTextFieldDescription.setEditable(false);
+        jTextFieldDescription.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jPanelInformation.add(jTextFieldDescription, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 260, 310, 50));
 
         jTextFieldBloodGroupp.setEditable(false);
+        jTextFieldBloodGroupp.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jPanelInformation.add(jTextFieldBloodGroupp, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 60, -1));
 
         jTextFieldNIF.setEditable(false);
+        jTextFieldNIF.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jPanelInformation.add(jTextFieldNIF, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 150, -1));
 
         jTextFieldEmailp.setEditable(false);
+        jTextFieldEmailp.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jPanelInformation.add(jTextFieldEmailp, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, 190, -1));
 
         jTextFieldNumCCp.setEditable(false);
+        jTextFieldNumCCp.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jPanelInformation.add(jTextFieldNumCCp, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 170, 140, -1));
 
         jTextFieldNumTelp.setEditable(false);
+        jTextFieldNumTelp.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jPanelInformation.add(jTextFieldNumTelp, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 150, -1));
 
         jTextFieldBirthDate.setEditable(false);
+        jTextFieldBirthDate.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jPanelInformation.add(jTextFieldBirthDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 150, -1));
 
         jTextFieldNamep.setEditable(false);
+        jTextFieldNamep.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jPanelInformation.add(jTextFieldNamep, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, 150, -1));
 
         jButtonPrescribeSession.setText("Prescrever sessão");
@@ -232,7 +247,7 @@ public class PatientProfile extends javax.swing.JFrame {
                 jButtonPrescribeSessionActionPerformed(evt);
             }
         });
-        jPanelInformation.add(jButtonPrescribeSession, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 330, -1, -1));
+        jPanelInformation.add(jButtonPrescribeSession, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 330, -1, -1));
 
         jButtonBack.setText("Voltar");
         jButtonBack.addActionListener(new java.awt.event.ActionListener() {
@@ -240,7 +255,7 @@ public class PatientProfile extends javax.swing.JFrame {
                 jButtonBackActionPerformed(evt);
             }
         });
-        jPanelInformation.add(jButtonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 330, -1, -1));
+        jPanelInformation.add(jButtonBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 330, -1, -1));
 
         jButtonDelete.setText("Eliminar Paciente");
         jButtonDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -248,10 +263,10 @@ public class PatientProfile extends javax.swing.JFrame {
                 jButtonDeleteActionPerformed(evt);
             }
         });
-        jPanelInformation.add(jButtonDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 330, -1, -1));
+        jPanelInformation.add(jButtonDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, -1, -1));
 
         jButtonGenerateReport.setText("Gerar relatório");
-        jPanelInformation.add(jButtonGenerateReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 330, -1, -1));
+        jPanelInformation.add(jButtonGenerateReport, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 330, -1, -1));
 
         jLabelDiscription.setText("  Descrição:");
         jPanelInformation.add(jLabelDiscription, new org.netbeans.lib.awtextra.AbsoluteConstraints(163, 259, -1, 20));

@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 import org.apache.log4j.Logger;
 import pt.dainamic.nepum.model.LoginSession;
 import pt.dainamic.nepum.ui.admin.AdminMenu;
@@ -29,14 +30,17 @@ import pt.dainamic.nepum.ws.LoginWS;
  * @author jorge
  */
 public class LoginPage extends javax.swing.JFrame {
-    private Logger log = Logger.getLogger(Login.class);
+    private Logger log = Logger.getLogger(LoginPage.class);
+    private LoginWS lWS;
     /**
      * Creates new form LoginPage
      */
     public LoginPage() {
+        lWS = new LoginWS();
         initComponents();
         setIcon();
         setFields();
+        
     }
 
     private String[] checkFile() {
@@ -187,8 +191,33 @@ public class LoginPage extends javax.swing.JFrame {
 }
 
     private void jButtonForgotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonForgotActionPerformed
-        // TODO add your handling code here:
-        new ForgetPassword().setVisible(true);
+        JTextField email = new JTextField();
+        JTextField numCc = new JTextField();
+
+        Object[] message = {
+            "Email:", email,
+            "Num. CC:", numCc
+        };
+
+        int option = JOptionPane.showOptionDialog(null, message, "Recuperar password", 
+                         JOptionPane.OK_CANCEL_OPTION, JOptionPane.INFORMATION_MESSAGE, 
+                         null,
+                         new String[]{"Recuperar", "Cancelar"},
+                         "default");
+        if (option == JOptionPane.OK_OPTION) {
+            if (email.getText().isEmpty() || numCc.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Preencha todos os dados");
+            } else if (numCc.getText().trim().length() != 8) {
+                JOptionPane.showMessageDialog(null, "O NºCC deve ter 8 digitos!", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                lWS.getPassword(email.getText().trim(), Integer.parseInt(numCc.getText().trim()));
+                JOptionPane.showMessageDialog(null, "Password enviada para o respetivo email");
+                dispose();
+            }
+
+        } else {
+            dispose();
+        }
     }//GEN-LAST:event_jButtonForgotActionPerformed
 
     private void jButtonLoginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButtonLoginKeyPressed

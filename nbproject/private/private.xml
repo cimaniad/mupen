@@ -2,17 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group name="videoaulas">
-            <file>file:/C:/Users/Ricardo/Documents/NetBeansProjects/nep-um/src/pt/dainamic/nepum/ui/hp/appointments/FEAppointment.java</file>
-            <file>file:/C:/Users/Ricardo/Documents/NetBeansProjects/nep-um/src/pt/dainamic/nepum/ui/hp/appointments/Schedule.java</file>
-            <file>file:/C:/Users/Ricardo/Documents/NetBeansProjects/nep-um/src/pt/dainamic/nepum/ui/login/Login.java</file>
-            <file>file:/C:/Users/Ricardo/Documents/NetBeansProjects/nep-um/src/pt/dainamic/nepum/ui/hp/HealthProfessionalMenu.java</file>
-            <file>file:/C:/Users/Ricardo/Documents/NetBeansProjects/nep-um/src/pt/dainamic/nepum/ui/hp/patients/PatientRegist.java</file>
-            <file>file:/C:/Users/Ricardo/Documents/NetBeansProjects/nep-um/src/pt/dainamic/nepum/ws/LoginWS.java</file>
-            <file>file:/C:/Users/Ricardo/Documents/NetBeansProjects/nep-um/src/pt/dainamic/nepum/ui/hp/patients/exercises/PrescribeSession.java</file>
-            <file>file:/C:/Users/Ricardo/Documents/NetBeansProjects/nep-um/src/pt/dainamic/nepum/ws/SessionWS.java</file>
-            <file>file:/C:/Users/Ricardo/Documents/NetBeansProjects/nep-um/src/pt/dainamic/nepum/ui/admin/AdminMenu.java</file>
-            <file>file:/C:/Users/Ricardo/Documents/NetBeansProjects/nep-um/properties/predifinedSession.txt</file>
-        </group>
+        <group name="videoaulas"/>
     </open-files>
 </project-private>
