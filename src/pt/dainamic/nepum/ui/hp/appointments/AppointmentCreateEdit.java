@@ -305,11 +305,11 @@ public class AppointmentCreateEdit extends javax.swing.JFrame {
             int idApp = Integer.parseInt(appWS.saveEditAppointment(appt).getMsg());
             
             if (idApp != 0) {
-                nWS.createEditNotification(new Notification(0, 0, idApp,
+                nWS.createEditNotification(new Notification(0, idApp, 0,
                         0, (byte) 0, "Foi criada uma nova consulta!",
                         (byte) 0, appt.getIdPatient(), appt.getIdHealthProfessional()));
             } else {
-                nWS.createEditNotification(new Notification(0, 0, appt.getIdAppointment(),
+                nWS.createEditNotification(new Notification(0,  appt.getIdAppointment(), 0,
                         0, (byte) 0, "Foi criada uma nova consulta!",
                         (byte) 0, appt.getIdPatient(), appt.getIdHealthProfessional()));
             }
