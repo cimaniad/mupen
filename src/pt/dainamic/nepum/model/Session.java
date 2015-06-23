@@ -18,9 +18,9 @@ public class Session {
     private int idPatient;
     private int idHealthProfessional;
     private int idBlock;
-    private Date deadline;
+    private String deadline;
 
-    public Session(int idSession, int idPatient, int idHealthProfessional, int idBlock, Date deadline) {
+    public Session(int idSession, int idPatient, int idHealthProfessional, int idBlock, String deadline) {
         this.idSession = idSession;
         this.idPatient = idPatient;
         this.idHealthProfessional = idHealthProfessional;
@@ -59,11 +59,11 @@ public class Session {
         this.idBlock = idBlock;
     }
 
-    public Date getDeadline() {
+    public String getDeadline() {
         return deadline;
     }
 
-    public void setDeadline(Date deadline) {
+    public void setDeadline(String deadline) {
         this.deadline = deadline;
     }
     

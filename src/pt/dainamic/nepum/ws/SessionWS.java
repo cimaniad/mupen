@@ -61,7 +61,7 @@ Validation v;
         params.add(new BasicNameValuePair("idPatient", String.valueOf(s.getIdPatient())));
         params.add(new BasicNameValuePair("idHealthProfessional", String.valueOf(s.getIdHealthProfessional())));
         params.add(new BasicNameValuePair("idBlock", String.valueOf(s.getIdBlock())));
-        params.add(new BasicNameValuePair("deadline", String.valueOf(s.getDeadline())));
+        params.add(new BasicNameValuePair("deadLine", String.valueOf(s.getDeadline())));
         return params;
 }
 }

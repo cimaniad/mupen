@@ -7,6 +7,7 @@ package pt.dainamic.nepum.ui.hp.patients.exercises;
 
 import java.awt.Image;
 import java.awt.event.KeyEvent;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -82,9 +83,8 @@ public class PrescribeSession extends javax.swing.JFrame {
         return bList.get(jTableList.getSelectedRow());
     }
 
-    private Date getDeadLine() {
-        Date date = jDateChooserDeadline.getDate();
-        return date;
+    private String getDeadLine() {
+       return parseDate(jDateChooserDeadline.getDate());
     }
 
     private Session loadSession() {
@@ -94,7 +94,7 @@ public class PrescribeSession extends javax.swing.JFrame {
         int idPatient = p.getIdPatient();
         int idHealthProfessional = idHP;
         int idBlock = getBlockAtTable().getIdBlock();
-        Date deadline = getDeadLine();
+        String deadline = getDeadLine();
 
         return new Session(0, idPatient, idHealthProfessional, idBlock, deadline);
         }
@@ -295,10 +295,10 @@ public class PrescribeSession extends javax.swing.JFrame {
         }else{
             try{
        int idSession= Integer.parseInt(sWS.saveSession(loadSession()).getMsg());
-
+                System.out.println("IDSESSÃO: "+idSession);
        NotificationWS nWS = new NotificationWS();
-            nWS.createEditNotification(new Notification(0, 0, 0,
-                    idSession, (byte) 0, "Foi-lhe prescrita uma sessão! ",
+            nWS.createEditNotification(new Notification(0, 0, idSession,
+                    0, (byte) 0, "Foi-lhe prescrita uma sessão! ",
                     (byte) 0, p.getIdPatient(), idHP));
             }catch (Exception e){
                 log.error(e.getMessage());
@@ -353,4 +353,9 @@ public class PrescribeSession extends javax.swing.JFrame {
     private javax.swing.JTable jTableList;
     private PlaceholderTextField placeholderFieldSearch;
     // End of variables declaration//GEN-END:variables
+private String parseDate(Date d) {
+        SimpleDateFormat dateFromat = new SimpleDateFormat("yyyy-MM-dd");
+        String date = dateFromat.format(d);
+        return date;
+    }
 }
